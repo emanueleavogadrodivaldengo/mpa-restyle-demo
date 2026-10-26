@@ -1,0 +1,9 @@
+<!-- BLOCCO card-fiera → una fiera del calendario (template-parts/card-fiera.php) -->
+<li class="fair">
+  <time class="fair__date" datetime="{{start_iso}}"><span class="fair__day">{{day}}</span><span class="fair__month">{{month}}</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">{{name}}</strong>
+    <span class="fair__place"><img src="{{root}}assets/img/bandiere/{{cc}}.svg" alt="" width="20" height="14" loading="lazy">{{city}}, {{country}}</span>
+    <span class="fair__sector">{{sector}}</span>
+  </div>
+</li>

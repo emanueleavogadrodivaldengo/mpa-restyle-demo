@@ -5,6 +5,7 @@
 //   {{> header}}                         → get_header() / get_template_part()
 //   {{#news template="card-news" limit=6}} → il "loop" di WP_Query
 //   {{#riviste template="cover"}}         → un loop sulle sei testate
+//   {{#fiere template="card-fiera"}}      → un loop sulle prossime fiere
 //   {{title}}, {{root}} ...               → variabili (in PHP: the_title(), ecc.)
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, statSync } from 'node:fs';
@@ -16,6 +17,8 @@ const OUT = 'docs';
 const news = JSON.parse(readFileSync(join(SRC, 'data/news.json'), 'utf8'))
   .sort((a, b) => b.date.localeCompare(a.date));
 const riviste = JSON.parse(readFileSync(join(SRC, 'data/riviste.json'), 'utf8'));
+const fiere = JSON.parse(readFileSync(join(SRC, 'data/fiere.json'), 'utf8'))
+  .sort((a, b) => a.start.localeCompare(b.start));
 const rivistaByKey = Object.fromEntries(riviste.map(r => [r.key, r]));
 
 const partial = name => readFileSync(join(SRC, 'partials', `${name}.html`), 'utf8');
@@ -63,13 +66,30 @@ function renderNews(attrs, root) {
   let list = news;
   if (attrs.magazine) list = list.filter(n => n.magazine === attrs.magazine);
   if (attrs.exclude) list = list.filter(n => n.slug !== attrs.exclude);
+  if (attrs.featured) list = list.filter(n => n.featured); // "in evidenza", scelte dalla redazione
   const offset = Number(attrs.offset ?? 0);
   const limit = Number(attrs.limit ?? list.length);
   const revealFrom = Number(attrs['reveal-from'] ?? Infinity);
   const tpl = partial(attrs.template ?? 'card-news');
   return list.slice(offset, offset + limit)
-    .map((item, i) => fill(tpl, { ...newsVars(item, root), n: i + 1, reveal: i >= revealFrom ? 'reveal' : '' }))
+    .map((item, i) => fill(tpl, { ...newsVars(item, root), n: i + 1, first: i === 0, reveal: i >= revealFrom ? 'reveal' : '' }))
     .join('\n');
+}
+
+const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+
+function renderFiere(attrs, root) {
+  const tpl = partial(attrs.template ?? 'card-fiera');
+  return fiere.slice(0, Number(attrs.limit ?? fiere.length)).map(f => {
+    const [, m1, d1] = f.start.split('-').map(Number);
+    const [, m2, d2] = f.end.split('-').map(Number);
+    return fill(tpl, {
+      root, name: f.name, city: f.city, country: f.country, cc: f.cc, sector: f.sector,
+      start_iso: f.start, end_iso: f.end,
+      day: d1 === d2 && m1 === m2 ? String(d1) : `${d1}–${d2}`,
+      month: MESI[m1 - 1] + (m1 !== m2 ? `–${MESI[m2 - 1]}` : ''),
+    });
+  }).join('\n');
 }
 
 function renderRiviste(attrs, root) {
@@ -121,7 +141,8 @@ function renderPage(file) {
   // 2. loop
   html = html
     .replace(/\{\{#news\s*([^}]*)\}\}/g, (_, a) => renderNews({ magazine: meta.rivista, ...parseAttrs(a) }, root))
-    .replace(/\{\{#riviste\s*([^}]*)\}\}/g, (_, a) => renderRiviste(parseAttrs(a), root));
+    .replace(/\{\{#riviste\s*([^}]*)\}\}/g, (_, a) => renderRiviste(parseAttrs(a), root))
+    .replace(/\{\{#fiere\s*([^}]*)\}\}/g, (_, a) => renderFiere(parseAttrs(a), root));
   // 3. variabili
   html = fill(html, vars);
   // 4. voce di menu attiva: aria-current="page" sul link con data-section uguale a quella della pagina

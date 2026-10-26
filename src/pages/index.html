@@ -8,13 +8,24 @@
 <main id="contenuto">
   <h1 class="visually-hidden">MPA Style: news e riviste della filiera moda, pelle, tessile e DPI</h1>
 
-  <!-- Primo schermo: niente animazioni, così l'apertura compare subito -->
+  <!-- Primo schermo: le notizie "in evidenza" scelte dalla redazione in un carosello, accanto le più recenti.
+       Nessuna animazione all'arrivo: la prima foto compare subito. -->
   <section class="opening wrap" aria-label="In apertura">
-    {{#news template="card-news-lead" limit=1}}
+    <div class="hero" data-hero aria-roledescription="carosello" aria-label="In evidenza">
+      <div class="hero__track" tabindex="0">
+        {{#news template="card-news-slide" featured=1 limit=4}}
+      </div>
+      <div class="hero__controls">
+        <div class="hero__dots" role="group" aria-label="Scegli la notizia"></div>
+        <button class="hero__pause" type="button" hidden aria-label="Ferma lo scorrimento automatico">❚❚</button>
+        <button type="button" data-dir="-1" aria-label="Notizia precedente">←</button>
+        <button type="button" data-dir="1" aria-label="Notizia successiva">→</button>
+      </div>
+    </div>
     <div class="opening__side">
       <h2 class="section-title section-title--small">Le ultime</h2>
       <ol class="headlines">
-        {{#news template="card-news-title" offset=1 limit=4}}
+        {{#news template="card-news-title" limit=4}}
       </ol>
     </div>
   </section>
@@ -59,22 +70,7 @@
       <a class="more" href="{{root}}fairs/">Calendario completo</a>
     </div>
     <ul class="fairs">
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-03">3–5 nov</time>
-        <div><strong>ISPO</strong><span>Amsterdam, Paesi Bassi · Calzatura</span></div>
-      </li>
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-03">3–5 nov</time>
-        <div><strong>Expoprotection</strong><span>Parigi, Francia · Sicurezza sul lavoro</span></div>
-      </li>
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-13">13–15 nov</time>
-        <div><strong>APLF ASEAN</strong><span>Ho Chi Minh City, Vietnam · Calzatura</span></div>
-      </li>
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-17">17–19 nov</time>
-        <div><strong>Interleather &amp; Shoes Spain</strong><span>Madrid, Spagna · Pelle e borse</span></div>
-      </li>
+      {{#fiere limit=4}}
     </ul>
   </section>
 

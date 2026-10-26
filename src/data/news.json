@@ -17,7 +17,8 @@
     "magazine": "shoes-and-bags",
     "excerpt": "A Fermo l'ABC Fashion Event 2026 registra il tutto esaurito tra gli espositori del distretto calzaturiero.",
     "image": "news/abc-fashion-event-2026-fermo.webp",
-    "imageAlt": "L'ingresso dell'ABC Fashion Event 2026, con i visitatori tra gli stand"
+    "imageAlt": "L'ingresso dell'ABC Fashion Event 2026, con i visitatori tra gli stand",
+    "featured": true
   },
   {
     "slug": "ssip-entra-in-cotance-supporting-member",
@@ -27,7 +28,8 @@
     "magazine": "tannery",
     "excerpt": "La Stazione Sperimentale per l'Industria delle Pelli diventa supporting member di Cotance, la confederazione europea dei conciatori.",
     "image": "news/ssip-cotance-supporting-member.webp",
-    "imageAlt": "I loghi di Cotance e della Stazione Sperimentale per l'Industria delle Pelli"
+    "imageAlt": "I loghi di Cotance e della Stazione Sperimentale per l'Industria delle Pelli",
+    "featured": true
   },
   {
     "slug": "futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali",
@@ -36,7 +38,8 @@
     "magazine": "shoes-and-bags",
     "excerpt": "Ad Elche la fiera dei componenti per calzatura e pelletteria mette al centro circolarità, intelligenza artificiale e nuovi materiali.",
     "image": "news/futurmoda-ottobre-2026.webp",
-    "imageAlt": "L'ingresso di Futurmoda 56, edizione fall/winter 27-28"
+    "imageAlt": "L'ingresso di Futurmoda 56, edizione fall/winter 27-28",
+    "featured": true
   },
   {
     "slug": "safety-first-novembre-2026-rivista-calzature-di-sicurezza",
@@ -45,7 +48,8 @@
     "magazine": "safety-first",
     "excerpt": "Il nuovo numero della rivista delle calzature di sicurezza e dei DPI si può sfogliare online.",
     "image": "copertine/safety-first-14.webp",
-    "imageAlt": "La copertina di Safety First n. 14, ottobre/novembre 2026"
+    "imageAlt": "La copertina di Safety First n. 14, ottobre/novembre 2026",
+    "featured": true
   },
   {
     "slug": "gsc-group-positivity-cabin-andrea-bianconi-zermeghedo",

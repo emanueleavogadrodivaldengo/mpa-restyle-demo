@@ -1,0 +1,47 @@
+[
+  {
+    "name": "ISPO",
+    "start": "2026-11-03",
+    "end": "2026-11-05",
+    "city": "Amsterdam",
+    "country": "Paesi Bassi",
+    "cc": "nl",
+    "sector": "Calzatura"
+  },
+  {
+    "name": "Expoprotection",
+    "start": "2026-11-03",
+    "end": "2026-11-05",
+    "city": "Parigi",
+    "country": "Francia",
+    "cc": "fr",
+    "sector": "Sicurezza sul lavoro"
+  },
+  {
+    "name": "APLF ASEAN",
+    "start": "2026-11-13",
+    "end": "2026-11-15",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "cc": "vn",
+    "sector": "Calzatura"
+  },
+  {
+    "name": "Interleather & Shoes Spain",
+    "start": "2026-11-17",
+    "end": "2026-11-19",
+    "city": "Madrid",
+    "country": "Spagna",
+    "cc": "es",
+    "sector": "Pelle e borse"
+  },
+  {
+    "name": "Diflex",
+    "start": "2026-12-08",
+    "end": "2026-12-10",
+    "city": "Dubai",
+    "country": "Emirati Arabi Uniti",
+    "cc": "ae",
+    "sector": "Calzatura"
+  }
+]
