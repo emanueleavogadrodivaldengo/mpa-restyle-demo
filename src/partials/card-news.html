@@ -1,0 +1,14 @@
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card {{reveal}}" data-rivista="{{magazine_key}}">
+  <a class="card__link" href="{{url}}">
+    <div class="card__media media" style="view-transition-name: foto-{{slug}}">
+      <img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">{{magazine_short}}</p>
+      <h3 class="card__title">{{title}}</h3>
+      <p class="card__excerpt">{{excerpt}}</p>
+      <time class="meta" datetime="{{date_iso}}">{{date_human}}</time>
+    </div>
+  </a>
+</article>

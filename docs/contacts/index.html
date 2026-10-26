@@ -1,0 +1,173 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contatti · MPA Style</title>
+  <meta name="description" content="Come contattare MPA: redazione e comunicati stampa, pubblicità e media kit, abbonamenti e amministrazione. Sede a Buccinasco (MI).">
+  <meta name="theme-color" content="#111111">
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../" aria-label="MPA Style, torna alla home">
+      <!-- Segnaposto: qui va il logo STYLE in SVG -->
+      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../news/" data-section="news">News</a></li>
+        <li><a href="../magazines/" data-section="riviste">Riviste</a></li>
+        <li><a href="../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../contacts/" data-section="contatti" aria-current="page">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia, un'azienda, una fiera">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Modello pagina contatti → in WordPress: page-contacts.php -->
+<main id="contenuto" class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">Contatti</h1>
+    <p class="page-intro">Scrivi o chiama la persona giusta: ti rispondiamo prima.</p>
+  </header>
+
+  <ul class="contact-cards">
+    <li class="contact-card">
+      <h2>Redazione e comunicati stampa</h2>
+      <a href="tel:+390240741222">+39 02 4074 1222</a>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+      <p class="ph-note">Email dedicata alla redazione: da definire</p>
+    </li>
+    <li class="contact-card">
+      <h2>Pubblicità e media kit</h2>
+      <a href="tel:+393346642270">+39 334 664 2270</a>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+      <p class="ph-note">Numero ed email commerciale: da confermare</p>
+    </li>
+    <li class="contact-card">
+      <h2>Abbonamenti e amministrazione</h2>
+      <a href="tel:+390239620666">+39 02 3962 0666</a>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+      <p class="ph-note">Email amministrazione: da definire</p>
+    </li>
+    <li class="contact-card contact-card--wa">
+      <h2>WhatsApp</h2>
+      <a class="button" href="https://wa.me/393346642270" rel="noopener">Scrivici su WhatsApp</a>
+    </li>
+  </ul>
+
+  <div class="contact-layout section">
+    <form class="form" action="#" method="post">
+      <h2 class="section-title">Scrivici</h2>
+      <p class="ph-note">Demo: il modulo non invia ancora nulla.</p>
+      <div class="field">
+        <label for="c-nome">Nome e cognome</label>
+        <input id="c-nome" name="nome" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="c-email">Email</label>
+        <input id="c-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="c-motivo">Per cosa ci scrivi</label>
+        <select id="c-motivo" name="motivo">
+          <option>Redazione e comunicati stampa</option>
+          <option>Pubblicità e media kit</option>
+          <option>Abbonamenti</option>
+          <option>Academy e corsi</option>
+          <option>Altro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="c-msg">Messaggio</label>
+        <textarea id="c-msg" name="messaggio" rows="6" required></textarea>
+      </div>
+      <div class="field field--check">
+        <input id="c-privacy" name="privacy" type="checkbox" required>
+        <label for="c-privacy">Ho letto l'<a href="../privacy-policy/">informativa privacy</a></label>
+      </div>
+      <button class="button" type="submit">Invia il messaggio</button>
+    </form>
+
+    <div class="addresses">
+      <h2 class="section-title section-title--small">Sede</h2>
+      <address>
+        MPA srl<br>
+        Via del Commercio 46<br>
+        20090 Buccinasco (MI), Italia<br>
+        <!-- Al posto della mappa incorporata (pesante e con cookie di terzi) un link che apre la mappa -->
+        <a href="https://www.openstreetmap.org/search?query=Via%20del%20Commercio%2046%20Buccinasco" rel="noopener">Apri la mappa</a>
+      </address>
+      <h2 class="section-title section-title--small">Spedizione materiali</h2>
+      <address>
+        Via dei Garibaldini 17<br>
+        20019 Settimo Milanese (MI), Italia
+      </address>
+      <p class="meta">P.IVA 09515700962</p>
+    </div>
+  </div>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
+        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../privacy-policy/">Privacy</a> · <a href="../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

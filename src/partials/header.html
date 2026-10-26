@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#111111">
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <link rel="stylesheet" href="{{root}}assets/css/style.css">
+  <link rel="icon" href="{{root}}assets/img/favicon.svg" type="image/svg+xml">
+  <script src="{{root}}assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="{{root}}" aria-label="MPA Style, torna alla home">
+      <!-- Segnaposto: qui va il logo STYLE in SVG -->
+      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="{{root}}news/" data-section="news">News</a></li>
+        <li><a href="{{root}}magazines/" data-section="riviste">Riviste</a></li>
+        <li><a href="{{root}}fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="{{root}}academy/" data-section="academy">Academy</a></li>
+        <li><a href="{{root}}company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="{{root}}pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="{{root}}contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="{{root}}" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia, un'azienda, una fiera">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "style",
+    "name": "Style",
+    "short": "Style",
+    "slug": "style",
+    "audience": "Moda e accessori",
+    "about": "Tendenze, colori, materiali e protagonisti della moda e degli accessori, italiani e internazionali.",
+    "issue": "Ultimo numero",
+    "color": "#2c3a55"
+  },
+  {
+    "key": "shoes-and-bags",
+    "name": "Shoes & Bags",
+    "short": "Shoes & Bags",
+    "slug": "shoes-and-bags",
+    "audience": "Calzatura e pelletteria moda",
+    "about": "La rivista per chi progetta, produce e compra calzature e pelletteria: fiere, componenti, tecnologie e mercati.",
+    "issue": "Ultimo numero",
+    "color": "#7a2e2e"
+  },
+  {
+    "key": "tannery",
+    "name": "Tannery International",
+    "short": "Tannery",
+    "slug": "tannery",
+    "audience": "Concerie e industria della pelle",
+    "about": "Concia, chimica, macchinari e sostenibilità: l'industria della pelle raccontata a concerie e fornitori, in Italia e all'estero.",
+    "issue": "Ultimo numero",
+    "color": "#8a5a2b"
+  },
+  {
+    "key": "texstyle",
+    "name": "TexStyle",
+    "short": "TexStyle",
+    "slug": "texstyle",
+    "audience": "Tessile",
+    "about": "Tessuti, filati e fiere del tessile per l'abbigliamento e per la casa.",
+    "issue": "Ultimo numero",
+    "color": "#3f5a46"
+  },
+  {
+    "key": "safety-first",
+    "name": "Safety First",
+    "short": "Safety First",
+    "slug": "safety-first",
+    "audience": "Calzature e DPI da lavoro",
+    "about": "Calzature di sicurezza e dispositivi di protezione individuale: norme, materiali, tecnologie e fiere del settore.",
+    "issue": "Ottobre/Novembre 2026",
+    "color": "#1f4a5c"
+  },
+  {
+    "key": "outerwear",
+    "name": "Outerwear",
+    "short": "Outerwear",
+    "slug": "outerwear",
+    "audience": "Capispalla e pellicceria",
+    "about": "Giacche, capi in pelle e pellicceria: collezioni, lavorazioni e aziende del capospalla.",
+    "issue": "Ultimo numero",
+    "color": "#4b4458"
+  }
+]

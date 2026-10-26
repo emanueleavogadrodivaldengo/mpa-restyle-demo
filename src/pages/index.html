@@ -1,0 +1,102 @@
+<!--page {
+  "title": "MPA Style · News e riviste di moda, pelle, tessile e calzatura",
+  "description": "Le news quotidiane della filiera moda, pelle, tessile e DPI, le sei riviste di MPA e il calendario delle fiere internazionali.",
+  "section": "home"
+} -->
+{{> header}}
+
+<main id="contenuto">
+  <h1 class="visually-hidden">MPA Style: news e riviste della filiera moda, pelle, tessile e DPI</h1>
+
+  <!-- Primo schermo: niente animazioni, così l'apertura compare subito -->
+  <section class="opening wrap" aria-label="In apertura">
+    {{#news template="card-news-lead" limit=1}}
+    <div class="opening__side">
+      <h2 class="section-title section-title--small">Le ultime</h2>
+      <ol class="headlines">
+        {{#news template="card-news-title" offset=1 limit=4}}
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap section" aria-labelledby="t-news">
+    <div class="section-head">
+      <h2 class="section-title" id="t-news">Ultime news</h2>
+      <a class="more" href="{{root}}news/">Tutte le news</a>
+    </div>
+    {{> filtri-riviste}}
+    <div class="grid-news">
+      {{#news template="card-news" offset=5 limit=6 reveal-from=0}}
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-riviste">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title" id="t-riviste">Le sei riviste</h2>
+        <a class="more" href="{{root}}magazines/">Tutte le riviste</a>
+      </div>
+      {{> carosello-riviste}}
+    </div>
+  </section>
+
+  <section class="wrap section reveal" aria-labelledby="t-fiere">
+    <div class="section-head">
+      <h2 class="section-title" id="t-fiere">Prossime fiere</h2>
+      <a class="more" href="{{root}}fairs/">Calendario completo</a>
+    </div>
+    <ul class="fairs">
+      <li class="fair">
+        <time class="fair__date" datetime="2026-11-03">3–5 nov</time>
+        <div><strong>ISPO</strong><span>Amsterdam, Paesi Bassi · Calzatura</span></div>
+      </li>
+      <li class="fair">
+        <time class="fair__date" datetime="2026-11-03">3–5 nov</time>
+        <div><strong>Expoprotection</strong><span>Parigi, Francia · Sicurezza sul lavoro</span></div>
+      </li>
+      <li class="fair">
+        <time class="fair__date" datetime="2026-11-13">13–15 nov</time>
+        <div><strong>APLF ASEAN</strong><span>Ho Chi Minh City, Vietnam · Calzatura</span></div>
+      </li>
+      <li class="fair">
+        <time class="fair__date" datetime="2026-11-17">17–19 nov</time>
+        <div><strong>Interleather &amp; Shoes Spain</strong><span>Madrid, Spagna · Pelle e borse</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section section--dark reveal" aria-labelledby="t-pub">
+    <div class="wrap advertisers">
+      <div>
+        <h2 class="section-title" id="t-pub">Fai conoscere la tua azienda alla filiera</h2>
+        <p>Pagine sulle riviste, articoli, banner sul sito, newsletter e presenza in fiera.</p>
+      </div>
+      <!-- Numeri segnaposto: da sostituire con i dati reali di MPA -->
+      <dl class="stats">
+        <div><dt>copie per numero</dt><dd>00.000</dd></div>
+        <div><dt>iscritti alla newsletter</dt><dd>00.000</dd></div>
+        <div><dt>fiere seguite ogni anno</dt><dd>00</dd></div>
+        <div><dt>paesi raggiunti</dt><dd>00</dd></div>
+      </dl>
+      <p class="stats__note">Numeri segnaposto, in attesa dei dati reali.</p>
+      <a class="button button--light" href="{{root}}pubblicita/">Richiedi il media kit</a>
+    </div>
+  </section>
+
+  <section class="wrap section reveal" aria-labelledby="t-newsletter">
+    {{> newsletter}}
+  </section>
+
+  <section class="wrap section partners reveal" aria-labelledby="t-partner">
+    <h2 class="section-title section-title--small" id="t-partner">Partner</h2>
+    <!-- Segnaposto: qui vanno i loghi in grigio; per ora i nomi -->
+    <ul class="partners__list">
+      <li>Assocalzaturifici</li><li>UNIC – Concerie Italiane</li><li>Assomac</li><li>Assopellettieri</li>
+      <li>Leather Naturally</li><li>UNIDO</li><li>Distretto Veneto della Pelle</li><li>APLF</li>
+      <li>APICCAPS</li><li>Officina Vanvitelli</li><li>Futurmoda</li><li>Première Vision</li>
+      <li>Milano Unica</li><li>NAD</li><li>CFPIC</li><li>Council for Leather Exports</li>
+    </ul>
+  </section>
+</main>
+
+{{> footer}}

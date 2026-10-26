@@ -1,0 +1,10 @@
+<!-- BLOCCO carosello-riviste → scroll-snap del browser; il JS serve solo alle frecce -->
+<div class="carousel" data-carousel>
+  <div class="carousel__track" tabindex="0" aria-label="Le riviste MPA, scorri per vederle tutte">
+    {{#riviste template="cover"}}
+  </div>
+  <div class="carousel__nav" hidden>
+    <button type="button" data-dir="-1" aria-label="Indietro">←</button>
+    <button type="button" data-dir="1" aria-label="Avanti">→</button>
+  </div>
+</div>

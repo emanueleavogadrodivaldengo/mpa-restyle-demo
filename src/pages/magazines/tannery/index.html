@@ -1,0 +1,75 @@
+<!--page {
+  "title": "Tannery International · la rivista delle concerie e dell'industria della pelle",
+  "description": "Tannery International, la rivista MPA per concerie e industria della pelle: ultimo numero sfogliabile, news del settore e archivio.",
+  "section": "riviste",
+  "rivista": "tannery"
+} -->
+{{> header}}
+
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste -->
+<main id="contenuto" data-rivista="{{rivista_key}}">
+  <header class="magazine-hero">
+    <div class="wrap magazine-hero__inner">
+      <div class="magazine-hero__text">
+        <p class="label label--on-dark">{{rivista_audience}}</p>
+        <h1 class="page-title">{{rivista_name}}</h1>
+        <p class="page-intro">{{rivista_about}}</p>
+        <p class="magazine-hero__facts"><span>Periodicità: <em>da completare</em></span> <span>Lingua: <em>da completare</em></span></p>
+        <div class="magazine-hero__actions">
+          <a class="button button--light" href="#">Sfoglia online</a>
+          <a class="button button--ghost" href="#">Abbonati</a>
+        </div>
+      </div>
+      <a class="cover cover--big cover--static" href="#" data-rivista="{{rivista_key}}">
+        <span class="cover__art" role="img" aria-label="Copertina segnaposto dell'ultimo numero di {{rivista_name}}">
+          <span class="cover__kicker">{{rivista_audience}}</span>
+          <span class="cover__name">{{rivista_name}}</span>
+          <span class="cover__ph">Copertina segnaposto</span>
+        </span>
+        <span class="cover__caption"><strong>{{rivista_issue}}</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    {{> filtri-riviste}}
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-art">
+    <h2 class="section-title" id="t-art">Le ultime da {{rivista_name}}</h2>
+    <div class="grid-news">
+      {{#news template="card-news" limit=9 reveal-from=2}}
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-archivio">
+    <div class="wrap">
+      <h2 class="section-title" id="t-archivio">Numeri precedenti</h2>
+      <!-- Segnaposto: in WordPress arrivano dal tipo di contenuto "Numero" -->
+      <div class="carousel" data-carousel>
+        <div class="carousel__track" tabindex="0" aria-label="Numeri precedenti, scorri per vederli">
+          <a class="cover cover--static" href="#" data-rivista="{{rivista_key}}"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">{{rivista_name}}</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="{{rivista_key}}"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">{{rivista_name}}</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="{{rivista_key}}"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">{{rivista_name}}</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="{{rivista_key}}"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">{{rivista_name}}</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+        </div>
+        <div class="carousel__nav" hidden>
+          <button type="button" data-dir="-1" aria-label="Indietro">←</button>
+          <button type="button" data-dir="1" aria-label="Avanti">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità su {{rivista_name}}</h2>
+        <p>Raggiungi chi legge {{rivista_name}}: aziende, buyer e visitatori delle fiere del settore.</p>
+      </div>
+      <a class="button" href="{{root}}pubblicita/">Richiedi il media kit</a>
+    </div>
+  </section>
+</main>
+
+{{> footer}}

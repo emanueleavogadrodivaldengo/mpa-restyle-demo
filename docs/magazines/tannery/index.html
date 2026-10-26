@@ -1,0 +1,209 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tannery International · la rivista delle concerie e dell'industria della pelle</title>
+  <meta name="description" content="Tannery International, la rivista MPA per concerie e industria della pelle: ultimo numero sfogliabile, news del settore e archivio.">
+  <meta name="theme-color" content="#111111">
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../../" aria-label="MPA Style, torna alla home">
+      <!-- Segnaposto: qui va il logo STYLE in SVG -->
+      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../../news/" data-section="news">News</a></li>
+        <li><a href="../../magazines/" data-section="riviste" aria-current="page">Riviste</a></li>
+        <li><a href="../../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia, un'azienda, una fiera">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste -->
+<main id="contenuto" data-rivista="tannery">
+  <header class="magazine-hero">
+    <div class="wrap magazine-hero__inner">
+      <div class="magazine-hero__text">
+        <p class="label label--on-dark">Concerie e industria della pelle</p>
+        <h1 class="page-title">Tannery International</h1>
+        <p class="page-intro">Concia, chimica, macchinari e sostenibilità: l'industria della pelle raccontata a concerie e fornitori, in Italia e all'estero.</p>
+        <p class="magazine-hero__facts"><span>Periodicità: <em>da completare</em></span> <span>Lingua: <em>da completare</em></span></p>
+        <div class="magazine-hero__actions">
+          <a class="button button--light" href="#">Sfoglia online</a>
+          <a class="button button--ghost" href="#">Abbonati</a>
+        </div>
+      </div>
+      <a class="cover cover--big cover--static" href="#" data-rivista="tannery">
+        <span class="cover__art" role="img" aria-label="Copertina segnaposto dell'ultimo numero di Tannery International">
+          <span class="cover__kicker">Concerie e industria della pelle</span>
+          <span class="cover__name">Tannery International</span>
+          <span class="cover__ph">Copertina segnaposto</span>
+        </span>
+        <span class="cover__caption"><strong>Ultimo numero</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- BLOCCO filtri-riviste → link alle pagine delle testate. In WordPress sono le categorie: wp_list_categories() -->
+<nav class="filters" aria-label="Filtra per rivista">
+  <a href="../../news/" data-section="news">Tutte</a>
+  <a href="../../magazines/shoes-and-bags/" data-section="shoes-and-bags">Shoes &amp; Bags</a>
+  <a href="../../magazines/tannery/" data-section="tannery" aria-current="page">Tannery</a>
+  <a href="../../magazines/style/" data-section="style">Style</a>
+  <a href="../../magazines/texstyle/" data-section="texstyle">TexStyle</a>
+  <a href="../../magazines/safety-first/" data-section="safety-first">Safety First</a>
+  <a href="../../magazines/outerwear/" data-section="outerwear">Outerwear</a>
+</nav>
+
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-art">
+    <h2 class="section-title" id="t-art">Le ultime da Tannery International</h2>
+    <div class="grid-news">
+      <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="tannery">
+  <a class="card__link" href="../../gsc-group-positivity-cabin-andrea-bianconi-zermeghedo/">
+    <div class="card__media media" style="view-transition-name: foto-gsc-group-positivity-cabin-andrea-bianconi-zermeghedo">
+      <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo</h3>
+      <p class="card__excerpt">L'opera di Andrea Bianconi torna a Zermeghedo, nella sede di GSC Group.</p>
+      <time class="meta" datetime="2026-10-16">16 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="tannery">
+  <a class="card__link" href="../../mile-museum-senato-steam-giovani-filiera-pelle/">
+    <div class="card__media media" style="view-transition-name: foto-mile-museum-senato-steam-giovani-filiera-pelle">
+      <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">Il MILE Museum al Senato della Repubblica: un ponte tra territorio, istituzioni e giovani nel segno delle STEAM</h3>
+      <p class="card__excerpt">Il museo della filiera della pelle porta al Senato il suo progetto per avvicinare i giovani alle materie STEAM.</p>
+      <time class="meta" datetime="2026-10-07">7 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="tannery">
+  <a class="card__link" href="../../acque-del-chiampo-pfas-dioxin-2026/">
+    <div class="card__media media" style="view-transition-name: foto-acque-del-chiampo-pfas-dioxin-2026">
+      <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica</h3>
+      <p class="card__excerpt">Acque del Chiampo presenta a Dioxin 2026 il suo lavoro contro i PFAS.</p>
+      <time class="meta" datetime="2026-10-06">6 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-archivio">
+    <div class="wrap">
+      <h2 class="section-title" id="t-archivio">Numeri precedenti</h2>
+      <!-- Segnaposto: in WordPress arrivano dal tipo di contenuto "Numero" -->
+      <div class="carousel" data-carousel>
+        <div class="carousel__track" tabindex="0" aria-label="Numeri precedenti, scorri per vederli">
+          <a class="cover cover--static" href="#" data-rivista="tannery"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Tannery International</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="tannery"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Tannery International</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="tannery"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Tannery International</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="tannery"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Tannery International</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+        </div>
+        <div class="carousel__nav" hidden>
+          <button type="button" data-dir="-1" aria-label="Indietro">←</button>
+          <button type="button" data-dir="1" aria-label="Avanti">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità su Tannery International</h2>
+        <p>Raggiungi chi legge Tannery International: aziende, buyer e visitatori delle fiere del settore.</p>
+      </div>
+      <a class="button" href="../../pubblicita/">Richiedi il media kit</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../../" aria-label="MPA Style, torna alla home">
+        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../../privacy-policy/">Privacy</a> · <a href="../../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

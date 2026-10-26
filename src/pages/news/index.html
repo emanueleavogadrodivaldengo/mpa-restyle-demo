@@ -1,0 +1,29 @@
+<!--page {
+  "title": "News dalla filiera moda, pelle, tessile e DPI · MPA Style",
+  "description": "Tutte le notizie di MPA Style su calzatura, pelletteria, concia, tessile, capispalla e sicurezza sul lavoro, aggiornate ogni giorno.",
+  "section": "news"
+} -->
+{{> header}}
+
+<main id="contenuto" class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">News</h1>
+    <p class="page-intro">Le notizie della filiera, ogni giorno. Scegli una rivista per vedere solo il suo settore.</p>
+  </header>
+
+  {{> filtri-riviste}}
+
+  <!-- Le prime 4 card sono nel primo schermo: niente animazione. Dalla quinta compaiono scorrendo. -->
+  <div class="grid-news grid-news--list">
+    {{#news template="card-news" reveal-from=4}}
+  </div>
+
+  <nav class="pagination" aria-label="Pagine delle news">
+    <span aria-current="page">1</span>
+    <a href="{{root}}news/page/2/">2</a>
+    <a href="{{root}}news/page/3/">3</a>
+    <a class="pagination__next" href="{{root}}news/page/2/">Notizie precedenti →</a>
+  </nav>
+</main>
+
+{{> footer}}
