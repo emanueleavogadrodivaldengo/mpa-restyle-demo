@@ -1,0 +1,31 @@
+<!--page {
+  "title": "Calendario fiere internazionali · MPA Style",
+  "description": "Le fiere internazionali di calzatura, pelle, pelletteria, moda e sicurezza sul lavoro: date, città e settore, mese per mese.",
+  "section": "fiere"
+} -->
+{{> header}}
+
+<!-- Pagina Fiere → in WordPress: archive-fiera.php (tipo di contenuto "Fiera" con data di inizio e fine) -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Calendario fiere</h1>
+    <p class="page-intro">Le fiere internazionali di calzatura, pelle, moda e sicurezza sul lavoro, mese per mese. Molte le seguiamo di persona: lì trovi anche le nostre riviste.</p>
+  </header>
+
+  <div class="wrap fairs-page">
+    {{#fiere template="card-fiera-riga" by-month=1}}
+    <p class="ph-note">Elenco preso dal sito di oggi. Le fiere già concluse spariscono da sole.</p>
+  </div>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Organizzi una fiera?</h2>
+        <p>Segnalacela per il calendario, oppure chiedici la distribuzione delle riviste in fiera.</p>
+      </div>
+      <a class="button" href="{{root}}contacts/">Scrivici</a>
+    </div>
+  </section>
+</main>
+
+{{> footer}}

@@ -1,47 +1,28 @@
 [
-  {
-    "name": "ISPO",
-    "start": "2026-11-03",
-    "end": "2026-11-05",
-    "city": "Amsterdam",
-    "country": "Paesi Bassi",
-    "cc": "nl",
-    "sector": "Calzatura"
-  },
-  {
-    "name": "Expoprotection",
-    "start": "2026-11-03",
-    "end": "2026-11-05",
-    "city": "Parigi",
-    "country": "Francia",
-    "cc": "fr",
-    "sector": "Sicurezza sul lavoro"
-  },
-  {
-    "name": "APLF ASEAN",
-    "start": "2026-11-13",
-    "end": "2026-11-15",
-    "city": "Ho Chi Minh City",
-    "country": "Vietnam",
-    "cc": "vn",
-    "sector": "Calzatura"
-  },
-  {
-    "name": "Interleather & Shoes Spain",
-    "start": "2026-11-17",
-    "end": "2026-11-19",
-    "city": "Madrid",
-    "country": "Spagna",
-    "cc": "es",
-    "sector": "Pelle e borse"
-  },
-  {
-    "name": "Diflex",
-    "start": "2026-12-08",
-    "end": "2026-12-10",
-    "city": "Dubai",
-    "country": "Emirati Arabi Uniti",
-    "cc": "ae",
-    "sector": "Calzatura"
-  }
+  { "name": "GEB Main Sample · Women’s and Men’s Shoes", "start": "2026-09-26", "end": "2026-10-01", "city": "Düsseldorf", "country": "Germania", "cc": "de", "sector": "Calzatura" },
+  { "name": "Polshoes", "start": "2026-10-01", "end": "2026-10-02", "city": "Cracovia", "country": "Polonia", "cc": "pl", "sector": "Calzatura" },
+  { "name": "Première Classe", "start": "2026-10-02", "end": "2026-10-05", "city": "Parigi", "country": "Francia", "cc": "fr", "sector": "Calzatura" },
+  { "name": "Fashion World Tokyo", "start": "2026-10-07", "end": "2026-10-09", "city": "Tokyo", "country": "Giappone", "cc": "jp", "sector": "Moda" },
+  { "name": "Aymod", "start": "2026-10-07", "end": "2026-10-10", "city": "Istanbul", "country": "Turchia", "cc": "tr", "sector": "Calzatura" },
+  { "name": "Performance Days", "start": "2026-10-13", "end": "2026-10-14", "city": "Monaco di Baviera", "country": "Germania", "cc": "de", "sector": "Calzatura" },
+  { "name": "Obuv Mir Kozhi", "start": "2026-10-13", "end": "2026-10-15", "city": "Mosca", "country": "Russia", "cc": "ru", "sector": "Calzatura" },
+  { "name": "Futurmoda", "start": "2026-10-14", "end": "2026-10-15", "city": "Elche", "country": "Spagna", "cc": "es", "sector": "Moda" },
+  { "name": "Shoes & Leather", "start": "2026-10-15", "end": "2026-10-17", "city": "Hanoi", "country": "Vietnam", "cc": "vn", "sector": "Pelle e borse" },
+  { "name": "Arbeitsschutz Aktuell", "start": "2026-10-20", "end": "2026-10-22", "city": "Stoccarda", "country": "Germania", "cc": "de", "sector": "Sicurezza sul lavoro" },
+  { "name": "Shoes for a Cure", "start": "2026-10-21", "end": "2026-10-25", "city": "New York", "country": "Stati Uniti", "cc": "us", "sector": "Calzatura" },
+  { "name": "ANPIC", "start": "2026-10-22", "end": "2026-10-24", "city": "León", "country": "Messico", "cc": "mx", "sector": "Calzatura" },
+  { "name": "ISPO", "start": "2026-11-03", "end": "2026-11-05", "city": "Amsterdam", "country": "Paesi Bassi", "cc": "nl", "sector": "Calzatura" },
+  { "name": "Expoprotection", "start": "2026-11-03", "end": "2026-11-05", "city": "Parigi", "country": "Francia", "cc": "fr", "sector": "Sicurezza sul lavoro" },
+  { "name": "FDRA Shoe Sustainability & Innovation Summit", "start": "2026-11-04", "end": "2026-11-04", "city": "Portland", "country": "Stati Uniti", "cc": "us", "sector": "Calzatura" },
+  { "name": "FDRA Shoe Trade & Logistics Strategy Summit", "start": "2026-11-05", "end": "2026-11-05", "city": "Portland", "country": "Stati Uniti", "cc": "us", "sector": "Calzatura" },
+  { "name": "APLF ASEAN", "start": "2026-11-13", "end": "2026-11-15", "city": "Ho Chi Minh City", "country": "Vietnam", "cc": "vn", "sector": "Calzatura" },
+  { "name": "Interleather & Shoes Spain", "start": "2026-11-17", "end": "2026-11-19", "city": "Madrid", "country": "Spagna", "cc": "es", "sector": "Pelle e borse" },
+  { "name": "Trade Congress Germany", "start": "2026-11-18", "end": "2026-11-19", "city": "Berlino", "country": "Germania", "cc": "de", "sector": "Calzatura" },
+  { "name": "Diflex", "start": "2026-12-08", "end": "2026-12-10", "city": "Dubai", "country": "Emirati Arabi Uniti", "cc": "ae", "sector": "Calzatura" },
+  { "name": "Early Order Days", "start": "2026-12-10", "end": "2026-12-11", "city": "Hannover", "country": "Germania", "cc": "de", "sector": "Calzatura" },
+  { "name": "Cairo Inter Leather", "start": "2026-12-18", "end": "2026-12-20", "city": "Il Cairo", "country": "Egitto", "cc": "eg", "sector": "Pelle e borse" },
+  { "name": "Prowinter", "start": "2027-01-10", "end": "2027-01-12", "city": "Bolzano", "country": "Italia", "cc": "it", "sector": "Calzatura" },
+  { "name": "Zero", "start": "2027-01-11", "end": "2027-01-13", "city": "Novo Hamburgo", "country": "Brasile", "cc": "br", "sector": "Calzatura" },
+  { "name": "Supreme Women & Men", "start": "2027-02-13", "end": "2027-02-16", "city": "Monaco di Baviera", "country": "Germania", "cc": "de", "sector": "Calzatura" },
+  { "name": "EuroCIS", "start": "2027-02-16", "end": "2027-02-18", "city": "Düsseldorf", "country": "Germania", "cc": "de", "sector": "Calzatura" }
 ]

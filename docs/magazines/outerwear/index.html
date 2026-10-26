@@ -1,0 +1,181 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outerwear · Capispalla e pellicceria · riviste MPA Style</title>
+  <meta name="description" content="Giacche, capi in pelle e pellicceria: collezioni, lavorazioni e aziende del capospalla. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/magazines/outerwear/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Outerwear · Capispalla e pellicceria · riviste MPA Style">
+  <meta property="og:description" content="Giacche, capi in pelle e pellicceria: collezioni, lavorazioni e aziende del capospalla. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta property="og:url" content="https://www.mpastyle.it/magazines/outerwear/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../../news/" data-section="news">News</a></li>
+        <li><a href="../../magazines/" data-section="riviste" aria-current="page">Riviste</a></li>
+        <li><a href="../../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste.
+     La build ne genera sei, una per testata, da questo stesso file. -->
+<main id="contenuto" data-rivista="outerwear">
+  <header class="magazine-hero">
+    <div class="wrap magazine-hero__inner">
+      <div class="magazine-hero__text">
+        <p class="label label--on-dark">Capispalla e pellicceria</p>
+        <h1 class="page-title">Outerwear</h1>
+        <p class="page-intro">Giacche, capi in pelle e pellicceria: collezioni, lavorazioni e aziende del capospalla.</p>
+        <p class="magazine-hero__facts"><span>Periodicità: <em>da completare</em></span> <span>Lingua: <em>da completare</em></span></p>
+        <div class="magazine-hero__actions">
+          <a class="button button--light" href="#">Sfoglia online</a>
+          <a class="button button--ghost" href="#">Abbonati</a>
+        </div>
+      </div>
+      <a class="cover cover--big cover--static" href="#" data-rivista="outerwear">
+        <span class="cover__art" role="img" aria-label="Copertina segnaposto dell'ultimo numero di Outerwear">
+          <span class="cover__kicker">Capispalla e pellicceria</span>
+          <span class="cover__name">Outerwear</span>
+          <span class="cover__ph">Copertina segnaposto</span>
+        </span>
+        <span class="cover__caption"><strong>Ultimo numero</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- BLOCCO filtri-riviste → link alle pagine delle testate. In WordPress sono le categorie: wp_list_categories() -->
+<nav class="filters" aria-label="Filtra per rivista">
+  <a href="../../news/" data-section="news">Tutte</a>
+  <a href="../../magazines/shoes-and-bags/" data-section="shoes-and-bags">Shoes &amp; Bags</a>
+  <a href="../../magazines/tannery/" data-section="tannery">Tannery</a>
+  <a href="../../magazines/style/" data-section="style">Style</a>
+  <a href="../../magazines/texstyle/" data-section="texstyle">TexStyle</a>
+  <a href="../../magazines/safety-first/" data-section="safety-first">Safety First</a>
+  <a href="../../magazines/outerwear/" data-section="outerwear" aria-current="page">Outerwear</a>
+</nav>
+
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-art">
+    <h2 class="section-title" id="t-art">Le ultime da Outerwear</h2>
+    <div class="grid-news">
+      <p class="empty">Nessuna notizia recente per questa rivista: le trovi tutte nella pagina News.</p>
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-archivio">
+    <div class="wrap">
+      <h2 class="section-title" id="t-archivio">Numeri precedenti</h2>
+      <!-- Segnaposto: in WordPress arrivano dal tipo di contenuto "Numero" -->
+      <div class="carousel" data-carousel>
+        <div class="carousel__track" tabindex="0" aria-label="Numeri precedenti, scorri per vederli">
+          <a class="cover cover--static" href="#" data-rivista="outerwear"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Outerwear</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="outerwear"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Outerwear</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="outerwear"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Outerwear</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="outerwear"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Outerwear</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+        </div>
+        <div class="carousel__nav" hidden>
+          <button type="button" data-dir="-1" aria-label="Indietro">←</button>
+          <button type="button" data-dir="1" aria-label="Avanti">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità su Outerwear</h2>
+        <p>Raggiungi chi legge Outerwear: aziende, buyer e visitatori delle fiere del settore.</p>
+      </div>
+      <a class="button" href="../../pubblicita/">Richiedi il media kit</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../../" aria-label="MPA Style, torna alla home">
+        <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../../privacy-policy/">Privacy</a> · <a href="../../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

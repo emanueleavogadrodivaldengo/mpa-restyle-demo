@@ -1,0 +1,315 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoes &amp; Bags · Calzatura e pelletteria moda · riviste MPA Style</title>
+  <meta name="description" content="La rivista per chi progetta, produce e compra calzature e pelletteria: fiere, componenti, tecnologie e mercati. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/magazines/shoes-and-bags/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shoes &amp; Bags · Calzatura e pelletteria moda · riviste MPA Style">
+  <meta property="og:description" content="La rivista per chi progetta, produce e compra calzature e pelletteria: fiere, componenti, tecnologie e mercati. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta property="og:url" content="https://www.mpastyle.it/magazines/shoes-and-bags/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../../news/" data-section="news">News</a></li>
+        <li><a href="../../magazines/" data-section="riviste" aria-current="page">Riviste</a></li>
+        <li><a href="../../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste.
+     La build ne genera sei, una per testata, da questo stesso file. -->
+<main id="contenuto" data-rivista="shoes-and-bags">
+  <header class="magazine-hero">
+    <div class="wrap magazine-hero__inner">
+      <div class="magazine-hero__text">
+        <p class="label label--on-dark">Calzatura e pelletteria moda</p>
+        <h1 class="page-title">Shoes &amp; Bags</h1>
+        <p class="page-intro">La rivista per chi progetta, produce e compra calzature e pelletteria: fiere, componenti, tecnologie e mercati.</p>
+        <p class="magazine-hero__facts"><span>Periodicità: <em>da completare</em></span> <span>Lingua: <em>da completare</em></span></p>
+        <div class="magazine-hero__actions">
+          <a class="button button--light" href="#">Sfoglia online</a>
+          <a class="button button--ghost" href="#">Abbonati</a>
+        </div>
+      </div>
+      <a class="cover cover--big cover--static" href="#" data-rivista="shoes-and-bags">
+        <span class="cover__art" role="img" aria-label="Copertina segnaposto dell'ultimo numero di Shoes &amp; Bags">
+          <span class="cover__kicker">Calzatura e pelletteria moda</span>
+          <span class="cover__name">Shoes &amp; Bags</span>
+          <span class="cover__ph">Copertina segnaposto</span>
+        </span>
+        <span class="cover__caption"><strong>Ultimo numero</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- BLOCCO filtri-riviste → link alle pagine delle testate. In WordPress sono le categorie: wp_list_categories() -->
+<nav class="filters" aria-label="Filtra per rivista">
+  <a href="../../news/" data-section="news">Tutte</a>
+  <a href="../../magazines/shoes-and-bags/" data-section="shoes-and-bags" aria-current="page">Shoes &amp; Bags</a>
+  <a href="../../magazines/tannery/" data-section="tannery">Tannery</a>
+  <a href="../../magazines/style/" data-section="style">Style</a>
+  <a href="../../magazines/texstyle/" data-section="texstyle">TexStyle</a>
+  <a href="../../magazines/safety-first/" data-section="safety-first">Safety First</a>
+  <a href="../../magazines/outerwear/" data-section="outerwear">Outerwear</a>
+</nav>
+
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-art">
+    <h2 class="section-title" id="t-art">Le ultime da Shoes &amp; Bags</h2>
+    <div class="grid-news">
+      <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../abc-fashion-event-2026-fermo-forum-terza-edizione/">
+    <div class="card__media media" style="view-transition-name: foto-abc-fashion-event-2026-fermo-forum-terza-edizione">
+      <img src="../../assets/img/news/abc-fashion-event-2026-fermo-forum-terza-edizione.webp" alt="abc accessori fermo" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">ABC Fashion Event 2026: a Fermo il distretto calzaturiero fa il pieno di espositori</h3>
+      <p class="card__excerpt">Al Fermo Forum la terza edizione della fiera dedicata ad accessori, componentistica e tecnologie per calzatura e pelletteria: 180 aziende dirette, oltre 260 marchi e 50 realtà estere. Si è…</p>
+      <time class="meta" datetime="2026-10-23">23 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali/">
+    <div class="card__media media" style="view-transition-name: foto-futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali">
+      <img src="../../assets/img/news/futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali.webp" alt="Futurmoda 56" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">Futurmoda ottobre 2026: la filiera della calzatura tra Circolarità Avanzata, Intelligenza Artificiale e Nuovi Linguaggi Materici</h3>
+      <p class="card__excerpt">L’edizione di Futurmoda, andata in scena il 14 e 15 ottobre 2026 presso l’IFA Fira Alacant a Elche, ha tracciato le traiettorie evolutive che guideranno la filiera internazionale della…</p>
+      <time class="meta" datetime="2026-10-19">19 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh/">
+    <div class="card__media media" style="view-transition-name: foto-shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh">
+      <img src="../../assets/img/news/shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">Shoes &amp; Leather – Vietnam 2027 | La piattaforma unica dell’ASEAN per il sourcing di calzature e pelletteria</h3>
+      <p class="card__excerpt">Dal 14 al 16 luglio 2027, uno dei principali poli produttivi dell’Asia ospiterà la 27ª edizione dell’International Shoes &amp; Leather Exhibition – Vietnam (Shoes &amp; Leather – Vietnam). La…</p>
+      <time class="meta" datetime="2026-10-14">14 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../daytona-73-mythic-legend-giubbotti-pelle/">
+    <div class="card__media media" style="view-transition-name: foto-daytona-73-mythic-legend-giubbotti-pelle">
+      <img src="../../assets/img/news/daytona-73-mythic-legend-giubbotti-pelle.webp" alt="Giubbotto in pelle Daytona 73 Mythic Legend con patch ricamate" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">MYTHIC LEGEND DAYTONA 73</h3>
+      <p class="card__excerpt">L’anima ribelle del vintage leather La collezione Mythic Legend firmata Daytona 73 celebra il fascino intramontabile della pelle, unendo l’heritage dei motori all’estetica d’aviazione in…</p>
+      <time class="meta" datetime="2026-10-13">13 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../shoes-leather-guangzhou-2027-fiera-calzature-pelletteria/">
+    <div class="card__media media" style="view-transition-name: foto-shoes-leather-guangzhou-2027-fiera-calzature-pelletteria">
+      <img src="../../assets/img/news/shoes-leather-guangzhou-2027-fiera-calzature-pelletteria.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">Shoes &amp; Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera</h3>
+      <p class="card__excerpt">L’ecosistema globale della calzatura e della pelletteria si prepara al grande ritorno in Cina. Dal 20 al 22 maggio 2027, il Canton Fair Complex di Guangzhou ospiterà la 35ª edizione…</p>
+      <time class="meta" datetime="2026-10-06">6 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../uitic-congresso-2027-jakarta-footwear-industry/">
+    <div class="card__media media" style="view-transition-name: foto-uitic-congresso-2027-jakarta-footwear-industry">
+      <img src="../../assets/img/news/uitic-congresso-2027-jakarta-footwear-industry.webp" alt="uitic 2027 jakarta" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">UITIC guarda al futuro della calzatura: il XXIII Congresso Internazionale si terrà a Jakarta</h3>
+      <p class="card__excerpt">“Engineering the Future of the Footwear Industry&quot; è il titolo scelto per l’edizione 2027, in programma dal 2 al 4 agosto. Tecnologie avanzate, manifattura sostenibile e resilienza al centro…</p>
+      <time class="meta" datetime="2026-10-05">5 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../acm-dettagli-di-moda-accessori-alta-tecnologia/">
+    <div class="card__media media" style="view-transition-name: foto-acm-dettagli-di-moda-accessori-alta-tecnologia">
+      <img src="../../assets/img/news/acm-dettagli-di-moda-accessori-alta-tecnologia.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">ACM Dettagli di Moda: la sartorialità degli accessori tra materia e alta tecnologia</h3>
+      <p class="card__excerpt">Nel panorama del lusso contemporaneo, la differenza tra un prodotto ordinario e una creazione iconica risiede nella ricerca del dettaglio. Per i brand di pelletteria, calzatura e…</p>
+      <time class="meta" datetime="2026-10-01">1 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../benheart-intervista-ben-seconda-pelle-panerai/">
+    <div class="card__media media" style="view-transition-name: foto-benheart-intervista-ben-seconda-pelle-panerai">
+      <img src="../../assets/img/news/benheart-intervista-ben-seconda-pelle-panerai.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">L’essenza oltre la materia: la visione del lusso autentico firmata Benheart</h3>
+      <p class="card__excerpt">Ci sono parabole umane che sembrano sfidare le leggi della probabilità, destinate a trasformare la vulnerabilità in pura eccellenza. Quello di Ben non è solo un percorso imprenditoriale, ma…</p>
+      <time class="meta" datetime="2026-10-01">1 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="../../columbia-sportswear-lancia-ft-fund-e-premia-le-foto-dei-piedi-degli-escursionisti/">
+    <div class="card__media media" style="view-transition-name: foto-columbia-sportswear-lancia-ft-fund-e-premia-le-foto-dei-piedi-degli-escursionisti">
+      <img src="../../assets/img/news/columbia-sportswear-lancia-ft-fund-e-premia-le-foto-dei-piedi-degli-escursionisti.webp" alt="Columbia Sportswear lancia F££T FUND" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">Columbia Sportswear lancia F££T Fund e premia le foto dei piedi degli escursionisti</h3>
+      <p class="card__excerpt">Columbia Sportswear ha annunciato il lancio di F££T FUND, un’iniziativa ironica e irriverente pensata per accompagnare il debutto della nuova linea di calzature Peakfreak™. Il progetto…</p>
+      <time class="meta" datetime="2026-09-29">29 settembre 2026</time>
+    </div>
+  </a>
+</article>
+
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-archivio">
+    <div class="wrap">
+      <h2 class="section-title" id="t-archivio">Numeri precedenti</h2>
+      <!-- Segnaposto: in WordPress arrivano dal tipo di contenuto "Numero" -->
+      <div class="carousel" data-carousel>
+        <div class="carousel__track" tabindex="0" aria-label="Numeri precedenti, scorri per vederli">
+          <a class="cover cover--static" href="#" data-rivista="shoes-and-bags"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Shoes &amp; Bags</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="shoes-and-bags"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Shoes &amp; Bags</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="shoes-and-bags"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Shoes &amp; Bags</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="shoes-and-bags"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Shoes &amp; Bags</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+        </div>
+        <div class="carousel__nav" hidden>
+          <button type="button" data-dir="-1" aria-label="Indietro">←</button>
+          <button type="button" data-dir="1" aria-label="Avanti">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità su Shoes &amp; Bags</h2>
+        <p>Raggiungi chi legge Shoes &amp; Bags: aziende, buyer e visitatori delle fiere del settore.</p>
+      </div>
+      <a class="button" href="../../pubblicita/">Richiedi il media kit</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../../" aria-label="MPA Style, torna alla home">
+        <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../../privacy-policy/">Privacy</a> · <a href="../../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

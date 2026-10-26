@@ -1,0 +1,17 @@
+<!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="{{key}}">
+  <a class="mag-card__cover" href="{{url}}" tabindex="-1" aria-hidden="true">
+    {{#if cover}}<img class="cover__img" src="{{cover}}" alt="" width="600" height="848" loading="lazy" decoding="async">{{else}}<span class="cover__art">
+      <span class="cover__kicker">{{audience}}</span>
+      <span class="cover__name">{{name}}</span>
+      <span class="cover__ph">Copertina segnaposto</span>
+    </span>{{/if}}
+  </a>
+  <div class="mag-card__body">
+    <p class="label">{{audience}}</p>
+    <h2 class="mag-card__title"><a href="{{url}}">{{name}}</a></h2>
+    <p>{{about}}</p>
+    <p class="meta">{{issue}}{{#if frequency}} · {{frequency}}{{/if}}</p>
+    <a class="more" href="{{url}}">Notizie e numeri</a>
+  </div>
+</article>

@@ -11,11 +11,16 @@ Pagine di questa prima versione (italiano; l'inglese è previsto ma non ancora f
 | Home | `docs/index.html` | `front-page.php` |
 | Lista news | `docs/news/index.html` | `home.php` / `archive.php` |
 | Articolo (Heimtextil 2027, testo reale) | `docs/heimtextil-2027-si-presenta-a-milano/index.html` | `single.php` |
-| Pagina di una testata (Tannery International) | `docs/magazines/tannery/index.html` | `category.php` |
+| Riviste (le sei testate) | `docs/magazines/index.html` | `page-magazines.php` |
+| Pagina di ogni testata (sei, da un solo modello) | `docs/magazines/<testata>/index.html` | `category.php` |
+| Calendario fiere | `docs/fairs/index.html` | `archive-fiera.php` |
+| Academy | `docs/academy/index.html` | `page-academy.php` |
+| Chi siamo | `docs/company/index.html` | `page-company.php` |
+| Pubblicità e media kit (pagina nuova) | `docs/pubblicita/index.html` | `page-pubblicita.php` |
 | Contatti | `docs/contacts/index.html` | `page-contacts.php` |
 
-Gli indirizzi sono quelli di oggi (`/news/`, `/magazines/tannery/`, `/contacts/`, articoli alla
-radice): così, quando il tema andrà online, Google non perde nessuna pagina.
+Gli indirizzi sono quelli di oggi (`/news/`, `/magazines/tannery/`, `/fairs/`, `/company/`,
+`/academy/`, `/contacts/`, articoli alla radice; `/pubblicita/` è nuova): così, quando il tema andrà online, Google non perde nessuna pagina.
 
 ## Come si usa
 
@@ -59,6 +64,8 @@ Nei file sorgente ci sono tre istruzioni, pensate per ricalcare WordPress:
 | `{{> header}}` | `get_header()` |
 | `{{> card-news}}` | `get_template_part('template-parts/card-news')` |
 | `{{#news limit=6 offset=1}}` | il loop: `WP_Query` + `while (have_posts())` |
+| `{{#fiere}}`, `{{#partner}}` | loop su tipi di contenuto "Fiera" e "Partner" |
+| `pages/magazines/[rivista]/` | `category.php`: un modello, sei pagine |
 | `{{title}}`, `{{date_human}}` | `the_title()`, `get_the_date()` |
 | `data/news.json` | gli articoli nel database |
 
@@ -131,8 +138,14 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 - **Contatti**: numeri ed email sono quelli del sito di oggi; quale numero e quale email per
   la pubblicità va confermato. Nel footer resta un solo numero (redazione).
 - **Moduli** (newsletter, contatti) e **ricerca**: grafica pronta, non inviano nulla.
-- **Menu**: Riviste, Fiere, Academy, Chi siamo e Pubblicità non sono ancora nella demo
-  (portano alla pagina 404, che lo spiega).
+- **Fiere**: le 27 del sito di oggi (`data/fiere.json`); quelle già finite spariscono da sole a
+  ogni build.
+- **Chi siamo**: testo e partner dal sito di oggi; storia, persone e loghi dei partner da completare.
+- **Academy**: testo dal sito di oggi; date, sedi e costi dei corsi da completare.
+- **Pubblicità**: pagina nuova. Formati ricavati dagli spazi della demo e dalla distribuzione delle
+  riviste; formati esatti, prezzi e numeri da confermare.
+- **Pagine delle testate**: Outerwear oggi non ha notizie fra le 20 scaricate, quindi mostra un
+  messaggio al posto della griglia.
 
 Contenuti reali usati: le 20 news più recenti con titoli, date, estratti e foto (dal sito, 26/10/2026), il
 testo completo dell'articolo Heimtextil 2027, le sei testate, il calendario fiere, i partner,

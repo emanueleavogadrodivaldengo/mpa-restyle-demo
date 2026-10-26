@@ -1,12 +1,12 @@
 <!--page {
-  "title": "Tannery International · la rivista delle concerie e dell'industria della pelle",
-  "description": "Tannery International, la rivista MPA per concerie e industria della pelle: ultimo numero sfogliabile, news del settore e archivio.",
-  "section": "riviste",
-  "rivista": "tannery"
+  "title": "{{rivista_name}} · {{rivista_audience}} · riviste MPA Style",
+  "description": "{{rivista_about}} Ultimo numero, news del settore e archivio dei numeri precedenti.",
+  "section": "riviste"
 } -->
 {{> header}}
 
-<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste -->
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste.
+     La build ne genera sei, una per testata, da questo stesso file. -->
 <main id="contenuto" data-rivista="{{rivista_key}}">
   <header class="magazine-hero">
     <div class="wrap magazine-hero__inner">
@@ -21,11 +21,11 @@
         </div>
       </div>
       <a class="cover cover--big cover--static" href="#" data-rivista="{{rivista_key}}">
-        <span class="cover__art" role="img" aria-label="Copertina segnaposto dell'ultimo numero di {{rivista_name}}">
+        {{#if rivista_cover}}<img class="cover__img" src="{{root}}assets/img/{{rivista_cover}}" alt="Copertina di {{rivista_name}}, {{rivista_issue}}" width="600" height="848">{{else}}<span class="cover__art" role="img" aria-label="Copertina segnaposto dell'ultimo numero di {{rivista_name}}">
           <span class="cover__kicker">{{rivista_audience}}</span>
           <span class="cover__name">{{rivista_name}}</span>
           <span class="cover__ph">Copertina segnaposto</span>
-        </span>
+        </span>{{/if}}
         <span class="cover__caption"><strong>{{rivista_issue}}</strong></span>
       </a>
     </div>
@@ -38,7 +38,7 @@
   <section class="wrap section" aria-labelledby="t-art">
     <h2 class="section-title" id="t-art">Le ultime da {{rivista_name}}</h2>
     <div class="grid-news">
-      {{#news template="card-news" limit=9 reveal-from=2}}
+      {{#news template="card-news" limit=9 reveal-from=2 empty="Nessuna notizia recente per questa rivista: le trovi tutte nella pagina News."}}
     </div>
   </section>
 

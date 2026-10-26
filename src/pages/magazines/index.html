@@ -1,0 +1,47 @@
+<!--page {
+  "title": "Le riviste · MPA Style",
+  "description": "Le sei riviste di MPA Style: Shoes & Bags, Tannery International, Style, TexStyle, Safety First e Outerwear. Moda, pelle, tessile, calzatura e DPI.",
+  "section": "riviste"
+} -->
+{{> header}}
+
+<!-- Pagina Riviste → in WordPress: page-magazines.php (o l'archivio del tipo di contenuto "Numero") -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Le riviste</h1>
+    <p class="page-intro">Sei testate, una per ogni pezzo della filiera: tendenze, colori, materiali e componenti, ma anche sicurezza sul lavoro, macchinari e tecnologie per pelle, calzatura, accessori e concia.</p>
+  </header>
+
+  <section class="wrap section section--flush" aria-label="Le sei testate">
+    <div class="mag-grid">
+      {{#riviste template="card-rivista"}}
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-dist">
+    <div class="wrap split">
+      <div>
+        <h2 class="section-title" id="t-dist">Dove arrivano</h2>
+        <p class="lead">Ogni numero è stampato e sfogliabile online, e arriva a chi compra e produce.</p>
+      </div>
+      <ul class="ticks">
+        <li>Buyer internazionali, negozi specializzati e mall</li>
+        <li>Agenzie di abbonamento, edicole di settore e aeroporti</li>
+        <li>Le principali fiere internazionali della moda</li>
+        <li>Newsletter settimanale, social e mailing list dedicate</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità sulle riviste</h2>
+        <p>Pagine, redazionali e copertine sulle testate, più banner e newsletter sul sito.</p>
+      </div>
+      <a class="button" href="{{root}}pubblicita/">Scopri i formati</a>
+    </div>
+  </section>
+</main>
+
+{{> footer}}

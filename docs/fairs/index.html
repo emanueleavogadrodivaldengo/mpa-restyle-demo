@@ -1,0 +1,308 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario fiere internazionali · MPA Style</title>
+  <meta name="description" content="Le fiere internazionali di calzatura, pelle, pelletteria, moda e sicurezza sul lavoro: date, città e settore, mese per mese.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/fairs/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calendario fiere internazionali · MPA Style">
+  <meta property="og:description" content="Le fiere internazionali di calzatura, pelle, pelletteria, moda e sicurezza sul lavoro: date, città e settore, mese per mese.">
+  <meta property="og:url" content="https://www.mpastyle.it/fairs/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../news/" data-section="news">News</a></li>
+        <li><a href="../magazines/" data-section="riviste">Riviste</a></li>
+        <li><a href="../fairs/" data-section="fiere" aria-current="page">Fiere</a></li>
+        <li><a href="../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Pagina Fiere → in WordPress: archive-fiera.php (tipo di contenuto "Fiera" con data di inizio e fine) -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Calendario fiere</h1>
+    <p class="page-intro">Le fiere internazionali di calzatura, pelle, moda e sicurezza sul lavoro, mese per mese. Molte le seguiamo di persona: lì trovi anche le nostre riviste.</p>
+  </header>
+
+  <div class="wrap fairs-page">
+    <!-- BLOCCO fiere-mese → un mese del calendario fiere, con le sue fiere -->
+<section class="fair-month" aria-labelledby="m-2026-11">
+  <h2 class="fair-month__title" id="m-2026-11">novembre 2026 <span>7 fiere</span></h2>
+  <ul class="fairs fairs--list">
+    <!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-03"><span class="fair__day">3–5</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">ISPO</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/nl.svg" alt="" width="20" height="14" loading="lazy">Amsterdam, Paesi Bassi</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=ISPO&amp;dates=20261103%2F20261106&amp;location=Amsterdam%2C+Paesi+Bassi" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: ISPO</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-03"><span class="fair__day">3–5</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Expoprotection</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/fr.svg" alt="" width="20" height="14" loading="lazy">Parigi, Francia</span>
+    <span class="fair__sector">Sicurezza sul lavoro</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Expoprotection&amp;dates=20261103%2F20261106&amp;location=Parigi%2C+Francia" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Expoprotection</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-04"><span class="fair__day">4</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">FDRA Shoe Sustainability &amp; Innovation Summit</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/us.svg" alt="" width="20" height="14" loading="lazy">Portland, Stati Uniti</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=FDRA+Shoe+Sustainability+%26+Innovation+Summit&amp;dates=20261104%2F20261105&amp;location=Portland%2C+Stati+Uniti" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: FDRA Shoe Sustainability &amp; Innovation Summit</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-05"><span class="fair__day">5</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">FDRA Shoe Trade &amp; Logistics Strategy Summit</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/us.svg" alt="" width="20" height="14" loading="lazy">Portland, Stati Uniti</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=FDRA+Shoe+Trade+%26+Logistics+Strategy+Summit&amp;dates=20261105%2F20261106&amp;location=Portland%2C+Stati+Uniti" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: FDRA Shoe Trade &amp; Logistics Strategy Summit</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-13"><span class="fair__day">13–15</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">APLF ASEAN</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/vn.svg" alt="" width="20" height="14" loading="lazy">Ho Chi Minh City, Vietnam</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=APLF+ASEAN&amp;dates=20261113%2F20261116&amp;location=Ho+Chi+Minh+City%2C+Vietnam" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: APLF ASEAN</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-17"><span class="fair__day">17–19</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Interleather &amp; Shoes Spain</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/es.svg" alt="" width="20" height="14" loading="lazy">Madrid, Spagna</span>
+    <span class="fair__sector">Pelle e borse</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Interleather+%26+Shoes+Spain&amp;dates=20261117%2F20261120&amp;location=Madrid%2C+Spagna" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Interleather &amp; Shoes Spain</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-11-18"><span class="fair__day">18–19</span><span class="fair__month">nov</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Trade Congress Germany</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/de.svg" alt="" width="20" height="14" loading="lazy">Berlino, Germania</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Trade+Congress+Germany&amp;dates=20261118%2F20261120&amp;location=Berlino%2C+Germania" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Trade Congress Germany</span></a>
+</li>
+
+  </ul>
+</section>
+
+<!-- BLOCCO fiere-mese → un mese del calendario fiere, con le sue fiere -->
+<section class="fair-month" aria-labelledby="m-2026-12">
+  <h2 class="fair-month__title" id="m-2026-12">dicembre 2026 <span>3 fiere</span></h2>
+  <ul class="fairs fairs--list">
+    <!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-12-08"><span class="fair__day">8–10</span><span class="fair__month">dic</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Diflex</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/ae.svg" alt="" width="20" height="14" loading="lazy">Dubai, Emirati Arabi Uniti</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Diflex&amp;dates=20261208%2F20261211&amp;location=Dubai%2C+Emirati+Arabi+Uniti" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Diflex</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-12-10"><span class="fair__day">10–11</span><span class="fair__month">dic</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Early Order Days</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/de.svg" alt="" width="20" height="14" loading="lazy">Hannover, Germania</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Early+Order+Days&amp;dates=20261210%2F20261212&amp;location=Hannover%2C+Germania" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Early Order Days</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2026-12-18"><span class="fair__day">18–20</span><span class="fair__month">dic</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Cairo Inter Leather</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/eg.svg" alt="" width="20" height="14" loading="lazy">Il Cairo, Egitto</span>
+    <span class="fair__sector">Pelle e borse</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Cairo+Inter+Leather&amp;dates=20261218%2F20261221&amp;location=Il+Cairo%2C+Egitto" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Cairo Inter Leather</span></a>
+</li>
+
+  </ul>
+</section>
+
+<!-- BLOCCO fiere-mese → un mese del calendario fiere, con le sue fiere -->
+<section class="fair-month" aria-labelledby="m-2027-01">
+  <h2 class="fair-month__title" id="m-2027-01">gennaio 2027 <span>2 fiere</span></h2>
+  <ul class="fairs fairs--list">
+    <!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2027-01-10"><span class="fair__day">10–12</span><span class="fair__month">gen</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Prowinter</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/it.svg" alt="" width="20" height="14" loading="lazy">Bolzano, Italia</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Prowinter&amp;dates=20270110%2F20270113&amp;location=Bolzano%2C+Italia" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Prowinter</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2027-01-11"><span class="fair__day">11–13</span><span class="fair__month">gen</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Zero</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/br.svg" alt="" width="20" height="14" loading="lazy">Novo Hamburgo, Brasile</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Zero&amp;dates=20270111%2F20270114&amp;location=Novo+Hamburgo%2C+Brasile" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Zero</span></a>
+</li>
+
+  </ul>
+</section>
+
+<!-- BLOCCO fiere-mese → un mese del calendario fiere, con le sue fiere -->
+<section class="fair-month" aria-labelledby="m-2027-02">
+  <h2 class="fair-month__title" id="m-2027-02">febbraio 2027 <span>2 fiere</span></h2>
+  <ul class="fairs fairs--list">
+    <!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2027-02-13"><span class="fair__day">13–16</span><span class="fair__month">feb</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">Supreme Women &amp; Men</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/de.svg" alt="" width="20" height="14" loading="lazy">Monaco di Baviera, Germania</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Supreme+Women+%26+Men&amp;dates=20270213%2F20270217&amp;location=Monaco+di+Baviera%2C+Germania" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: Supreme Women &amp; Men</span></a>
+</li>
+
+<!-- BLOCCO card-fiera-riga → una fiera nel calendario completo, con il link per salvarla nel calendario -->
+<li class="fair">
+  <time class="fair__date" datetime="2027-02-16"><span class="fair__day">16–18</span><span class="fair__month">feb</span></time>
+  <div class="fair__body">
+    <strong class="fair__name">EuroCIS</strong>
+    <span class="fair__place"><img src="../assets/img/bandiere/de.svg" alt="" width="20" height="14" loading="lazy">Düsseldorf, Germania</span>
+    <span class="fair__sector">Calzatura</span>
+  </div>
+  <a class="fair__cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=EuroCIS&amp;dates=20270216%2F20270219&amp;location=D%C3%BCsseldorf%2C+Germania" rel="noopener" target="_blank">Aggiungi al calendario<span class="visually-hidden">: EuroCIS</span></a>
+</li>
+
+  </ul>
+</section>
+
+    <p class="ph-note">Elenco preso dal sito di oggi. Le fiere già concluse spariscono da sole.</p>
+  </div>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Organizzi una fiera?</h2>
+        <p>Segnalacela per il calendario, oppure chiedici la distribuzione delle riviste in fiera.</p>
+      </div>
+      <a class="button" href="../contacts/">Scrivici</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../privacy-policy/">Privacy</a> · <a href="../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

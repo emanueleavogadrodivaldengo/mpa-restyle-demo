@@ -6,6 +6,8 @@
 //   {{#news template="card-news" limit=6}} → il "loop" di WP_Query
 //   {{#riviste template="cover"}}         → un loop sulle sei testate
 //   {{#fiere template="card-fiera"}}      → un loop sulle prossime fiere
+//   {{#partner template="partner-card"}}  → un loop sui partner
+//   pages/magazines/[rivista]/index.html  → una pagina per ogni testata (in WP: category.php)
 //   {{title}}, {{root}} ...               → variabili (in PHP: the_title(), ecc.)
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, statSync } from 'node:fs';
@@ -19,8 +21,12 @@ const OUT = 'docs';
 const news = JSON.parse(readFileSync(join(SRC, 'data/news.json'), 'utf8'))
   .sort((a, b) => b.date.localeCompare(a.date));
 const riviste = JSON.parse(readFileSync(join(SRC, 'data/riviste.json'), 'utf8'));
+// Solo le fiere non ancora finite il giorno in cui si lancia la build (in WP: una meta_query sulla data)
+const TODAY = new Date().toISOString().slice(0, 10);
 const fiere = JSON.parse(readFileSync(join(SRC, 'data/fiere.json'), 'utf8'))
+  .filter(f => f.end >= TODAY)
   .sort((a, b) => a.start.localeCompare(b.start));
+const partner = JSON.parse(readFileSync(join(SRC, 'data/partner.json'), 'utf8'));
 const rivistaByKey = Object.fromEntries(riviste.map(r => [r.key, r]));
 
 const partial = name => readFileSync(join(SRC, 'partials', `${name}.html`), 'utf8');
@@ -75,25 +81,56 @@ function renderNews(attrs, root) {
   const limit = Number(attrs.limit ?? list.length);
   const revealFrom = Number(attrs['reveal-from'] ?? Infinity);
   const tpl = partial(attrs.template ?? 'card-news');
+  // Nessuna notizia: messaggio al posto della griglia vuota (in WP: il ramo "else" di have_posts())
+  if (!list.length && attrs.empty) return `<p class="empty">${escape(attrs.empty)}</p>`;
   return list.slice(offset, offset + limit)
     .map((item, i) => fill(tpl, { ...newsVars(item, root), n: i + 1, first: i === 0, reveal: i >= revealFrom ? 'reveal' : '' }))
     .join('\n');
 }
 
 const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+const monthName = ym => new Intl.DateTimeFormat('it-IT', { month: 'long', year: 'numeric' })
+  .format(new Date(ym + '-15T12:00:00'));
+
+function fieraVars(f, root) {
+  const [, m1, d1] = f.start.split('-').map(Number);
+  const [, m2, d2] = f.end.split('-').map(Number);
+  // Link "aggiungi a Google Calendar": evento di giornate intere, la data di fine è il giorno dopo
+  const dayAfter = new Date(f.end + 'T12:00:00'); dayAfter.setDate(dayAfter.getDate() + 1);
+  const compact = iso => iso.replaceAll('-', '');
+  const gcal = 'https://calendar.google.com/calendar/render?' + new URLSearchParams({
+    action: 'TEMPLATE', text: f.name,
+    dates: `${compact(f.start)}/${compact(dayAfter.toISOString().slice(0, 10))}`,
+    location: `${f.city}, ${f.country}`,
+  });
+  return {
+    root, name: f.name, city: f.city, country: f.country, cc: f.cc, sector: f.sector,
+    start_iso: f.start, end_iso: f.end, gcal,
+    day: d1 === d2 && m1 === m2 ? String(d1) : `${d1}–${d2}`,
+    month: MESI[m1 - 1] + (m1 !== m2 ? `–${MESI[m2 - 1]}` : ''),
+  };
+}
 
 function renderFiere(attrs, root) {
   const tpl = partial(attrs.template ?? 'card-fiera');
-  return fiere.slice(0, Number(attrs.limit ?? fiere.length)).map(f => {
-    const [, m1, d1] = f.start.split('-').map(Number);
-    const [, m2, d2] = f.end.split('-').map(Number);
-    return fill(tpl, {
-      root, name: f.name, city: f.city, country: f.country, cc: f.cc, sector: f.sector,
-      start_iso: f.start, end_iso: f.end,
-      day: d1 === d2 && m1 === m2 ? String(d1) : `${d1}–${d2}`,
-      month: MESI[m1 - 1] + (m1 !== m2 ? `–${MESI[m2 - 1]}` : ''),
-    });
-  }).join('\n');
+  const list = fiere.slice(0, Number(attrs.limit ?? fiere.length));
+  if (attrs['by-month'] !== '1') return list.map(f => fill(tpl, fieraVars(f, root))).join('\n');
+  // Calendario completo: un blocco per mese, ognuno con il suo titolo
+  const months = new Map();
+  for (const f of list) {
+    const ym = f.start.slice(0, 7);
+    months.set(ym, [...(months.get(ym) ?? []), f]);
+  }
+  const monthTpl = partial('fiere-mese');
+  return [...months].map(([ym, items]) => fill(monthTpl, {
+    root, month_id: ym, month_name: monthName(ym), count: items.length,
+    items: items.map(f => fill(tpl, fieraVars(f, root))).join('\n'),
+  })).join('\n');
+}
+
+function renderPartner(attrs, root) {
+  const tpl = partial(attrs.template ?? 'partner-card');
+  return partner.map(p => fill(tpl, { root, name: p.name, about: p.about })).join('\n');
 }
 
 function renderRiviste(attrs, root) {
@@ -104,6 +141,7 @@ function renderRiviste(attrs, root) {
     key: r.key,
     name: r.name,
     audience: r.audience,
+    about: r.about,
     issue: r.issue,
     cover: r.cover ? `${root}assets/img/${r.cover}` : '',
     frequency: r.frequency ?? '',
@@ -116,14 +154,31 @@ function renderRiviste(attrs, root) {
 function rivistaVars(key) {
   const r = rivistaByKey[key];
   if (!r) return {};
-  return { rivista_key: r.key, rivista_name: r.name, rivista_audience: r.audience, rivista_about: r.about, rivista_issue: r.issue, rivista_frequency: r.frequency ?? '', rivista_language: r.language ?? '' };
+  return {
+    rivista_key: r.key, rivista_name: r.name, rivista_audience: r.audience, rivista_about: r.about,
+    rivista_issue: r.issue, rivista_frequency: r.frequency ?? '', rivista_language: r.language ?? '',
+    rivista_cover: r.cover ?? '',
+  };
 }
 
-function renderPage(file) {
+// Le pagine con [rivista] nel percorso sono un modello: se ne genera una per ogni testata
+function renderFile(file) {
   const rel = relative(join(SRC, 'pages'), file);
+  if (!rel.includes('[rivista]')) return [renderPage(file, rel)];
+  return riviste.map(r => renderPage(file, rel.replace('[rivista]', r.slug), r.key));
+}
+
+function renderPage(file, rel, rivistaKey) {
   let html = readFileSync(file, 'utf8');
-  // Prima riga: <!--page { ...JSON... } --> con titolo, descrizione e voce di menu attiva
-  const meta = JSON.parse(html.match(/^<!--page\s*([\s\S]*?)-->/)[1]);
+  // Prima riga: <!--page { ...JSON... } --> con titolo, descrizione e voce di menu attiva.
+  // Nelle pagine modello anche titolo e descrizione possono usare {{rivista_name}} ecc.
+  let metaSrc = html.match(/^<!--page\s*([\s\S]*?)-->/)[1];
+  if (rivistaKey) {
+    const rv = rivistaVars(rivistaKey);
+    metaSrc = metaSrc.replace(/\{\{(\w+)\}\}/g, (_, k) => JSON.stringify(String(rv[k] ?? '')).slice(1, -1));
+  }
+  const meta = JSON.parse(metaSrc);
+  if (rivistaKey) meta.rivista = rivistaKey;
   html = html.replace(/^<!--page[\s\S]*?-->\s*/, '');
 
   // Percorso relativo verso la radice del sito (./ oppure ../../), così la demo funziona
@@ -152,7 +207,8 @@ function renderPage(file) {
   html = html
     .replace(/\{\{#news\s*([^}]*)\}\}/g, (_, a) => renderNews({ magazine: meta.rivista, ...parseAttrs(a) }, root))
     .replace(/\{\{#riviste\s*([^}]*)\}\}/g, (_, a) => renderRiviste(parseAttrs(a), root))
-    .replace(/\{\{#fiere\s*([^}]*)\}\}/g, (_, a) => renderFiere(parseAttrs(a), root));
+    .replace(/\{\{#fiere\s*([^}]*)\}\}/g, (_, a) => renderFiere(parseAttrs(a), root))
+    .replace(/\{\{#partner\s*([^}]*)\}\}/g, (_, a) => renderPartner(parseAttrs(a), root));
   // 3. variabili
   html = fill(html, vars);
   // 4. voce di menu attiva: aria-current="page" sul link con data-section uguale a quella della pagina
@@ -226,6 +282,6 @@ function walk(dir) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 cpSync(join(SRC, 'assets'), join(OUT, 'assets'), { recursive: true });
-const built = walk(join(SRC, 'pages')).map(renderPage);
+const built = walk(join(SRC, 'pages')).flatMap(renderFile);
 writeFileSync(join(OUT, '.nojekyll'), '');
 console.log(`Generate ${built.length} pagine in ${OUT}/:\n  ` + built.join('\n  '));
