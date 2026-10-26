@@ -299,10 +299,19 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Partner */
 .partners__list { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; color: var(--muted); font-size: 0.9375rem; }
 
-/* Spazi pubblicitari */
-.ad { display: grid; place-items: center; border: 1px dashed #cfccc4; color: var(--muted); font-size: 0.75rem; letter-spacing: .08em; text-transform: uppercase; background: var(--tint); }
-.ad--inline { min-height: 7.5rem; margin-block: 1.75rem; }
-.ad--side { min-height: 15.625rem; margin-top: 1.5rem; }
+/* Spazi pubblicitari: misure standard e spazio riservato in anticipo (niente salti di pagina) */
+.ad-slot { display: grid; justify-items: center; gap: 0.25rem; }
+.ad-slot__label { font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.ad-slot__box {
+  display: grid; place-items: center; width: 100%; padding: 0.5rem; text-align: center;
+  border: 1px dashed #cfccc4; background: var(--tint); color: var(--muted); font-size: 0.75rem;
+}
+.ad-slot--fascia { margin-block: 1.5rem 0; }
+.ad-slot--fascia .ad-slot__box { max-width: 320px; height: 100px; }
+.ad-slot--riquadro { margin-block: 1.75rem; }
+.ad-slot--riquadro .ad-slot__box { max-width: 300px; height: 250px; }
+.news-aside { display: grid; align-content: start; }
+.news-aside .ad-slot--riquadro { margin-block: 1.5rem 0; }
 
 /* Paginazione */
 .pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 2rem; }
@@ -385,6 +394,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .grid-news--list .card:first-child .card__excerpt { -webkit-line-clamp: 4; font-size: 1.0625rem; }
   .grid-news--two { grid-template-columns: repeat(2, 1fr); }
   .news-with-aside { grid-template-columns: 1fr 20rem; gap: 3rem; }
+  .ad-slot--fascia .ad-slot__box { max-width: 970px; height: 250px; }
   .magazines { grid-template-columns: 23.75rem 1fr; align-items: center; gap: 3rem; }
   .issue { grid-template-columns: 10.625rem 1fr; }
   .slide__media { aspect-ratio: 16 / 10; }

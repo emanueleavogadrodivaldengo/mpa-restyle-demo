@@ -12,6 +12,8 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, st
 import { join, dirname, relative, sep } from 'node:path';
 
 const SRC = 'src';
+// Indirizzo vero del sito: serve per i link "assoluti" di anteprime social e dati per Google
+const SITE = 'https://www.mpastyle.it';
 const OUT = 'docs';
 
 const news = JSON.parse(readFileSync(join(SRC, 'data/news.json'), 'utf8'))
@@ -137,6 +139,12 @@ function renderPage(file) {
     path: rel.replace(/index\.html$/, '').split(sep).join('/'),
     ...rivistaVars(meta.rivista),
   };
+  // Anteprima social (Open Graph): indirizzo assoluto della pagina e della sua immagine
+  vars.canonical = `${SITE}/${vars.path}`;
+  vars.og_type = meta.type === 'article' ? 'article' : 'website';
+  vars.og_image = `${SITE}/assets/img/${meta.image ?? 'condivisione.jpg'}`;
+  vars.og_image_alt = meta.imageAlt ?? 'MPA Style · media, publishing & advertising';
+  vars.jsonld = jsonLd(meta, vars);
 
   // 1. inclusioni dei blocchi (anche annidate di un livello: l'header può includere altri blocchi)
   for (let i = 0; i < 2; i++) html = html.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => partial(name));
@@ -156,6 +164,56 @@ function renderPage(file) {
   mkdirSync(dirname(dest), { recursive: true });
   writeFileSync(dest, html);
   return rel;
+}
+
+// Dati strutturati (JSON-LD): righe invisibili che dicono a Google cos'è la pagina.
+// In WordPress li genera Yoast, che il sito usa già: qui li scriviamo a mano per vederli.
+const publisher = {
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: 'MPA Style',
+  url: `${SITE}/`,
+  logo: { '@type': 'ImageObject', url: `${SITE}/assets/img/logo-style.webp`, width: 400, height: 125 },
+  sameAs: [
+    'https://www.instagram.com/MPA_STYLE/', 'https://www.linkedin.com/company/mpa-style',
+    'https://www.facebook.com/mpastyle', 'https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A',
+    'https://x.com/MpaStyle',
+  ],
+};
+
+function jsonLd(meta, vars) {
+  let data;
+  if (meta.type === 'article') {
+    data = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: meta.headline,
+      description: meta.description,
+      image: [vars.og_image],
+      datePublished: meta.published,
+      dateModified: meta.modified ?? meta.published,
+      inLanguage: 'it-IT',
+      mainEntityOfPage: vars.canonical,
+      articleSection: meta.articleSection,
+      author: { '@type': 'Organization', name: 'Redazione MPA Style', url: `${SITE}/` },
+      publisher,
+    };
+  } else if (vars.path === '') {
+    data = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        publisher,
+        {
+          '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'MPA Style',
+          inLanguage: 'it-IT', publisher: { '@id': `${SITE}/#organization` },
+          potentialAction: { '@type': 'SearchAction', target: `${SITE}/?s={search_term_string}`, 'query-input': 'required name=search_term_string' },
+        },
+      ],
+    };
+  } else {
+    return '';
+  }
+  return `<script type="application/ld+json">\n${JSON.stringify(data, null, 2).replaceAll('</', '<\\/')}\n</script>`;
 }
 
 function walk(dir) {

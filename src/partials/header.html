@@ -7,6 +7,19 @@
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
   <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="{{canonical}}">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="{{og_type}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta property="og:image:alt" content="{{og_image_alt}}">
+  <meta name="twitter:card" content="summary_large_image">
+  {{{jsonld}}}
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
   <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
   <link rel="preload" href="{{root}}assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>

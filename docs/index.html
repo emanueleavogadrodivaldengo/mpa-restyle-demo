@@ -7,6 +7,59 @@
   <title>MPA Style · News e riviste di moda, pelle, tessile e calzatura</title>
   <meta name="description" content="Le news quotidiane della filiera moda, pelle, tessile e DPI, le sei riviste di MPA e il calendario delle fiere internazionali.">
   <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MPA Style · News e riviste di moda, pelle, tessile e calzatura">
+  <meta property="og:description" content="Le news quotidiane della filiera moda, pelle, tessile e DPI, le sei riviste di MPA e il calendario delle fiere internazionali.">
+  <meta property="og:url" content="https://www.mpastyle.it/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.mpastyle.it/#organization",
+      "name": "MPA Style",
+      "url": "https://www.mpastyle.it/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mpastyle.it/assets/img/logo-style.webp",
+        "width": 400,
+        "height": 125
+      },
+      "sameAs": [
+        "https://www.instagram.com/MPA_STYLE/",
+        "https://www.linkedin.com/company/mpa-style",
+        "https://www.facebook.com/mpastyle",
+        "https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A",
+        "https://x.com/MpaStyle"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.mpastyle.it/#website",
+      "url": "https://www.mpastyle.it/",
+      "name": "MPA Style",
+      "inLanguage": "it-IT",
+      "publisher": {
+        "@id": "https://www.mpastyle.it/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.mpastyle.it/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
   <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
   <link rel="preload" href="./assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
@@ -167,6 +220,15 @@
     </div>
   </section>
 
+  <!-- BLOCCO ad-fascia → spazio pubblicitario a tutta larghezza (template-parts/ad-fascia.php).
+     Le misure sono quelle standard dei banner: 320×100 su telefono, 970×250 su desktop.
+     Lo spazio è riservato anche prima che il banner arrivi, così la pagina non "salta". -->
+<aside class="ad-slot ad-slot--fascia wrap" aria-label="Pubblicità">
+  <span class="ad-slot__label">Pubblicità</span>
+  <div class="ad-slot__box"><span>Spazio pubblicitario · 970×250 su desktop, 320×100 su telefono</span></div>
+</aside>
+
+
   <section class="wrap section" aria-labelledby="t-news">
     <div class="section-head">
       <h2 class="section-title" id="t-news">Ultime news</h2>
@@ -276,6 +338,7 @@
 </article>
 
       </div>
+      <div class="news-aside">
       <aside class="most-read reveal" aria-labelledby="t-lette">
         <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
         <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
@@ -328,6 +391,13 @@
         </ol>
         <p class="ph-note">Classifica di esempio</p>
       </aside>
+      <!-- BLOCCO ad-riquadro → spazio pubblicitario 300×250, il formato più venduto (template-parts/ad-riquadro.php) -->
+<aside class="ad-slot ad-slot--riquadro" aria-label="Pubblicità">
+  <span class="ad-slot__label">Pubblicità</span>
+  <div class="ad-slot__box"><span>Spazio pubblicitario · 300×250</span></div>
+</aside>
+
+      </div>
     </div>
   </section>
 

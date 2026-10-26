@@ -30,6 +30,8 @@
     </div>
   </section>
 
+  {{> ad-fascia}}
+
   <section class="wrap section" aria-labelledby="t-news">
     <div class="section-head">
       <h2 class="section-title" id="t-news">Ultime news</h2>
@@ -40,6 +42,7 @@
       <div class="grid-news grid-news--two">
         {{#news template="card-news" featured=0 offset=2 limit=6 reveal-from=0}}
       </div>
+      <div class="news-aside">
       <aside class="most-read reveal" aria-labelledby="t-lette">
         <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
         <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
@@ -48,6 +51,8 @@
         </ol>
         <p class="ph-note">Classifica di esempio</p>
       </aside>
+      {{> ad-riquadro}}
+      </div>
     </div>
   </section>
 
