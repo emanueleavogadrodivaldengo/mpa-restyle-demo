@@ -1,0 +1,16 @@
+<!-- BLOCCO issue-feature → l'ultimo numero uscito, in evidenza (in WP: l'ultimo contenuto di tipo "Numero") -->
+<article class="issue" data-rivista="{{key}}">
+  <a class="issue__cover" href="{{url}}">
+    <img src="{{cover}}" alt="Copertina di {{name}}, {{issue}}" width="600" height="848" loading="lazy" decoding="async">
+  </a>
+  <div class="issue__body">
+    <p class="label">Appena uscito</p>
+    <h3 class="issue__title">{{name}}</h3>
+    <p class="issue__meta">{{issue}}</p>
+    <p class="issue__facts">{{frequency}} · testi in {{language}}</p>
+    <div class="issue__actions">
+      <a class="button" href="{{url}}">Sfoglia online</a>
+      <a class="button button--outline" href="{{url}}">Tutti i numeri</a>
+    </div>
+  </div>
+</article>

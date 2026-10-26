@@ -1,0 +1,128 @@
+<!--page {
+  "title": "Pubblicità e media kit · MPA Style",
+  "description": "Fai conoscere la tua azienda alla filiera moda, pelle, tessile e DPI: pagine sulle sei riviste, banner sul sito, newsletter e distribuzione in fiera.",
+  "section": "pubblicita"
+} -->
+{{> header}}
+
+<!-- Pagina Pubblicità → in WordPress: page-pubblicita.php. Pagina nuova: il sito di oggi non ne ha una -->
+<main id="contenuto">
+  <header class="section section--dark ad-hero">
+    <div class="wrap">
+      <p class="label label--on-dark">Pubblicità</p>
+      <h1 class="page-title">Fai conoscere la tua azienda alla filiera</h1>
+      <p class="page-intro">Concerie, calzaturifici, pelletterie, aziende tessili e del DPI, buyer e negozi: li raggiungi sulle riviste, sul sito, nella newsletter e in fiera.</p>
+      <a class="button button--light" href="#media-kit">Richiedi il media kit</a>
+    </div>
+  </header>
+
+  <section class="wrap section" aria-labelledby="t-chi">
+    <h2 class="section-title" id="t-chi">A chi parli</h2>
+    <p class="page-intro">Scegli la testata del tuo pubblico, o combinane più di una.</p>
+    <ul class="audiences">
+      {{#riviste template="rivista-pubblico"}}
+    </ul>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-formati">
+    <div class="wrap">
+      <h2 class="section-title" id="t-formati">I formati</h2>
+      <div class="offer-grid offer-grid--four">
+        <article class="offer">
+          <h3>Sulle riviste</h3>
+          <ul>
+            <li>Pagina singola e doppia pagina</li>
+            <li>Copertina, seconda, terza e quarta di copertina</li>
+            <li>Redazionale sulla tua azienda</li>
+          </ul>
+        </article>
+        <article class="offer">
+          <h3>Sul sito</h3>
+          <ul>
+            <li>Fascia sotto l'apertura: 970×250, 320×100 su telefono</li>
+            <li>Riquadro 300×250 in home e negli articoli</li>
+            <li>Articolo sponsorizzato</li>
+          </ul>
+        </article>
+        <article class="offer">
+          <h3>Newsletter</h3>
+          <ul>
+            <li>Banner nella newsletter settimanale</li>
+            <li>Invio dedicato alle mailing list di settore</li>
+          </ul>
+        </article>
+        <article class="offer">
+          <h3>In fiera</h3>
+          <ul>
+            <li>Le riviste distribuite alle fiere internazionali</li>
+            <li>Uscite speciali per le fiere principali</li>
+          </ul>
+        </article>
+      </div>
+      <p class="ph-note">Formati ricavati dagli spazi della demo e da come vengono distribuite oggi le riviste: elenco e prezzi da confermare con MPA.</p>
+    </div>
+  </section>
+
+  <section class="section section--dark reveal" aria-labelledby="t-numeri">
+    <div class="wrap advertisers">
+      <h2 class="section-title" id="t-numeri">I numeri</h2>
+      <!-- Numeri segnaposto: da sostituire con i dati reali di MPA -->
+      <dl class="stats">
+        <div><dt>copie per numero</dt><dd>00.000</dd></div>
+        <div><dt>iscritti alla newsletter</dt><dd>00.000</dd></div>
+        <div><dt>fiere seguite ogni anno</dt><dd>00</dd></div>
+        <div><dt>paesi raggiunti</dt><dd>00</dd></div>
+      </dl>
+      <p class="stats__note">Numeri segnaposto, in attesa dei dati reali.</p>
+    </div>
+  </section>
+
+  <section class="wrap section" id="media-kit" aria-labelledby="t-kit">
+    <div class="contact-layout">
+      <form class="form" action="#" method="post">
+        <h2 class="section-title" id="t-kit">Richiedi il media kit</h2>
+        <p>Ti mandiamo formati, prezzi e calendario delle uscite entro un giorno lavorativo.</p>
+        <p class="ph-note">Demo: il modulo non invia ancora nulla.</p>
+        <div class="field">
+          <label for="k-nome">Nome e cognome</label>
+          <input id="k-nome" name="nome" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="k-azienda">Azienda</label>
+          <input id="k-azienda" name="azienda" autocomplete="organization" required>
+        </div>
+        <div class="field">
+          <label for="k-email">Email</label>
+          <input id="k-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="k-tel">Telefono <span class="meta">(facoltativo)</span></label>
+          <input id="k-tel" name="telefono" type="tel" autocomplete="tel">
+        </div>
+        <fieldset class="field checks">
+          <legend>Riviste che ti interessano</legend>
+          {{#riviste template="rivista-check"}}
+        </fieldset>
+        <div class="field">
+          <label for="k-msg">Messaggio <span class="meta">(facoltativo)</span></label>
+          <textarea id="k-msg" name="messaggio" rows="4"></textarea>
+        </div>
+        <div class="field field--check">
+          <input id="k-privacy" name="privacy" type="checkbox" required>
+          <label for="k-privacy">Ho letto l'<a href="{{root}}privacy-policy/">informativa privacy</a></label>
+        </div>
+        <button class="button" type="submit">Richiedi il media kit</button>
+      </form>
+
+      <div class="addresses">
+        <h2 class="section-title section-title--small">Preferisci parlarne?</h2>
+        <a class="big-link" href="tel:+393346642270">+39 334 664 2270</a>
+        <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+        <a class="button contact-wa" href="https://wa.me/393346642270" rel="noopener">Scrivici su WhatsApp</a>
+        <p class="ph-note">Numero ed email commerciale: da confermare.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{> footer}}

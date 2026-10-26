@@ -5,17 +5,28 @@
 //   {{> header}}                         → get_header() / get_template_part()
 //   {{#news template="card-news" limit=6}} → il "loop" di WP_Query
 //   {{#riviste template="cover"}}         → un loop sulle sei testate
+//   {{#fiere template="card-fiera"}}      → un loop sulle prossime fiere
+//   {{#partner template="partner-card"}}  → un loop sui partner
+//   pages/magazines/[rivista]/index.html  → una pagina per ogni testata (in WP: category.php)
 //   {{title}}, {{root}} ...               → variabili (in PHP: the_title(), ecc.)
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, relative, sep } from 'node:path';
 
 const SRC = 'src';
+// Indirizzo vero del sito: serve per i link "assoluti" di anteprime social e dati per Google
+const SITE = 'https://www.mpastyle.it';
 const OUT = 'docs';
 
 const news = JSON.parse(readFileSync(join(SRC, 'data/news.json'), 'utf8'))
   .sort((a, b) => b.date.localeCompare(a.date));
 const riviste = JSON.parse(readFileSync(join(SRC, 'data/riviste.json'), 'utf8'));
+// Solo le fiere non ancora finite il giorno in cui si lancia la build (in WP: una meta_query sulla data)
+const TODAY = new Date().toISOString().slice(0, 10);
+const fiere = JSON.parse(readFileSync(join(SRC, 'data/fiere.json'), 'utf8'))
+  .filter(f => f.end >= TODAY)
+  .sort((a, b) => a.start.localeCompare(b.start));
+const partner = JSON.parse(readFileSync(join(SRC, 'data/partner.json'), 'utf8'));
 const rivistaByKey = Object.fromEntries(riviste.map(r => [r.key, r]));
 
 const partial = name => readFileSync(join(SRC, 'partials', `${name}.html`), 'utf8');
@@ -32,7 +43,10 @@ const parseAttrs = str => Object.fromEntries(
 );
 
 // Sostituisce {{nome}} con il valore (già "escapato"); {{{nome}}} lo inserisce così com'è.
+// {{#if nome}}...{{else}}...{{/if}} sceglie un ramo, come un if in PHP (non annidabile).
 const fill = (tpl, vars) => tpl
+  .replace(/\{\{#if (\w+)\}\}([\s\S]*?)(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g,
+    (_, k, yes, no = '') => (vars[k] ? yes : no))
   .replace(/\{\{\{(\w+)\}\}\}/g, (_, k) => vars[k] ?? '')
   .replace(/\{\{(\w+)\}\}/g, (_, k) => (k in vars ? escape(vars[k]) : `{{${k}}}`));
 
@@ -50,6 +64,9 @@ function newsVars(item, root) {
     magazine_name: r.name,
     magazine_short: r.short,
     magazine_url: `${root}magazines/${r.slug}/`,
+    // Foto vera se c'è, altrimenti il segnaposto (in WP: has_post_thumbnail())
+    image: item.image ? `${root}assets/img/${item.image}` : '',
+    image_alt: item.imageAlt ?? '',
   };
 }
 
@@ -57,23 +74,78 @@ function renderNews(attrs, root) {
   let list = news;
   if (attrs.magazine) list = list.filter(n => n.magazine === attrs.magazine);
   if (attrs.exclude) list = list.filter(n => n.slug !== attrs.exclude);
+  // "in evidenza", scelte dalla redazione: featured=1 solo quelle, featured=0 tutte le altre
+  if (attrs.featured === '1') list = list.filter(n => n.featured);
+  if (attrs.featured === '0') list = list.filter(n => !n.featured);
   const offset = Number(attrs.offset ?? 0);
   const limit = Number(attrs.limit ?? list.length);
   const revealFrom = Number(attrs['reveal-from'] ?? Infinity);
   const tpl = partial(attrs.template ?? 'card-news');
+  // Nessuna notizia: messaggio al posto della griglia vuota (in WP: il ramo "else" di have_posts())
+  if (!list.length && attrs.empty) return `<p class="empty">${escape(attrs.empty)}</p>`;
   return list.slice(offset, offset + limit)
-    .map((item, i) => fill(tpl, { ...newsVars(item, root), reveal: i >= revealFrom ? 'reveal' : '' }))
+    .map((item, i) => fill(tpl, { ...newsVars(item, root), n: i + 1, first: i === 0, reveal: i >= revealFrom ? 'reveal' : '' }))
     .join('\n');
+}
+
+const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+const monthName = ym => new Intl.DateTimeFormat('it-IT', { month: 'long', year: 'numeric' })
+  .format(new Date(ym + '-15T12:00:00'));
+
+function fieraVars(f, root) {
+  const [, m1, d1] = f.start.split('-').map(Number);
+  const [, m2, d2] = f.end.split('-').map(Number);
+  // Link "aggiungi a Google Calendar": evento di giornate intere, la data di fine è il giorno dopo
+  const dayAfter = new Date(f.end + 'T12:00:00'); dayAfter.setDate(dayAfter.getDate() + 1);
+  const compact = iso => iso.replaceAll('-', '');
+  const gcal = 'https://calendar.google.com/calendar/render?' + new URLSearchParams({
+    action: 'TEMPLATE', text: f.name,
+    dates: `${compact(f.start)}/${compact(dayAfter.toISOString().slice(0, 10))}`,
+    location: `${f.city}, ${f.country}`,
+  });
+  return {
+    root, name: f.name, city: f.city, country: f.country, cc: f.cc, sector: f.sector,
+    start_iso: f.start, end_iso: f.end, gcal,
+    day: d1 === d2 && m1 === m2 ? String(d1) : `${d1}–${d2}`,
+    month: MESI[m1 - 1] + (m1 !== m2 ? `–${MESI[m2 - 1]}` : ''),
+  };
+}
+
+function renderFiere(attrs, root) {
+  const tpl = partial(attrs.template ?? 'card-fiera');
+  const list = fiere.slice(0, Number(attrs.limit ?? fiere.length));
+  if (attrs['by-month'] !== '1') return list.map(f => fill(tpl, fieraVars(f, root))).join('\n');
+  // Calendario completo: un blocco per mese, ognuno con il suo titolo
+  const months = new Map();
+  for (const f of list) {
+    const ym = f.start.slice(0, 7);
+    months.set(ym, [...(months.get(ym) ?? []), f]);
+  }
+  const monthTpl = partial('fiere-mese');
+  return [...months].map(([ym, items]) => fill(monthTpl, {
+    root, month_id: ym, month_name: monthName(ym), count: items.length,
+    items: items.map(f => fill(tpl, fieraVars(f, root))).join('\n'),
+  })).join('\n');
+}
+
+function renderPartner(attrs, root) {
+  const tpl = partial(attrs.template ?? 'partner-card');
+  return partner.map(p => fill(tpl, { root, name: p.name, about: p.about })).join('\n');
 }
 
 function renderRiviste(attrs, root) {
   const tpl = partial(attrs.template ?? 'cover');
-  return riviste.map(r => fill(tpl, {
+  const list = attrs.only ? riviste.filter(r => r.key === attrs.only) : riviste;
+  return list.map(r => fill(tpl, {
     root,
     key: r.key,
     name: r.name,
     audience: r.audience,
+    about: r.about,
     issue: r.issue,
+    cover: r.cover ? `${root}assets/img/${r.cover}` : '',
+    frequency: r.frequency ?? '',
+    language: r.language ?? '',
     url: `${root}magazines/${r.slug}/`,
   })).join('\n');
 }
@@ -82,14 +154,31 @@ function renderRiviste(attrs, root) {
 function rivistaVars(key) {
   const r = rivistaByKey[key];
   if (!r) return {};
-  return { rivista_key: r.key, rivista_name: r.name, rivista_audience: r.audience, rivista_about: r.about, rivista_issue: r.issue };
+  return {
+    rivista_key: r.key, rivista_name: r.name, rivista_audience: r.audience, rivista_about: r.about,
+    rivista_issue: r.issue, rivista_frequency: r.frequency ?? '', rivista_language: r.language ?? '',
+    rivista_cover: r.cover ?? '',
+  };
 }
 
-function renderPage(file) {
+// Le pagine con [rivista] nel percorso sono un modello: se ne genera una per ogni testata
+function renderFile(file) {
   const rel = relative(join(SRC, 'pages'), file);
+  if (!rel.includes('[rivista]')) return [renderPage(file, rel)];
+  return riviste.map(r => renderPage(file, rel.replace('[rivista]', r.slug), r.key));
+}
+
+function renderPage(file, rel, rivistaKey) {
   let html = readFileSync(file, 'utf8');
-  // Prima riga: <!--page { ...JSON... } --> con titolo, descrizione e voce di menu attiva
-  const meta = JSON.parse(html.match(/^<!--page\s*([\s\S]*?)-->/)[1]);
+  // Prima riga: <!--page { ...JSON... } --> con titolo, descrizione e voce di menu attiva.
+  // Nelle pagine modello anche titolo e descrizione possono usare {{rivista_name}} ecc.
+  let metaSrc = html.match(/^<!--page\s*([\s\S]*?)-->/)[1];
+  if (rivistaKey) {
+    const rv = rivistaVars(rivistaKey);
+    metaSrc = metaSrc.replace(/\{\{(\w+)\}\}/g, (_, k) => JSON.stringify(String(rv[k] ?? '')).slice(1, -1));
+  }
+  const meta = JSON.parse(metaSrc);
+  if (rivistaKey) meta.rivista = rivistaKey;
   html = html.replace(/^<!--page[\s\S]*?-->\s*/, '');
 
   // Percorso relativo verso la radice del sito (./ oppure ../../), così la demo funziona
@@ -105,13 +194,21 @@ function renderPage(file) {
     path: rel.replace(/index\.html$/, '').split(sep).join('/'),
     ...rivistaVars(meta.rivista),
   };
+  // Anteprima social (Open Graph): indirizzo assoluto della pagina e della sua immagine
+  vars.canonical = `${SITE}/${vars.path}`;
+  vars.og_type = meta.type === 'article' ? 'article' : 'website';
+  vars.og_image = `${SITE}/assets/img/${meta.image ?? 'condivisione.jpg'}`;
+  vars.og_image_alt = meta.imageAlt ?? 'MPA Style · media, publishing & advertising';
+  vars.jsonld = jsonLd(meta, vars);
 
   // 1. inclusioni dei blocchi (anche annidate di un livello: l'header può includere altri blocchi)
   for (let i = 0; i < 2; i++) html = html.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => partial(name));
   // 2. loop
   html = html
     .replace(/\{\{#news\s*([^}]*)\}\}/g, (_, a) => renderNews({ magazine: meta.rivista, ...parseAttrs(a) }, root))
-    .replace(/\{\{#riviste\s*([^}]*)\}\}/g, (_, a) => renderRiviste(parseAttrs(a), root));
+    .replace(/\{\{#riviste\s*([^}]*)\}\}/g, (_, a) => renderRiviste(parseAttrs(a), root))
+    .replace(/\{\{#fiere\s*([^}]*)\}\}/g, (_, a) => renderFiere(parseAttrs(a), root))
+    .replace(/\{\{#partner\s*([^}]*)\}\}/g, (_, a) => renderPartner(parseAttrs(a), root));
   // 3. variabili
   html = fill(html, vars);
   // 4. voce di menu attiva: aria-current="page" sul link con data-section uguale a quella della pagina
@@ -125,6 +222,56 @@ function renderPage(file) {
   return rel;
 }
 
+// Dati strutturati (JSON-LD): righe invisibili che dicono a Google cos'è la pagina.
+// In WordPress li genera Yoast, che il sito usa già: qui li scriviamo a mano per vederli.
+const publisher = {
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: 'MPA Style',
+  url: `${SITE}/`,
+  logo: { '@type': 'ImageObject', url: `${SITE}/assets/img/logo-style.webp`, width: 400, height: 125 },
+  sameAs: [
+    'https://www.instagram.com/MPA_STYLE/', 'https://www.linkedin.com/company/mpa-style',
+    'https://www.facebook.com/mpastyle', 'https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A',
+    'https://x.com/MpaStyle',
+  ],
+};
+
+function jsonLd(meta, vars) {
+  let data;
+  if (meta.type === 'article') {
+    data = {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: meta.headline,
+      description: meta.description,
+      image: [vars.og_image],
+      datePublished: meta.published,
+      dateModified: meta.modified ?? meta.published,
+      inLanguage: 'it-IT',
+      mainEntityOfPage: vars.canonical,
+      articleSection: meta.articleSection,
+      author: { '@type': 'Organization', name: 'Redazione MPA Style', url: `${SITE}/` },
+      publisher,
+    };
+  } else if (vars.path === '') {
+    data = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        publisher,
+        {
+          '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'MPA Style',
+          inLanguage: 'it-IT', publisher: { '@id': `${SITE}/#organization` },
+          potentialAction: { '@type': 'SearchAction', target: `${SITE}/?s={search_term_string}`, 'query-input': 'required name=search_term_string' },
+        },
+      ],
+    };
+  } else {
+    return '';
+  }
+  return `<script type="application/ld+json">\n${JSON.stringify(data, null, 2).replaceAll('</', '<\\/')}\n</script>`;
+}
+
 function walk(dir) {
   return readdirSync(dir).flatMap(name => {
     const p = join(dir, name);
@@ -135,6 +282,6 @@ function walk(dir) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 cpSync(join(SRC, 'assets'), join(OUT, 'assets'), { recursive: true });
-const built = walk(join(SRC, 'pages')).map(renderPage);
+const built = walk(join(SRC, 'pages')).flatMap(renderFile);
 writeFileSync(join(OUT, '.nojekyll'), '');
 console.log(`Generate ${built.length} pagine in ${OUT}/:\n  ` + built.join('\n  '));

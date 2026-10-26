@@ -8,16 +8,29 @@
 <main id="contenuto">
   <h1 class="visually-hidden">MPA Style: news e riviste della filiera moda, pelle, tessile e DPI</h1>
 
-  <!-- Primo schermo: niente animazioni, così l'apertura compare subito -->
+  <!-- Primo schermo: le notizie "in evidenza" scelte dalla redazione in un carosello, accanto le più recenti.
+       Nessuna animazione all'arrivo: la prima foto compare subito. -->
   <section class="opening wrap" aria-label="In apertura">
-    {{#news template="card-news-lead" limit=1}}
+    <div class="hero" data-hero aria-roledescription="carosello" aria-label="In evidenza">
+      <div class="hero__track" tabindex="0">
+        {{#news template="card-news-slide" featured=1 limit=4}}
+      </div>
+      <div class="hero__controls">
+        <div class="hero__dots" role="group" aria-label="Scegli la notizia"></div>
+        <button class="hero__pause" type="button" hidden aria-label="Ferma lo scorrimento automatico">❚❚</button>
+        <button type="button" data-dir="-1" aria-label="Notizia precedente">←</button>
+        <button type="button" data-dir="1" aria-label="Notizia successiva">→</button>
+      </div>
+    </div>
     <div class="opening__side">
       <h2 class="section-title section-title--small">Le ultime</h2>
       <ol class="headlines">
-        {{#news template="card-news-title" offset=1 limit=4}}
+        {{#news template="card-news-title" limit=4}}
       </ol>
     </div>
   </section>
+
+  {{> ad-fascia}}
 
   <section class="wrap section" aria-labelledby="t-news">
     <div class="section-head">
@@ -25,8 +38,21 @@
       <a class="more" href="{{root}}news/">Tutte le news</a>
     </div>
     {{> filtri-riviste}}
-    <div class="grid-news">
-      {{#news template="card-news" offset=5 limit=6 reveal-from=0}}
+    <div class="news-with-aside">
+      <div class="grid-news grid-news--two">
+        {{#news template="card-news" featured=0 offset=2 limit=6 reveal-from=0}}
+      </div>
+      <div class="news-aside">
+      <aside class="most-read reveal" aria-labelledby="t-lette">
+        <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
+        <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
+        <ol class="ranks">
+          {{#news template="card-news-rank" featured=0 offset=8 limit=5}}
+        </ol>
+        <p class="ph-note">Classifica di esempio</p>
+      </aside>
+      {{> ad-riquadro}}
+      </div>
     </div>
   </section>
 
@@ -36,7 +62,10 @@
         <h2 class="section-title" id="t-riviste">Le sei riviste</h2>
         <a class="more" href="{{root}}magazines/">Tutte le riviste</a>
       </div>
-      {{> carosello-riviste}}
+      <div class="magazines">
+        {{#riviste template="issue-feature" only="safety-first"}}
+        {{> carosello-riviste}}
+      </div>
     </div>
   </section>
 
@@ -46,22 +75,7 @@
       <a class="more" href="{{root}}fairs/">Calendario completo</a>
     </div>
     <ul class="fairs">
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-03">3–5 nov</time>
-        <div><strong>ISPO</strong><span>Amsterdam, Paesi Bassi · Calzatura</span></div>
-      </li>
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-03">3–5 nov</time>
-        <div><strong>Expoprotection</strong><span>Parigi, Francia · Sicurezza sul lavoro</span></div>
-      </li>
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-13">13–15 nov</time>
-        <div><strong>APLF ASEAN</strong><span>Ho Chi Minh City, Vietnam · Calzatura</span></div>
-      </li>
-      <li class="fair">
-        <time class="fair__date" datetime="2026-11-17">17–19 nov</time>
-        <div><strong>Interleather &amp; Shoes Spain</strong><span>Madrid, Spagna · Pelle e borse</span></div>
-      </li>
+      {{#fiere limit=4}}
     </ul>
   </section>
 
@@ -89,12 +103,9 @@
 
   <section class="wrap section partners reveal" aria-labelledby="t-partner">
     <h2 class="section-title section-title--small" id="t-partner">Partner</h2>
-    <!-- Segnaposto: qui vanno i loghi in grigio; per ora i nomi -->
+    <!-- Segnaposto: qui vanno i loghi in grigio; per ora i nomi (stessi dati della pagina Chi siamo) -->
     <ul class="partners__list">
-      <li>Assocalzaturifici</li><li>UNIC – Concerie Italiane</li><li>Assomac</li><li>Assopellettieri</li>
-      <li>Leather Naturally</li><li>UNIDO</li><li>Distretto Veneto della Pelle</li><li>APLF</li>
-      <li>APICCAPS</li><li>Officina Vanvitelli</li><li>Futurmoda</li><li>Première Vision</li>
-      <li>Milano Unica</li><li>NAD</li><li>CFPIC</li><li>Council for Leather Exports</li>
+      {{#partner template="partner-nome"}}
     </ul>
   </section>
 </main>

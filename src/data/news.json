@@ -1,89 +1,187 @@
 [
   {
+    "slug": "intervista-bergozza-assomac-sostenibilita-open-innovation-conceria",
+    "title": "Il futuro della conceria: digitalizzazione, sostenibilità e open innovation",
+    "date": "2026-10-25",
+    "magazine": "tannery",
+    "excerpt": "In occasione del II° Italian Leather Research Summit, l’appuntamento di riferimento per l’innovazione e la ricerca nella filiera conciaria, abbiamo avuto il piacere di intervistare Mauro…",
+    "image": "news/intervista-bergozza-assomac-sostenibilita-open-innovation-conceria.webp",
+    "imageAlt": ""
+  },
+  {
+    "slug": "abc-fashion-event-2026-fermo-forum-terza-edizione",
+    "title": "ABC Fashion Event 2026: a Fermo il distretto calzaturiero fa il pieno di espositori",
+    "date": "2026-10-23",
+    "magazine": "shoes-and-bags",
+    "excerpt": "Al Fermo Forum la terza edizione della fiera dedicata ad accessori, componentistica e tecnologie per calzatura e pelletteria: 180 aziende dirette, oltre 260 marchi e 50 realtà estere. Si è…",
+    "image": "news/abc-fashion-event-2026-fermo-forum-terza-edizione.webp",
+    "imageAlt": "abc accessori fermo",
+    "featured": true
+  },
+  {
+    "slug": "ssip-entra-in-cotance-come-supporting-member-un-nuovo-passo-verso-leuropa",
+    "title": "SSIP entra in COTANCE come Supporting Member: un nuovo passo verso l’Europa",
+    "date": "2026-10-22",
+    "magazine": "tannery",
+    "excerpt": "La Stazione Sperimentale per l’Industria delle Pelli e delle Materie Concianti (SSIP) ha annunciato il proprio ingresso in COTANCE – Confederation of National Associations of Tanners and…",
+    "image": "news/ssip-entra-in-cotance-come-supporting-member-un-nuovo-passo-verso-leuropa.webp",
+    "imageAlt": "SSIP entra in COTANCE"
+  },
+  {
+    "slug": "tendenze-colore-tfl-primavera-estate-2028",
+    "title": "Tendenze Colore TFL Primavera/Estate 2028: tra energia cromatica e comfort materico",
+    "date": "2026-10-21",
+    "magazine": "tannery",
+    "excerpt": "TFL presenta il nuovo catalogo Tendenze Colore Primavera/Estate 2028, articolato in due macroaree — “Wearing“ e “Living“ — che ridisegnano la palette cromatica della pelle per moda e…",
+    "image": "news/tendenze-colore-tfl-primavera-estate-2028.webp",
+    "imageAlt": "TFL Spring Summer 2028",
+    "featured": true
+  },
+  {
     "slug": "futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali",
     "title": "Futurmoda ottobre 2026: la filiera della calzatura tra Circolarità Avanzata, Intelligenza Artificiale e Nuovi Linguaggi Materici",
     "date": "2026-10-19",
     "magazine": "shoes-and-bags",
-    "excerpt": "Ad Elche la fiera dei componenti per calzatura e pelletteria mette al centro circolarità, intelligenza artificiale e nuovi materiali."
+    "excerpt": "L’edizione di Futurmoda, andata in scena il 14 e 15 ottobre 2026 presso l’IFA Fira Alacant a Elche, ha tracciato le traiettorie evolutive che guideranno la filiera internazionale della…",
+    "image": "news/futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali.webp",
+    "imageAlt": "Futurmoda 56",
+    "featured": true
   },
   {
     "slug": "safety-first-novembre-2026-rivista-calzature-di-sicurezza",
     "title": "Safety First Ottobre/Novembre 2026: il nuovo numero è online in versione sfogliabile",
     "date": "2026-10-18",
     "magazine": "safety-first",
-    "excerpt": "Il nuovo numero della rivista delle calzature di sicurezza e dei DPI si può sfogliare online."
+    "excerpt": "È disponibile online, in versione sfogliabile, il nuovo numero di Safety First, la rivista di MPA_Style dedicata alle calzature di sicurezza, al workwear, ai materiali e ai componenti per…",
+    "image": "news/safety-first-novembre-2026-rivista-calzature-di-sicurezza.webp",
+    "imageAlt": "Safety First Magazine"
   },
   {
     "slug": "gsc-group-positivity-cabin-andrea-bianconi-zermeghedo",
     "title": "GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo",
     "date": "2026-10-16",
     "magazine": "tannery",
-    "excerpt": "L'opera di Andrea Bianconi torna a Zermeghedo, nella sede di GSC Group."
+    "excerpt": "Sabato 24 ottobre 2026 il Leather Innovation Hub di GSC Group ospiterà l’installazione artistica itinerante “Positivity Cabin – 30 Seconds of Positivity“. Un incontro tra impresa…",
+    "image": "news/gsc-group-positivity-cabin-andrea-bianconi-zermeghedo.webp",
+    "imageAlt": ""
   },
   {
     "slug": "shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh",
     "title": "Shoes & Leather – Vietnam 2027 | La piattaforma unica dell’ASEAN per il sourcing di calzature e pelletteria",
     "date": "2026-10-14",
     "magazine": "shoes-and-bags",
-    "excerpt": "La fiera vietnamita si presenta come piattaforma dell'area ASEAN per il sourcing di calzature e pelletteria."
+    "excerpt": "Dal 14 al 16 luglio 2027, uno dei principali poli produttivi dell’Asia ospiterà la 27ª edizione dell’International Shoes & Leather Exhibition – Vietnam (Shoes & Leather – Vietnam). La…",
+    "image": "news/shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh.webp",
+    "imageAlt": ""
   },
   {
     "slug": "daytona-73-mythic-legend-giubbotti-pelle",
-    "title": "Mythic Legend Daytona 73",
+    "title": "MYTHIC LEGEND DAYTONA 73",
     "date": "2026-10-13",
-    "magazine": "outerwear",
-    "excerpt": "I giubbotti in pelle Daytona 73."
+    "magazine": "shoes-and-bags",
+    "excerpt": "L’anima ribelle del vintage leather La collezione Mythic Legend firmata Daytona 73 celebra il fascino intramontabile della pelle, unendo l’heritage dei motori all’estetica d’aviazione in…",
+    "image": "news/daytona-73-mythic-legend-giubbotti-pelle.webp",
+    "imageAlt": "Giubbotto in pelle Daytona 73 Mythic Legend con patch ricamate"
   },
   {
     "slug": "reas-2026-bilancio-salone-emergenza-montichiari",
     "title": "REAS 2026 chiude con il segno più: crescono i professionisti, appuntamento al 2027",
     "date": "2026-10-12",
     "magazine": "safety-first",
-    "excerpt": "Il salone dell'emergenza di Montichiari chiude con più professionisti in visita e dà appuntamento al 2027."
+    "excerpt": "Si è conclusa a Montichiari la 25ª edizione del Salone internazionale dell’Emergenza: 310 espositori da 25 Paesi, +4% di manager e operatori professionali. Si è chiusa sabato 10 ottobre, al…",
+    "image": "news/reas-2026-bilancio-salone-emergenza-montichiari.webp",
+    "imageAlt": "reas-2026-centro-fiera-montichiari"
   },
   {
     "slug": "mile-museum-senato-steam-giovani-filiera-pelle",
     "title": "Il MILE Museum al Senato della Repubblica: un ponte tra territorio, istituzioni e giovani nel segno delle STEAM",
     "date": "2026-10-07",
     "magazine": "tannery",
-    "excerpt": "Il museo della filiera della pelle porta al Senato il suo progetto per avvicinare i giovani alle materie STEAM."
+    "excerpt": "Il MILE – Museum of Interactive Leather Experience protagonista a Palazzo Giustiniani, Presidenza del Senato, nell’incontro dedicato al ruolo delle STEAM nella società e per i cittadini del…",
+    "image": "news/mile-museum-senato-steam-giovani-filiera-pelle.webp",
+    "imageAlt": "I relatori dell'incontro \"Il ruolo delle STEAM nella società\" a Palazzo Giustiniani, Senato della Repubblica",
+    "featured": true
   },
   {
     "slug": "diadora-utility-glove-hyperform-tecnologia-supercritica",
     "title": "Diadora Utility e la tecnologia supercritica HYPERFORM: la formula perfetta dallo sport alla sicurezza",
     "date": "2026-10-06",
     "magazine": "safety-first",
-    "excerpt": "La tecnologia HYPERFORM passa dalle scarpe sportive alle calzature da lavoro Diadora Utility."
+    "excerpt": "Dal trasferimento tecnologico con il mondo del running di alta gamma nasce GLOVE HYPERFORM, la nuova calzatura antinfortunistica di Diadora Utility che porta nell’ambiente di lavoro una…",
+    "image": "news/diadora-utility-glove-hyperform-tecnologia-supercritica.webp",
+    "imageAlt": "Diadora Utility GLOVE HYPERFORM safety shoes"
   },
   {
     "slug": "acque-del-chiampo-pfas-dioxin-2026",
     "title": "Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica",
     "date": "2026-10-06",
     "magazine": "tannery",
-    "excerpt": "Acque del Chiampo presenta a Dioxin 2026 il suo lavoro contro i PFAS."
+    "excerpt": "Una sfida iniziata oltre un decennio fa che oggi si trasforma in un modello di riferimento internazionale. Acque del Chiampo ha portato la sua lunga esperienza nel contrasto ai PFAS…",
+    "image": "news/acque-del-chiampo-pfas-dioxin-2026.webp",
+    "imageAlt": ""
+  },
+  {
+    "slug": "shoes-leather-guangzhou-2027-fiera-calzature-pelletteria",
+    "title": "Shoes & Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera",
+    "date": "2026-10-06",
+    "magazine": "shoes-and-bags",
+    "excerpt": "L’ecosistema globale della calzatura e della pelletteria si prepara al grande ritorno in Cina. Dal 20 al 22 maggio 2027, il Canton Fair Complex di Guangzhou ospiterà la 35ª edizione…",
+    "image": "news/shoes-leather-guangzhou-2027-fiera-calzature-pelletteria.webp",
+    "imageAlt": ""
   },
   {
     "slug": "heimtextil-2027-si-presenta-a-milano",
     "title": "Heimtextil 2027 si presenta a Milano: un incontro tra tessile, design e sostenibilità",
     "date": "2026-10-05",
     "magazine": "texstyle",
-    "excerpt": "Al Palazzo Touring Club il press lunch della fiera del tessile casa e contract, a Francoforte dal 12 al 15 gennaio 2027.",
+    "excerpt": "Palazzo Touring Club by Radisson Hotel, in Corso Italia, ha ospitato il press lunch dedicato alla presentazione di Heimtextil 2027, la fiera internazionale di riferimento per il tessile…",
+    "image": "news/heimtextil-2027-si-presenta-a-milano.webp",
+    "imageAlt": "Heimtextil 2027: la presentazione a Milano con Alcova tra trend e innovazione tessile",
     "realText": true
-  },
-  {
-    "slug": "shoes-leather-guangzhou-2027-fiera-calzature-pelletteria",
-    "title": "Shoes & Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera",
-    "date": "2026-10-05",
-    "dateApprox": true,
-    "magazine": "shoes-and-bags",
-    "excerpt": "La fiera di Guangzhou torna nel 2027 per calzatura e pelletteria."
   },
   {
     "slug": "uitic-congresso-2027-jakarta-footwear-industry",
     "title": "UITIC guarda al futuro della calzatura: il XXIII Congresso Internazionale si terrà a Jakarta",
-    "date": "2026-10-02",
-    "dateApprox": true,
+    "date": "2026-10-05",
     "magazine": "shoes-and-bags",
-    "excerpt": "Il XXIII Congresso Internazionale dei tecnici della calzatura si terrà a Jakarta."
+    "excerpt": "“Engineering the Future of the Footwear Industry\" è il titolo scelto per l’edizione 2027, in programma dal 2 al 4 agosto. Tecnologie avanzate, manifattura sostenibile e resilienza al centro…",
+    "image": "news/uitic-congresso-2027-jakarta-footwear-industry.webp",
+    "imageAlt": "uitic 2027 jakarta"
+  },
+  {
+    "slug": "salone-nautico-genova-2026-nautica-moda-pelle-made-in-italy",
+    "title": "Salone Nautico di Genova 2026, taglio del nastro per la 66ª edizione: il mare incontra moda, pelle e Made in Italy",
+    "date": "2026-10-01",
+    "magazine": "style",
+    "excerpt": "È stato inaugurato questa mattina, giovedì 1° ottobre, il 66° Salone Nautico Internazionale di Genova, aperto al Waterfront di Levante fino al 6 ottobre 2026. L’edizione riunisce oltre…",
+    "image": "news/salone-nautico-genova-2026-nautica-moda-pelle-made-in-italy.webp",
+    "imageAlt": ""
+  },
+  {
+    "slug": "acm-dettagli-di-moda-accessori-alta-tecnologia",
+    "title": "ACM Dettagli di Moda: la sartorialità degli accessori tra materia e alta tecnologia",
+    "date": "2026-10-01",
+    "magazine": "shoes-and-bags",
+    "excerpt": "Nel panorama del lusso contemporaneo, la differenza tra un prodotto ordinario e una creazione iconica risiede nella ricerca del dettaglio. Per i brand di pelletteria, calzatura e…",
+    "image": "news/acm-dettagli-di-moda-accessori-alta-tecnologia.webp",
+    "imageAlt": ""
+  },
+  {
+    "slug": "benheart-intervista-ben-seconda-pelle-panerai",
+    "title": "L’essenza oltre la materia: la visione del lusso autentico firmata Benheart",
+    "date": "2026-10-01",
+    "magazine": "shoes-and-bags",
+    "excerpt": "Ci sono parabole umane che sembrano sfidare le leggi della probabilità, destinate a trasformare la vulnerabilità in pura eccellenza. Quello di Ben non è solo un percorso imprenditoriale, ma…",
+    "image": "news/benheart-intervista-ben-seconda-pelle-panerai.webp",
+    "imageAlt": ""
+  },
+  {
+    "slug": "columbia-sportswear-lancia-ft-fund-e-premia-le-foto-dei-piedi-degli-escursionisti",
+    "title": "Columbia Sportswear lancia F££T Fund e premia le foto dei piedi degli escursionisti",
+    "date": "2026-09-29",
+    "magazine": "shoes-and-bags",
+    "excerpt": "Columbia Sportswear ha annunciato il lancio di F££T FUND, un’iniziativa ironica e irriverente pensata per accompagnare il debutto della nuova linea di calzature Peakfreak™. Il progetto…",
+    "image": "news/columbia-sportswear-lancia-ft-fund-e-premia-le-foto-dei-piedi-degli-escursionisti.webp",
+    "imageAlt": "Columbia Sportswear lancia F££T FUND"
   }
 ]

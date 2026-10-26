@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+scripts/news-dal-sito.json
+shots/

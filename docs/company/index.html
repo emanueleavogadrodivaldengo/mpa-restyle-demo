@@ -1,0 +1,290 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi siamo · MPA Style, casa editrice della filiera moda e pelle</title>
+  <meta name="description" content="MPA srl, Buccinasco (Milano): sei riviste B2B, news ogni giorno, il calendario delle fiere internazionali e la formazione per designer e modellisti.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/company/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chi siamo · MPA Style, casa editrice della filiera moda e pelle">
+  <meta property="og:description" content="MPA srl, Buccinasco (Milano): sei riviste B2B, news ogni giorno, il calendario delle fiere internazionali e la formazione per designer e modellisti.">
+  <meta property="og:url" content="https://www.mpastyle.it/company/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../news/" data-section="news">News</a></li>
+        <li><a href="../magazines/" data-section="riviste">Riviste</a></li>
+        <li><a href="../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../company/" data-section="chi-siamo" aria-current="page">Chi siamo</a></li>
+        <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Pagina Chi siamo → in WordPress: page-company.php (l'indirizzo /company/ resta quello di oggi) -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Chi siamo</h1>
+    <p class="page-intro">MPA è una casa editrice B2B: da Buccinasco, alle porte di Milano, racconta la filiera della moda, della pelle, del tessile e della sicurezza sul lavoro a chi la fa e a chi la compra.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="prose">
+    <p><strong>Il know how di un'azienda è la risorsa su cui si fondano le sue performance e il suo vantaggio competitivo.</strong></p>
+    <p>MPA Style offre un osservatorio privilegiato per chi vuole scoprire e capire tendenze, protagonisti e sfide di un settore in continua evoluzione, dove tradizione e modernità si incontrano.</p>
+    <p>Seguiamo tutta la catena produttiva: dalle materie prime ai materiali innovativi, dai pellami di qualità ai componenti, fino alle nuove tecnologie, alla chimica e ai DPI più performanti. Artigianato e sostenibilità, creatività e tecnologia: MPA Style è il punto d'incontro di appassionati e professionisti.</p>
+    </div>
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-cosa">
+    <h2 class="section-title" id="t-cosa">Cosa facciamo</h2>
+    <div class="offer-grid offer-grid--four">
+      <a class="offer offer--link" href="../magazines/">
+        <h3>Sei riviste</h3>
+        <p>Una per ogni pezzo della filiera, stampate e sfogliabili online.</p>
+      </a>
+      <a class="offer offer--link" href="../news/">
+        <h3>News ogni giorno</h3>
+        <p>Aziende, fiere, materiali e mercati, aggiornati quotidianamente.</p>
+      </a>
+      <a class="offer offer--link" href="../fairs/">
+        <h3>Le fiere del mondo</h3>
+        <p>Il calendario internazionale e le riviste distribuite in fiera.</p>
+      </a>
+      <a class="offer offer--link" href="../academy/">
+        <h3>Academy</h3>
+        <p>Corsi e workshop per designer e modellisti di scarpe e borse.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-storia">
+    <div class="wrap split">
+      <h2 class="section-title" id="t-storia">La nostra storia</h2>
+      <div class="todo">
+        <p>Qui vanno l'anno di fondazione, le tappe principali e le persone della redazione, con una foto.</p>
+        <p class="ph-note">Da completare: il sito di oggi non racconta né la storia né le persone, ed è quello che convince un'azienda a fidarsi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal" aria-labelledby="t-partner">
+    <h2 class="section-title" id="t-partner">Partner</h2>
+    <p class="page-intro">Associazioni, fiere e scuole con cui lavoriamo, in Italia e nel mondo.</p>
+    <ul class="partner-grid">
+      <!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Assocalzaturifici</strong>
+  <span class="partner__about">Associazione nazionale dei calzaturifici italiani.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">UNIC – Concerie Italiane</strong>
+  <span class="partner__about">L'associazione di categoria del settore conciario nazionale: fornisce servizi e consulenze alle aziende associate.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Assomac</strong>
+  <span class="partner__about">L'associazione nazionale che aggrega e rappresenta i costruttori italiani di tecnologie per calzature, pelletteria e conceria.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Assopellettieri</strong>
+  <span class="partner__about">Associazione Italiana Pellettieri: dal 1966 rappresenta le imprese di pelletteria.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Leather Naturally</strong>
+  <span class="partner__about">Associazione internazionale dell'industria della pelle.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">UNIDO</strong>
+  <span class="partner__about">Organizzazione delle Nazioni Unite per lo sviluppo industriale.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Distretto Veneto della Pelle</strong>
+  <span class="partner__about">Uno dei sistemi industriali italiani più rilevanti al mondo: coinvolge l'intera filiera della lavorazione della pelle.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">APLF</strong>
+  <span class="partner__about">Fiera internazionale per l'industria della moda e della pelle.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">APICCAPS</strong>
+  <span class="partner__about">Associazione portoghese dei produttori di calzature, componenti e pelletteria, con sede a Porto.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Officina Vanvitelli</strong>
+  <span class="partner__about">Nata nel Dipartimento di Architettura e Disegno Industriale: un distretto leggero per la moda e il design in Campania.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Pyramids Fairs</strong>
+  <span class="partner__about">Organizzatore di fiere di riferimento in Medio Oriente e Africa, in oltre 22 settori.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Futurmoda</strong>
+  <span class="partner__about">La fiera internazionale di componenti, pellami, tessuti e macchinari per calzatura e pelletteria.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Council for Leather Exports</strong>
+  <span class="partner__about">L'ente indiano per gli esportatori di pelle e prodotti in pelle, dal 1984.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Top Repute</strong>
+  <span class="partner__about">Organizza in Asia fiere di macchinari per calzatura, pelle e materiali, e incontri di sourcing per calzature e pelletteria.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Première Vision</strong>
+  <span class="partner__about">Da oltre 50 anni riunisce i professionisti della moda e ne fa crescere il business.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">NAD – Nuova Accademia del Design</strong>
+  <span class="partner__about">Corsi di design e formazione post-diploma: comunicazione, interior, fashion, green e visual design.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">CFPIC</strong>
+  <span class="partner__about">Academy of Design and Footwear University, in Portogallo.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Milano Unica</strong>
+  <span class="partner__about">La fiera di riferimento dei tessuti e degli accessori di alta gamma per l'abbigliamento donna e uomo.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">S&amp;V Mag</strong>
+  <span class="partner__about">Riviste e annuario di riferimento per calzatura, pelletteria, pelle e DPI in Sudafrica e Africa orientale.</span>
+</li>
+
+<!-- BLOCCO partner-card → un partner con la sua descrizione (in WP: un tipo di contenuto "Partner" con logo) -->
+<li class="partner">
+  <strong class="partner__name">Fashion World Tokyo</strong>
+  <span class="partner__about">Fiera internazionale dell'industria della moda.</span>
+</li>
+
+    </ul>
+    <p class="ph-note">Descrizioni dal sito di oggi, tradotte in italiano dove erano in inglese o spagnolo. I loghi andranno accanto ai nomi.</p>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Vieni a trovarci</h2>
+        <p>MPA srl, Via del Commercio 46, 20090 Buccinasco (MI).</p>
+      </div>
+      <a class="button" href="../contacts/">Contatti</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../privacy-policy/">Privacy</a> · <a href="../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

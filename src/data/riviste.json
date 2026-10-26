@@ -46,8 +46,11 @@
     "slug": "safety-first",
     "audience": "Calzature e DPI da lavoro",
     "about": "Calzature di sicurezza e dispositivi di protezione individuale: norme, materiali, tecnologie e fiere del settore.",
-    "issue": "Ottobre/Novembre 2026",
-    "color": "#1f4a5c"
+    "issue": "N. 14 · Ottobre/Novembre 2026",
+    "color": "#1f4a5c",
+    "cover": "copertine/safety-first-14.webp",
+    "frequency": "Trimestrale",
+    "language": "Italiano e inglese"
   },
   {
     "key": "outerwear",

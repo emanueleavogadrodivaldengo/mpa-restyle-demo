@@ -2,7 +2,7 @@
 <article class="mini" data-rivista="{{magazine_key}}">
   <a href="{{url}}">
     <div class="mini__media media">
-      <img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">
+      {{#if image}}<img src="{{image}}" alt="{{image_alt}}" width="320" height="180" loading="lazy" decoding="async">{{else}}<img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">{{/if}}
     </div>
     <p class="label">{{magazine_short}}</p>
     <h3 class="mini__title">{{title}}</h3>

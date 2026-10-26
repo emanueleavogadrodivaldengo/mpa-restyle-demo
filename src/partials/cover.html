@@ -1,9 +1,9 @@
-<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="{{url}}" data-rivista="{{key}}">
-  <span class="cover__art" role="img" aria-label="Copertina segnaposto di {{name}}">
+  {{#if cover}}<img class="cover__img" src="{{cover}}" alt="Copertina di {{name}}, {{issue}}" width="600" height="848" loading="lazy" decoding="async">{{else}}<span class="cover__art" role="img" aria-label="Copertina segnaposto di {{name}}">
     <span class="cover__kicker">{{audience}}</span>
     <span class="cover__name">{{name}}</span>
     <span class="cover__ph">Copertina segnaposto</span>
-  </span>
+  </span>{{/if}}
   <span class="cover__caption"><strong>{{name}}</strong> {{issue}}</span>
 </a>

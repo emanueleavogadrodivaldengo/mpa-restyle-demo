@@ -1,0 +1,221 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safety First · Calzature e DPI da lavoro · riviste MPA Style</title>
+  <meta name="description" content="Calzature di sicurezza e dispositivi di protezione individuale: norme, materiali, tecnologie e fiere del settore. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/magazines/safety-first/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Safety First · Calzature e DPI da lavoro · riviste MPA Style">
+  <meta property="og:description" content="Calzature di sicurezza e dispositivi di protezione individuale: norme, materiali, tecnologie e fiere del settore. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta property="og:url" content="https://www.mpastyle.it/magazines/safety-first/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../../news/" data-section="news">News</a></li>
+        <li><a href="../../magazines/" data-section="riviste" aria-current="page">Riviste</a></li>
+        <li><a href="../../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste.
+     La build ne genera sei, una per testata, da questo stesso file. -->
+<main id="contenuto" data-rivista="safety-first">
+  <header class="magazine-hero">
+    <div class="wrap magazine-hero__inner">
+      <div class="magazine-hero__text">
+        <p class="label label--on-dark">Calzature e DPI da lavoro</p>
+        <h1 class="page-title">Safety First</h1>
+        <p class="page-intro">Calzature di sicurezza e dispositivi di protezione individuale: norme, materiali, tecnologie e fiere del settore.</p>
+        <p class="magazine-hero__facts"><span>Periodicità: Trimestrale</span> <span>Lingua: Italiano e inglese</span></p>
+        <div class="magazine-hero__actions">
+          <a class="button button--light" href="#">Sfoglia online</a>
+          <a class="button button--ghost" href="#">Abbonati</a>
+        </div>
+      </div>
+      <a class="cover cover--big cover--static" href="#" data-rivista="safety-first">
+        <img class="cover__img" src="../../assets/img/copertine/safety-first-14.webp" alt="Copertina di Safety First, N. 14 · Ottobre/Novembre 2026" width="600" height="848">
+        <span class="cover__caption"><strong>N. 14 · Ottobre/Novembre 2026</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- BLOCCO filtri-riviste → link alle pagine delle testate. In WordPress sono le categorie: wp_list_categories() -->
+<nav class="filters" aria-label="Filtra per rivista">
+  <a href="../../news/" data-section="news">Tutte</a>
+  <a href="../../magazines/shoes-and-bags/" data-section="shoes-and-bags">Shoes &amp; Bags</a>
+  <a href="../../magazines/tannery/" data-section="tannery">Tannery</a>
+  <a href="../../magazines/style/" data-section="style">Style</a>
+  <a href="../../magazines/texstyle/" data-section="texstyle">TexStyle</a>
+  <a href="../../magazines/safety-first/" data-section="safety-first" aria-current="page">Safety First</a>
+  <a href="../../magazines/outerwear/" data-section="outerwear">Outerwear</a>
+</nav>
+
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-art">
+    <h2 class="section-title" id="t-art">Le ultime da Safety First</h2>
+    <div class="grid-news">
+      <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="safety-first">
+  <a class="card__link" href="../../safety-first-novembre-2026-rivista-calzature-di-sicurezza/">
+    <div class="card__media media" style="view-transition-name: foto-safety-first-novembre-2026-rivista-calzature-di-sicurezza">
+      <img src="../../assets/img/news/safety-first-novembre-2026-rivista-calzature-di-sicurezza.webp" alt="Safety First Magazine" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Safety First</p>
+      <h3 class="card__title">Safety First Ottobre/Novembre 2026: il nuovo numero è online in versione sfogliabile</h3>
+      <p class="card__excerpt">È disponibile online, in versione sfogliabile, il nuovo numero di Safety First, la rivista di MPA_Style dedicata alle calzature di sicurezza, al workwear, ai materiali e ai componenti per…</p>
+      <time class="meta" datetime="2026-10-18">18 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="safety-first">
+  <a class="card__link" href="../../reas-2026-bilancio-salone-emergenza-montichiari/">
+    <div class="card__media media" style="view-transition-name: foto-reas-2026-bilancio-salone-emergenza-montichiari">
+      <img src="../../assets/img/news/reas-2026-bilancio-salone-emergenza-montichiari.webp" alt="reas-2026-centro-fiera-montichiari" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Safety First</p>
+      <h3 class="card__title">REAS 2026 chiude con il segno più: crescono i professionisti, appuntamento al 2027</h3>
+      <p class="card__excerpt">Si è conclusa a Montichiari la 25ª edizione del Salone internazionale dell’Emergenza: 310 espositori da 25 Paesi, +4% di manager e operatori professionali. Si è chiusa sabato 10 ottobre, al…</p>
+      <time class="meta" datetime="2026-10-12">12 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="safety-first">
+  <a class="card__link" href="../../diadora-utility-glove-hyperform-tecnologia-supercritica/">
+    <div class="card__media media" style="view-transition-name: foto-diadora-utility-glove-hyperform-tecnologia-supercritica">
+      <img src="../../assets/img/news/diadora-utility-glove-hyperform-tecnologia-supercritica.webp" alt="Diadora Utility GLOVE HYPERFORM safety shoes" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Safety First</p>
+      <h3 class="card__title">Diadora Utility e la tecnologia supercritica HYPERFORM: la formula perfetta dallo sport alla sicurezza</h3>
+      <p class="card__excerpt">Dal trasferimento tecnologico con il mondo del running di alta gamma nasce GLOVE HYPERFORM, la nuova calzatura antinfortunistica di Diadora Utility che porta nell’ambiente di lavoro una…</p>
+      <time class="meta" datetime="2026-10-06">6 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-archivio">
+    <div class="wrap">
+      <h2 class="section-title" id="t-archivio">Numeri precedenti</h2>
+      <!-- Segnaposto: in WordPress arrivano dal tipo di contenuto "Numero" -->
+      <div class="carousel" data-carousel>
+        <div class="carousel__track" tabindex="0" aria-label="Numeri precedenti, scorri per vederli">
+          <a class="cover cover--static" href="#" data-rivista="safety-first"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Safety First</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="safety-first"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Safety First</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="safety-first"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Safety First</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+          <a class="cover cover--static" href="#" data-rivista="safety-first"><span class="cover__art" role="img" aria-label="Copertina segnaposto"><span class="cover__kicker">Numero precedente</span><span class="cover__name">Safety First</span><span class="cover__ph">Copertina segnaposto</span></span><span class="cover__caption">Numero da definire</span></a>
+        </div>
+        <div class="carousel__nav" hidden>
+          <button type="button" data-dir="-1" aria-label="Indietro">←</button>
+          <button type="button" data-dir="1" aria-label="Avanti">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità su Safety First</h2>
+        <p>Raggiungi chi legge Safety First: aziende, buyer e visitatori delle fiere del settore.</p>
+      </div>
+      <a class="button" href="../../pubblicita/">Richiedi il media kit</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../../" aria-label="MPA Style, torna alla home">
+        <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../../privacy-policy/">Privacy</a> · <a href="../../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

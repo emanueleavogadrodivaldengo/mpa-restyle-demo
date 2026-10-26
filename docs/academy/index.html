@@ -1,0 +1,166 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style Modainpelle Academy · corsi di design e modelleria · MPA Style</title>
+  <meta name="description" content="Corsi brevi e intensivi, workshop e consulenza per designer e modellisti di calzature e pelletteria, in Italia e nel mondo.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/academy/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Style Modainpelle Academy · corsi di design e modelleria · MPA Style">
+  <meta property="og:description" content="Corsi brevi e intensivi, workshop e consulenza per designer e modellisti di calzature e pelletteria, in Italia e nel mondo.">
+  <meta property="og:url" content="https://www.mpastyle.it/academy/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../news/" data-section="news">News</a></li>
+        <li><a href="../magazines/" data-section="riviste">Riviste</a></li>
+        <li><a href="../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../academy/" data-section="academy" aria-current="page">Academy</a></li>
+        <li><a href="../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Pagina Academy → in WordPress: page-academy.php -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <p class="label">Style Modainpelle Academy</p>
+    <h1 class="page-title">Academy</h1>
+    <p class="page-intro">Corsi brevi e intensivi, workshop e consulenza per diventare, o migliorare come, designer e modellisti di calzature e pelletteria.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="prose">
+    <p>Il nostro ramo formazione nasce da una lunga esperienza nella moda in pelle e dai contatti con tutta la filiera. Portiamo corsi itineranti presso associazioni e aziende, in Italia e nel mondo.</p>
+    <p>Creatività e fantasia vengono stimolate tenendo conto dei parametri commerciali e tecnici che servono per disegnare e costruire collezioni di scarpe e borse di qualità. L'obiettivo è mostrare agli studenti tutto quello che un designer o un modellista affronta ogni giorno.</p>
+    </div>
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-corsi">
+    <h2 class="section-title" id="t-corsi">I corsi</h2>
+    <div class="offer-grid">
+      <article class="offer">
+        <h3>Corsi di design</h3>
+        <p>Individuali o in gruppo. Ogni studente sviluppa una propria collezione, con metodi di ricerca precisi e attenzione sia all'estetica sia al lato commerciale. Prima si può seguire un modulo tecnico di costruzione.</p>
+      </article>
+      <article class="offer">
+        <h3>Corsi tecnici</h3>
+        <p>Per modellisti: i segreti della manifattura italiana e la progettazione del prototipo, per lavorare in aziende di fascia medio alta accanto ai designer senza snaturarne il disegno.</p>
+      </article>
+      <article class="offer">
+        <h3>Workshop e consulenza</h3>
+        <p>Percorsi brevi e intensivi presso associazioni e aziende, sempre con la guida di tecnici esperti e designer.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-materie">
+    <div class="wrap split">
+      <h2 class="section-title" id="t-materie">Cosa si impara</h2>
+      <ul class="ticks ticks--two">
+        <li>Capire la moda</li>
+        <li>Sviluppo della creatività</li>
+        <li>Metodi di ricerca</li>
+        <li>Tecniche di design professionale</li>
+        <li>Illustrazione al computer</li>
+        <li>CAD CAM</li>
+        <li>Marketing e brand identity</li>
+        <li>Come si costruisce una scarpa o una borsa</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <p class="label">Scuola partner</p>
+        <h2 class="section-title">CFPIC</h2>
+        <p>Centro de Formação Profissional da Indústria do Calçado, Portogallo.</p>
+        <p class="ph-note">Date, sedi e costi dei prossimi corsi: da completare.</p>
+      </div>
+      <a class="button" href="../contacts/">Chiedi informazioni</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../privacy-policy/">Privacy</a> · <a href="../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+

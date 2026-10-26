@@ -11,11 +11,16 @@ Pagine di questa prima versione (italiano; l'inglese è previsto ma non ancora f
 | Home | `docs/index.html` | `front-page.php` |
 | Lista news | `docs/news/index.html` | `home.php` / `archive.php` |
 | Articolo (Heimtextil 2027, testo reale) | `docs/heimtextil-2027-si-presenta-a-milano/index.html` | `single.php` |
-| Pagina di una testata (Tannery International) | `docs/magazines/tannery/index.html` | `category.php` |
+| Riviste (le sei testate) | `docs/magazines/index.html` | `page-magazines.php` |
+| Pagina di ogni testata (sei, da un solo modello) | `docs/magazines/<testata>/index.html` | `category.php` |
+| Calendario fiere | `docs/fairs/index.html` | `archive-fiera.php` |
+| Academy | `docs/academy/index.html` | `page-academy.php` |
+| Chi siamo | `docs/company/index.html` | `page-company.php` |
+| Pubblicità e media kit (pagina nuova) | `docs/pubblicita/index.html` | `page-pubblicita.php` |
 | Contatti | `docs/contacts/index.html` | `page-contacts.php` |
 
-Gli indirizzi sono quelli di oggi (`/news/`, `/magazines/tannery/`, `/contacts/`, articoli alla
-radice): così, quando il tema andrà online, Google non perde nessuna pagina.
+Gli indirizzi sono quelli di oggi (`/news/`, `/magazines/tannery/`, `/fairs/`, `/company/`,
+`/academy/`, `/contacts/`, articoli alla radice; `/pubblicita/` è nuova): così, quando il tema andrà online, Google non perde nessuna pagina.
 
 ## Come si usa
 
@@ -31,6 +36,15 @@ apre da solo `index.html`.
 La cartella `docs/` è già generata e inclusa nel repo, così si può pubblicare con GitHub Pages
 (Settings → Pages → branch `main`, cartella `/docs`). Non va modificata a mano: si cambia
 `src/` e si rilancia la build.
+
+## Prendere news e foto dal sito attuale
+
+```bash
+node scripts/scarica-news.mjs 20   # le ultime 20 news, con foto, titoli, date, estratti e categorie
+```
+
+Usa l'API che ogni WordPress ha all'indirizzo `/wp-json/`. Le foto finiscono in
+`src/assets/img/news/`, i dati in `scripts/news-dal-sito.json`.
 
 ## Com'è organizzato
 
@@ -50,6 +64,8 @@ Nei file sorgente ci sono tre istruzioni, pensate per ricalcare WordPress:
 | `{{> header}}` | `get_header()` |
 | `{{> card-news}}` | `get_template_part('template-parts/card-news')` |
 | `{{#news limit=6 offset=1}}` | il loop: `WP_Query` + `while (have_posts())` |
+| `{{#fiere}}`, `{{#partner}}` | loop su tipi di contenuto "Fiera" e "Partner" |
+| `pages/magazines/[rivista]/` | `category.php`: un modello, sei pagine |
 | `{{title}}`, `{{date_human}}` | `the_title()`, `get_the_date()` |
 | `data/news.json` | gli articoli nel database |
 
@@ -62,8 +78,8 @@ file PHP andrà.
 aggiungono il desktop. Su telefono le card della lista hanno la foto piccola a sinistra, così in
 una schermata si leggono 3-4 notizie invece di una.
 
-**Velocità.** Niente font da scaricare (si usano quelli del sistema), niente librerie, un solo
-CSS (~20 KB) e un solo JS piccolo caricato con `defer`. L'immagine dell'apertura ha
+**Velocità.** Niente librerie, un solo CSS (~24 KB) e un solo JS piccolo caricato con `defer`.
+Un solo font da scaricare, per i titoli (vedi sotto); il testo usa i font del sistema. L'immagine dell'apertura ha
 `fetchpriority="high"` e niente lazy loading; tutte le altre hanno `loading="lazy"`. Ogni
 immagine ha `width` e `height`, così la pagina non "salta" mentre carica. Nel primo schermo non ci
 sono animazioni: il contenuto principale compare subito (oggi ci mette ~5,9 s).
@@ -71,6 +87,11 @@ sono animazioni: il contenuto principale compare subito (oggi ci mette ~5,9 s).
 **Leggibilità delle news.** Articolo a 18 px con righe da ~70 caratteri, titolo sopra la foto,
 sottotitolo e riga "di Redazione · data · tempo di lettura" in italiano, titoli in minuscolo
 normale, date scritte per intero.
+
+**Un font tutto nostro per i titoli.** Oswald (licenza libera OFL, `assets/fonts/`), condensato e
+deciso come il logo STYLE. È un file da 28 KB servito dal sito stesso, non da Google Fonts: niente
+richieste a server esterni e niente problemi di privacy. `font-display: swap` mostra subito il
+testo e cambia font appena è arrivato; il `preload` nell'header lo fa partire per primo.
 
 **Le riviste hanno un volto.** Ogni testata ha un colore (`--c-tannery` ecc.). Basta mettere
 `data-rivista="tannery"` su un elemento e etichetta, foto segnaposto e copertina prendono quel
@@ -102,22 +123,30 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 
 ## Cosa è segnaposto
 
-- **Foto e copertine**: segnaposto dichiarati ("Foto segnaposto", "Copertina segnaposto").
-- **Logo**: per ora è testo; va sostituito con l'SVG del logo STYLE.
+- **Foto delle news**: vere, scaricate dal sito con `scripts/scarica-news.mjs` (20 news). Larghe
+  1024 px: per il carosello d'apertura ne servirebbero di più grandi.
+- **Copertine**: vera solo Safety First n. 14; le altre sono segnaposto dichiarati.
+- **Logo**: quello vero, in WebP. Meglio averlo in SVG (più nitido e più leggero).
+- **Le più lette**: classifica di esempio, dichiarata. Sul sito vero arriva dalle statistiche.
+- **In evidenza**: le 4 notizie del carosello le ho scelte io (`"featured": true` in `news.json`).
 - **Numeri per gli inserzionisti** (copie, iscritti, fiere, paesi): `00.000`, dichiarati.
-- **Estratti delle news**: il sito di oggi non ne ha. Li ho scritti riassumendo solo quello che
-  dice il titolo; vanno sostituiti con quelli della redazione.
-- **Rivista di ogni news**: il sito di oggi non la indica. L'ho assegnata in base
-  all'argomento (`src/data/news.json`), da verificare.
-- **Date**: vere, tranne Guangzhou e UITIC (`"dateApprox": true`), che nell'HTML salvato non
-  avevano data.
+- **Estratti delle news**: presi dal sito attuale, ripuliti dai codici di WPBakery e accorciati.
+- **Rivista di ogni news**: dalla categoria WordPress quando c'è (Tannery, Safety First, Shoes and
+  Bags); per le altre l'ho assegnata io in base all'argomento, da verificare.
+- **Date e indirizzi**: veri, dal sito attuale.
 - **Descrizioni delle riviste**, periodicità, link "Sfoglia" e "Abbonati": da completare.
 - **Contatti**: numeri ed email sono quelli del sito di oggi; quale numero e quale email per
   la pubblicità va confermato. Nel footer resta un solo numero (redazione).
 - **Moduli** (newsletter, contatti) e **ricerca**: grafica pronta, non inviano nulla.
-- **Menu**: Riviste, Fiere, Academy, Chi siamo e Pubblicità non sono ancora nella demo
-  (portano alla pagina 404, che lo spiega).
+- **Fiere**: le 27 del sito di oggi (`data/fiere.json`); quelle già finite spariscono da sole a
+  ogni build.
+- **Chi siamo**: testo e partner dal sito di oggi; storia, persone e loghi dei partner da completare.
+- **Academy**: testo dal sito di oggi; date, sedi e costi dei corsi da completare.
+- **Pubblicità**: pagina nuova. Formati ricavati dagli spazi della demo e dalla distribuzione delle
+  riviste; formati esatti, prezzi e numeri da confermare.
+- **Pagine delle testate**: Outerwear oggi non ha notizie fra le 20 scaricate, quindi mostra un
+  messaggio al posto della griglia.
 
-Contenuti reali usati: le 12 news più recenti con titoli e date (salvate il 20/10/2026), il
+Contenuti reali usati: le 20 news più recenti con titoli, date, estratti e foto (dal sito, 26/10/2026), il
 testo completo dell'articolo Heimtextil 2027, le sei testate, il calendario fiere, i partner,
 indirizzi, telefoni, P.IVA e link social (aggiornati a https e x.com).

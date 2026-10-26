@@ -1,0 +1,75 @@
+<!--page {
+  "title": "Chi siamo · MPA Style, casa editrice della filiera moda e pelle",
+  "description": "MPA srl, Buccinasco (Milano): sei riviste B2B, news ogni giorno, il calendario delle fiere internazionali e la formazione per designer e modellisti.",
+  "section": "chi-siamo"
+} -->
+{{> header}}
+
+<!-- Pagina Chi siamo → in WordPress: page-company.php (l'indirizzo /company/ resta quello di oggi) -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Chi siamo</h1>
+    <p class="page-intro">MPA è una casa editrice B2B: da Buccinasco, alle porte di Milano, racconta la filiera della moda, della pelle, del tessile e della sicurezza sul lavoro a chi la fa e a chi la compra.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="prose">
+    <p><strong>Il know how di un'azienda è la risorsa su cui si fondano le sue performance e il suo vantaggio competitivo.</strong></p>
+    <p>MPA Style offre un osservatorio privilegiato per chi vuole scoprire e capire tendenze, protagonisti e sfide di un settore in continua evoluzione, dove tradizione e modernità si incontrano.</p>
+    <p>Seguiamo tutta la catena produttiva: dalle materie prime ai materiali innovativi, dai pellami di qualità ai componenti, fino alle nuove tecnologie, alla chimica e ai DPI più performanti. Artigianato e sostenibilità, creatività e tecnologia: MPA Style è il punto d'incontro di appassionati e professionisti.</p>
+    </div>
+  </div>
+
+  <section class="wrap section" aria-labelledby="t-cosa">
+    <h2 class="section-title" id="t-cosa">Cosa facciamo</h2>
+    <div class="offer-grid offer-grid--four">
+      <a class="offer offer--link" href="{{root}}magazines/">
+        <h3>Sei riviste</h3>
+        <p>Una per ogni pezzo della filiera, stampate e sfogliabili online.</p>
+      </a>
+      <a class="offer offer--link" href="{{root}}news/">
+        <h3>News ogni giorno</h3>
+        <p>Aziende, fiere, materiali e mercati, aggiornati quotidianamente.</p>
+      </a>
+      <a class="offer offer--link" href="{{root}}fairs/">
+        <h3>Le fiere del mondo</h3>
+        <p>Il calendario internazionale e le riviste distribuite in fiera.</p>
+      </a>
+      <a class="offer offer--link" href="{{root}}academy/">
+        <h3>Academy</h3>
+        <p>Corsi e workshop per designer e modellisti di scarpe e borse.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-storia">
+    <div class="wrap split">
+      <h2 class="section-title" id="t-storia">La nostra storia</h2>
+      <div class="todo">
+        <p>Qui vanno l'anno di fondazione, le tappe principali e le persone della redazione, con una foto.</p>
+        <p class="ph-note">Da completare: il sito di oggi non racconta né la storia né le persone, ed è quello che convince un'azienda a fidarsi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section reveal" aria-labelledby="t-partner">
+    <h2 class="section-title" id="t-partner">Partner</h2>
+    <p class="page-intro">Associazioni, fiere e scuole con cui lavoriamo, in Italia e nel mondo.</p>
+    <ul class="partner-grid">
+      {{#partner template="partner-card"}}
+    </ul>
+    <p class="ph-note">Descrizioni dal sito di oggi, tradotte in italiano dove erano in inglese o spagnolo. I loghi andranno accanto ai nomi.</p>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Vieni a trovarci</h2>
+        <p>MPA srl, Via del Commercio 46, 20090 Buccinasco (MI).</p>
+      </div>
+      <a class="button" href="{{root}}contacts/">Contatti</a>
+    </div>
+  </section>
+</main>
+
+{{> footer}}

@@ -1,0 +1,14 @@
+<!-- BLOCCO card-news-slide → una notizia "in evidenza" nel carosello d'apertura (template-parts/card-news-slide.php) -->
+<article class="slide" data-rivista="{{magazine_key}}">
+  <a class="slide__link" href="{{url}}">
+    <div class="slide__media media" style="view-transition-name: foto-{{slug}}">
+      <!-- La prima foto è l'elemento principale della pagina: si carica subito e con priorità alta; le altre solo quando servono -->
+      {{#if first}}<img src="{{image}}" alt="{{image_alt}}" width="768" height="384" fetchpriority="high" decoding="async">{{else}}<img src="{{image}}" alt="{{image_alt}}" width="768" height="384" loading="lazy" decoding="async">{{/if}}
+    </div>
+    <div class="slide__text">
+      <p class="label">{{magazine_short}}</p>
+      <h2 class="slide__title">{{title}}</h2>
+      <time class="meta" datetime="{{date_iso}}">{{date_human}}</time>
+    </div>
+  </a>
+</article>

@@ -2,7 +2,7 @@
 <article class="card {{reveal}}" data-rivista="{{magazine_key}}">
   <a class="card__link" href="{{url}}">
     <div class="card__media media" style="view-transition-name: foto-{{slug}}">
-      <img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+      {{#if image}}<img src="{{image}}" alt="{{image_alt}}" width="640" height="360" loading="lazy" decoding="async">{{else}}<img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">{{/if}}
     </div>
     <div class="card__body">
       <p class="label">{{magazine_short}}</p>

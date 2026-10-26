@@ -4,10 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tannery International · la rivista delle concerie e dell'industria della pelle</title>
-  <meta name="description" content="Tannery International, la rivista MPA per concerie e industria della pelle: ultimo numero sfogliabile, news del settore e archivio.">
+  <title>Tannery International · Concerie e industria della pelle · riviste MPA Style</title>
+  <meta name="description" content="Concia, chimica, macchinari e sostenibilità: l'industria della pelle raccontata a concerie e fornitori, in Italia e all'estero. Ultimo numero, news del settore e archivio dei numeri precedenti.">
   <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/magazines/tannery/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tannery International · Concerie e industria della pelle · riviste MPA Style">
+  <meta property="og:description" content="Concia, chimica, macchinari e sostenibilità: l'industria della pelle raccontata a concerie e fornitori, in Italia e all'estero. Ultimo numero, news del settore e archivio dei numeri precedenti.">
+  <meta property="og:url" content="https://www.mpastyle.it/magazines/tannery/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
   <script src="../../assets/js/main.js" defer></script>
@@ -18,8 +33,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="logo" href="../../" aria-label="MPA Style, torna alla home">
-      <!-- Segnaposto: qui va il logo STYLE in SVG -->
-      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125">
     </a>
 
     <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
@@ -42,7 +57,7 @@
       </ul>
       <form class="search" role="search" action="../../" method="get">
         <label class="visually-hidden" for="s">Cerca nel sito</label>
-        <input id="s" name="s" type="search" placeholder="Cerca una notizia, un'azienda, una fiera">
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
         <button type="submit">Cerca</button>
       </form>
       <p class="lang">
@@ -54,7 +69,8 @@
 </header>
 
 
-<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste -->
+<!-- Modello pagina testata → in WordPress diventa category.php (o taxonomy-rivista.php): una sola pagina per tutte e sei le riviste.
+     La build ne genera sei, una per testata, da questo stesso file. -->
 <main id="contenuto" data-rivista="tannery">
   <header class="magazine-hero">
     <div class="wrap magazine-hero__inner">
@@ -98,29 +114,74 @@
     <div class="grid-news">
       <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
 <article class="card " data-rivista="tannery">
-  <a class="card__link" href="../../gsc-group-positivity-cabin-andrea-bianconi-zermeghedo/">
-    <div class="card__media media" style="view-transition-name: foto-gsc-group-positivity-cabin-andrea-bianconi-zermeghedo">
-      <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+  <a class="card__link" href="../../intervista-bergozza-assomac-sostenibilita-open-innovation-conceria/">
+    <div class="card__media media" style="view-transition-name: foto-intervista-bergozza-assomac-sostenibilita-open-innovation-conceria">
+      <img src="../../assets/img/news/intervista-bergozza-assomac-sostenibilita-open-innovation-conceria.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
     </div>
     <div class="card__body">
       <p class="label">Tannery</p>
-      <h3 class="card__title">GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo</h3>
-      <p class="card__excerpt">L'opera di Andrea Bianconi torna a Zermeghedo, nella sede di GSC Group.</p>
-      <time class="meta" datetime="2026-10-16">16 ottobre 2026</time>
+      <h3 class="card__title">Il futuro della conceria: digitalizzazione, sostenibilità e open innovation</h3>
+      <p class="card__excerpt">In occasione del II° Italian Leather Research Summit, l’appuntamento di riferimento per l’innovazione e la ricerca nella filiera conciaria, abbiamo avuto il piacere di intervistare Mauro…</p>
+      <time class="meta" datetime="2026-10-25">25 ottobre 2026</time>
     </div>
   </a>
 </article>
 
 <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
 <article class="card " data-rivista="tannery">
+  <a class="card__link" href="../../ssip-entra-in-cotance-come-supporting-member-un-nuovo-passo-verso-leuropa/">
+    <div class="card__media media" style="view-transition-name: foto-ssip-entra-in-cotance-come-supporting-member-un-nuovo-passo-verso-leuropa">
+      <img src="../../assets/img/news/ssip-entra-in-cotance-come-supporting-member-un-nuovo-passo-verso-leuropa.webp" alt="SSIP entra in COTANCE" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">SSIP entra in COTANCE come Supporting Member: un nuovo passo verso l’Europa</h3>
+      <p class="card__excerpt">La Stazione Sperimentale per l’Industria delle Pelli e delle Materie Concianti (SSIP) ha annunciato il proprio ingresso in COTANCE – Confederation of National Associations of Tanners and…</p>
+      <time class="meta" datetime="2026-10-22">22 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="tannery">
+  <a class="card__link" href="../../tendenze-colore-tfl-primavera-estate-2028/">
+    <div class="card__media media" style="view-transition-name: foto-tendenze-colore-tfl-primavera-estate-2028">
+      <img src="../../assets/img/news/tendenze-colore-tfl-primavera-estate-2028.webp" alt="TFL Spring Summer 2028" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">Tendenze Colore TFL Primavera/Estate 2028: tra energia cromatica e comfort materico</h3>
+      <p class="card__excerpt">TFL presenta il nuovo catalogo Tendenze Colore Primavera/Estate 2028, articolato in due macroaree — “Wearing“ e “Living“ — che ridisegnano la palette cromatica della pelle per moda e…</p>
+      <time class="meta" datetime="2026-10-21">21 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="tannery">
+  <a class="card__link" href="../../gsc-group-positivity-cabin-andrea-bianconi-zermeghedo/">
+    <div class="card__media media" style="view-transition-name: foto-gsc-group-positivity-cabin-andrea-bianconi-zermeghedo">
+      <img src="../../assets/img/news/gsc-group-positivity-cabin-andrea-bianconi-zermeghedo.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo</h3>
+      <p class="card__excerpt">Sabato 24 ottobre 2026 il Leather Innovation Hub di GSC Group ospiterà l’installazione artistica itinerante “Positivity Cabin – 30 Seconds of Positivity“. Un incontro tra impresa…</p>
+      <time class="meta" datetime="2026-10-16">16 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="tannery">
   <a class="card__link" href="../../mile-museum-senato-steam-giovani-filiera-pelle/">
     <div class="card__media media" style="view-transition-name: foto-mile-museum-senato-steam-giovani-filiera-pelle">
-      <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+      <img src="../../assets/img/news/mile-museum-senato-steam-giovani-filiera-pelle.webp" alt="I relatori dell'incontro &quot;Il ruolo delle STEAM nella società&quot; a Palazzo Giustiniani, Senato della Repubblica" width="640" height="360" loading="lazy" decoding="async">
     </div>
     <div class="card__body">
       <p class="label">Tannery</p>
       <h3 class="card__title">Il MILE Museum al Senato della Repubblica: un ponte tra territorio, istituzioni e giovani nel segno delle STEAM</h3>
-      <p class="card__excerpt">Il museo della filiera della pelle porta al Senato il suo progetto per avvicinare i giovani alle materie STEAM.</p>
+      <p class="card__excerpt">Il MILE – Museum of Interactive Leather Experience protagonista a Palazzo Giustiniani, Presidenza del Senato, nell’incontro dedicato al ruolo delle STEAM nella società e per i cittadini del…</p>
       <time class="meta" datetime="2026-10-07">7 ottobre 2026</time>
     </div>
   </a>
@@ -130,12 +191,12 @@
 <article class="card reveal" data-rivista="tannery">
   <a class="card__link" href="../../acque-del-chiampo-pfas-dioxin-2026/">
     <div class="card__media media" style="view-transition-name: foto-acque-del-chiampo-pfas-dioxin-2026">
-      <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+      <img src="../../assets/img/news/acque-del-chiampo-pfas-dioxin-2026.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
     </div>
     <div class="card__body">
       <p class="label">Tannery</p>
       <h3 class="card__title">Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica</h3>
-      <p class="card__excerpt">Acque del Chiampo presenta a Dioxin 2026 il suo lavoro contro i PFAS.</p>
+      <p class="card__excerpt">Una sfida iniziata oltre un decennio fa che oggi si trasforma in un modello di riferimento internazionale. Acque del Chiampo ha portato la sua lunga esperienza nel contrasto ai PFAS…</p>
       <time class="meta" datetime="2026-10-06">6 ottobre 2026</time>
     </div>
   </a>
@@ -179,7 +240,7 @@
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <a class="logo logo--light" href="../../" aria-label="MPA Style, torna alla home">
-        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+        <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
       </a>
       <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
     </div>

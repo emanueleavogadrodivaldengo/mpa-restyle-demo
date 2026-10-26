@@ -1,0 +1,246 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le riviste · MPA Style</title>
+  <meta name="description" content="Le sei riviste di MPA Style: Shoes &amp; Bags, Tannery International, Style, TexStyle, Safety First e Outerwear. Moda, pelle, tessile, calzatura e DPI.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/magazines/">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Le riviste · MPA Style">
+  <meta property="og:description" content="Le sei riviste di MPA Style: Shoes &amp; Bags, Tannery International, Style, TexStyle, Safety First e Outerwear. Moda, pelle, tessile, calzatura e DPI.">
+  <meta property="og:url" content="https://www.mpastyle.it/magazines/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../news/" data-section="news">News</a></li>
+        <li><a href="../magazines/" data-section="riviste" aria-current="page">Riviste</a></li>
+        <li><a href="../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Pagina Riviste → in WordPress: page-magazines.php (o l'archivio del tipo di contenuto "Numero") -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Le riviste</h1>
+    <p class="page-intro">Sei testate, una per ogni pezzo della filiera: tendenze, colori, materiali e componenti, ma anche sicurezza sul lavoro, macchinari e tecnologie per pelle, calzatura, accessori e concia.</p>
+  </header>
+
+  <section class="wrap section section--flush" aria-label="Le sei testate">
+    <div class="mag-grid">
+      <!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="style">
+  <a class="mag-card__cover" href="../magazines/style/" tabindex="-1" aria-hidden="true">
+    <span class="cover__art">
+      <span class="cover__kicker">Moda e accessori</span>
+      <span class="cover__name">Style</span>
+      <span class="cover__ph">Copertina segnaposto</span>
+    </span>
+  </a>
+  <div class="mag-card__body">
+    <p class="label">Moda e accessori</p>
+    <h2 class="mag-card__title"><a href="../magazines/style/">Style</a></h2>
+    <p>Tendenze, colori, materiali e protagonisti della moda e degli accessori, italiani e internazionali.</p>
+    <p class="meta">Ultimo numero</p>
+    <a class="more" href="../magazines/style/">Notizie e numeri</a>
+  </div>
+</article>
+
+<!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="shoes-and-bags">
+  <a class="mag-card__cover" href="../magazines/shoes-and-bags/" tabindex="-1" aria-hidden="true">
+    <span class="cover__art">
+      <span class="cover__kicker">Calzatura e pelletteria moda</span>
+      <span class="cover__name">Shoes &amp; Bags</span>
+      <span class="cover__ph">Copertina segnaposto</span>
+    </span>
+  </a>
+  <div class="mag-card__body">
+    <p class="label">Calzatura e pelletteria moda</p>
+    <h2 class="mag-card__title"><a href="../magazines/shoes-and-bags/">Shoes &amp; Bags</a></h2>
+    <p>La rivista per chi progetta, produce e compra calzature e pelletteria: fiere, componenti, tecnologie e mercati.</p>
+    <p class="meta">Ultimo numero</p>
+    <a class="more" href="../magazines/shoes-and-bags/">Notizie e numeri</a>
+  </div>
+</article>
+
+<!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="tannery">
+  <a class="mag-card__cover" href="../magazines/tannery/" tabindex="-1" aria-hidden="true">
+    <span class="cover__art">
+      <span class="cover__kicker">Concerie e industria della pelle</span>
+      <span class="cover__name">Tannery International</span>
+      <span class="cover__ph">Copertina segnaposto</span>
+    </span>
+  </a>
+  <div class="mag-card__body">
+    <p class="label">Concerie e industria della pelle</p>
+    <h2 class="mag-card__title"><a href="../magazines/tannery/">Tannery International</a></h2>
+    <p>Concia, chimica, macchinari e sostenibilità: l'industria della pelle raccontata a concerie e fornitori, in Italia e all'estero.</p>
+    <p class="meta">Ultimo numero</p>
+    <a class="more" href="../magazines/tannery/">Notizie e numeri</a>
+  </div>
+</article>
+
+<!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="texstyle">
+  <a class="mag-card__cover" href="../magazines/texstyle/" tabindex="-1" aria-hidden="true">
+    <span class="cover__art">
+      <span class="cover__kicker">Tessile</span>
+      <span class="cover__name">TexStyle</span>
+      <span class="cover__ph">Copertina segnaposto</span>
+    </span>
+  </a>
+  <div class="mag-card__body">
+    <p class="label">Tessile</p>
+    <h2 class="mag-card__title"><a href="../magazines/texstyle/">TexStyle</a></h2>
+    <p>Tessuti, filati e fiere del tessile per l'abbigliamento e per la casa.</p>
+    <p class="meta">Ultimo numero</p>
+    <a class="more" href="../magazines/texstyle/">Notizie e numeri</a>
+  </div>
+</article>
+
+<!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="safety-first">
+  <a class="mag-card__cover" href="../magazines/safety-first/" tabindex="-1" aria-hidden="true">
+    <img class="cover__img" src="../assets/img/copertine/safety-first-14.webp" alt="" width="600" height="848" loading="lazy" decoding="async">
+  </a>
+  <div class="mag-card__body">
+    <p class="label">Calzature e DPI da lavoro</p>
+    <h2 class="mag-card__title"><a href="../magazines/safety-first/">Safety First</a></h2>
+    <p>Calzature di sicurezza e dispositivi di protezione individuale: norme, materiali, tecnologie e fiere del settore.</p>
+    <p class="meta">N. 14 · Ottobre/Novembre 2026 · Trimestrale</p>
+    <a class="more" href="../magazines/safety-first/">Notizie e numeri</a>
+  </div>
+</article>
+
+<!-- BLOCCO card-rivista → una testata nella pagina Riviste (template-parts/card-rivista.php) -->
+<article class="mag-card" data-rivista="outerwear">
+  <a class="mag-card__cover" href="../magazines/outerwear/" tabindex="-1" aria-hidden="true">
+    <span class="cover__art">
+      <span class="cover__kicker">Capispalla e pellicceria</span>
+      <span class="cover__name">Outerwear</span>
+      <span class="cover__ph">Copertina segnaposto</span>
+    </span>
+  </a>
+  <div class="mag-card__body">
+    <p class="label">Capispalla e pellicceria</p>
+    <h2 class="mag-card__title"><a href="../magazines/outerwear/">Outerwear</a></h2>
+    <p>Giacche, capi in pelle e pellicceria: collezioni, lavorazioni e aziende del capospalla.</p>
+    <p class="meta">Ultimo numero</p>
+    <a class="more" href="../magazines/outerwear/">Notizie e numeri</a>
+  </div>
+</article>
+
+    </div>
+  </section>
+
+  <section class="section section--tint reveal" aria-labelledby="t-dist">
+    <div class="wrap split">
+      <div>
+        <h2 class="section-title" id="t-dist">Dove arrivano</h2>
+        <p class="lead">Ogni numero è stampato e sfogliabile online, e arriva a chi compra e produce.</p>
+      </div>
+      <ul class="ticks">
+        <li>Buyer internazionali, negozi specializzati e mall</li>
+        <li>Agenzie di abbonamento, edicole di settore e aeroporti</li>
+        <li>Le principali fiere internazionali della moda</li>
+        <li>Newsletter settimanale, social e mailing list dedicate</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section reveal">
+    <div class="promo">
+      <div>
+        <h2 class="section-title">Fai pubblicità sulle riviste</h2>
+        <p>Pagine, redazionali e copertine sulle testate, più banner e newsletter sul sito.</p>
+      </div>
+      <a class="button" href="../pubblicita/">Scopri i formati</a>
+    </div>
+  </section>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <p><a href="../privacy-policy/">Privacy</a> · <a href="../cookie-policy/">Cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+
