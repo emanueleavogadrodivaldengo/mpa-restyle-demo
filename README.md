@@ -116,19 +116,17 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 
 ## Cosa è segnaposto
 
-- **Foto e copertine**: vere per le ultime news (conceria, ABC Fashion Event, SSIP/Cotance,
-  Futurmoda) e per Safety First n. 14; le altre sono segnaposto dichiarati ("Foto segnaposto",
-  "Copertina segnaposto"). Il componente usa la foto se c'è, altrimenti il segnaposto.
+- **Foto delle news**: vere, scaricate dal sito con `scripts/scarica-news.mjs` (20 news). Larghe
+  1024 px: per il carosello d'apertura ne servirebbero di più grandi.
+- **Copertine**: vera solo Safety First n. 14; le altre sono segnaposto dichiarati.
 - **Logo**: quello vero, in WebP. Meglio averlo in SVG (più nitido e più leggero).
 - **Le più lette**: classifica di esempio, dichiarata. Sul sito vero arriva dalle statistiche.
-- **Indirizzi delle 3 news più recenti** (`"slugApprox": true`): ricostruiti dal titolo.
+- **In evidenza**: le 4 notizie del carosello le ho scelte io (`"featured": true` in `news.json`).
 - **Numeri per gli inserzionisti** (copie, iscritti, fiere, paesi): `00.000`, dichiarati.
-- **Estratti delle news**: il sito di oggi non ne ha. Li ho scritti riassumendo solo quello che
-  dice il titolo; vanno sostituiti con quelli della redazione.
-- **Rivista di ogni news**: il sito di oggi non la indica. L'ho assegnata in base
-  all'argomento (`src/data/news.json`), da verificare.
-- **Date**: vere, tranne Guangzhou e UITIC (`"dateApprox": true`), che nell'HTML salvato non
-  avevano data.
+- **Estratti delle news**: presi dal sito attuale, ripuliti dai codici di WPBakery e accorciati.
+- **Rivista di ogni news**: dalla categoria WordPress quando c'è (Tannery, Safety First, Shoes and
+  Bags); per le altre l'ho assegnata io in base all'argomento, da verificare.
+- **Date e indirizzi**: veri, dal sito attuale.
 - **Descrizioni delle riviste**, periodicità, link "Sfoglia" e "Abbonati": da completare.
 - **Contatti**: numeri ed email sono quelli del sito di oggi; quale numero e quale email per
   la pubblicità va confermato. Nel footer resta un solo numero (redazione).
@@ -136,6 +134,6 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 - **Menu**: Riviste, Fiere, Academy, Chi siamo e Pubblicità non sono ancora nella demo
   (portano alla pagina 404, che lo spiega).
 
-Contenuti reali usati: le 15 news più recenti con titoli e date (salvate il 20/10/2026), il
+Contenuti reali usati: le 20 news più recenti con titoli, date, estratti e foto (dal sito, 26/10/2026), il
 testo completo dell'articolo Heimtextil 2027, le sei testate, il calendario fiere, i partner,
 indirizzi, telefoni, P.IVA e link social (aggiornati a https e x.com).

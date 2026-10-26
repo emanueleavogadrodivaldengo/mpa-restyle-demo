@@ -66,7 +66,9 @@ function renderNews(attrs, root) {
   let list = news;
   if (attrs.magazine) list = list.filter(n => n.magazine === attrs.magazine);
   if (attrs.exclude) list = list.filter(n => n.slug !== attrs.exclude);
-  if (attrs.featured) list = list.filter(n => n.featured); // "in evidenza", scelte dalla redazione
+  // "in evidenza", scelte dalla redazione: featured=1 solo quelle, featured=0 tutte le altre
+  if (attrs.featured === '1') list = list.filter(n => n.featured);
+  if (attrs.featured === '0') list = list.filter(n => !n.featured);
   const offset = Number(attrs.offset ?? 0);
   const limit = Number(attrs.limit ?? list.length);
   const revealFrom = Number(attrs['reveal-from'] ?? Infinity);

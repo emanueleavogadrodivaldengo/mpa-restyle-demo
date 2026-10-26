@@ -14,6 +14,11 @@ const CARTELLA_FOTO = 'src/assets/img/news';
 // Toglie i tag HTML e decodifica le entità più comuni (&amp; &#8217; ...)
 const testo = html => html
   .replace(/<[^>]+>/g, '')
+  .replace(/&#8221;|&#8243;/g, '"')
+  // Gli shortcode di WPBakery ([vc_row] ecc.): teniamo solo il testo dei titoletti
+  .replace(/\[vc_custom_heading text="([\s\S]*?)(?:"\s+\w+=|"\]|$)[^\]]*\]?/g, '$1 ')
+  .replace(/\[\/?[a-z_]+[^\]]*\]?/g, '')
+  .replace(/\s+/g, ' ')
   .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
   .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&nbsp;/g, ' ')
   .replace(/\[&hellip;\]|&hellip;/g, '…')

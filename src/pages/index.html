@@ -38,13 +38,13 @@
     {{> filtri-riviste}}
     <div class="news-with-aside">
       <div class="grid-news grid-news--two">
-        {{#news template="card-news" offset=5 limit=6 reveal-from=0}}
+        {{#news template="card-news" featured=0 offset=2 limit=6 reveal-from=0}}
       </div>
       <aside class="most-read reveal" aria-labelledby="t-lette">
         <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
         <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
         <ol class="ranks">
-          {{#news template="card-news-rank" offset=11 limit=5}}
+          {{#news template="card-news-rank" featured=0 offset=8 limit=5}}
         </ol>
         <p class="ph-note">Classifica di esempio</p>
       </aside>
