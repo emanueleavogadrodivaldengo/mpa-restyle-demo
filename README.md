@@ -127,7 +127,8 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
   1024 px: per il carosello d'apertura ne servirebbero di più grandi.
 - **Copertine**: vera solo Safety First n. 14; le altre sono segnaposto dichiarati.
 - **Logo**: quello vero, in WebP. Meglio averlo in SVG (più nitido e più leggero).
-- **Le più lette**: classifica di esempio, dichiarata. Sul sito vero arriva dalle statistiche.
+- **Le più lette**: classifica di esempio, dichiarata. Sul sito vero arriva dalle statistiche. Le
+  miniature quadrate 200×200 si rigenerano con `python3 scripts/miniature.py` (in WordPress le crea lui).
 - **In evidenza**: le 4 notizie del carosello le ho scelte io (`"featured": true` in `news.json`).
 - **Numeri per gli inserzionisti** (copie, iscritti, fiere, paesi): `00.000`, dichiarati.
 - **Estratti delle news**: presi dal sito attuale, ripuliti dai codici di WPBakery e accorciati.

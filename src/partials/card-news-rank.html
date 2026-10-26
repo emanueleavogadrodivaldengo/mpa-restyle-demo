@@ -1,8 +1,14 @@
-<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php).
+     Tutta la riga è un unico link: miniatura quadrata con il numero sopra, rivista e titolo -->
 <li class="rank" data-rivista="{{magazine_key}}">
-  <span class="rank__n" aria-hidden="true">{{n}}</span>
-  <div>
-    <p class="label">{{magazine_short}}</p>
-    <a href="{{url}}">{{title}}</a>
-  </div>
+  <a class="rank__link" href="{{url}}">
+    <span class="rank__media media">
+      {{#if image_mini}}<img src="{{image_mini}}" alt="" width="200" height="200" loading="lazy" decoding="async">{{/if}}
+      <span class="rank__n" aria-hidden="true">{{n}}</span>
+    </span>
+    <span class="rank__body">
+      <span class="label">{{magazine_short}}</span>
+      <span class="rank__title">{{title}}</span>
+    </span>
+  </a>
 </li>

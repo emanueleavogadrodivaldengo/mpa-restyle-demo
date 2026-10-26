@@ -245,8 +245,10 @@
   <a href="./magazines/outerwear/" data-section="outerwear">Outerwear</a>
 </nav>
 
+    <!-- Su telefono "Le più lette" arriva dopo le prime 2 notizie (non dopo tutte e 6);
+         su computer sta nella colonna di destra. Per questo la griglia è divisa in due pezzi. -->
     <div class="news-with-aside">
-      <div class="grid-news grid-news--two">
+      <div class="grid-news grid-news--two news-with-aside__a">
         <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
 <article class="card reveal" data-rivista="safety-first">
   <a class="card__link" href="./safety-first-novembre-2026-rivista-calzature-di-sicurezza/">
@@ -277,7 +279,99 @@
   </a>
 </article>
 
-<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+      </div>
+      <div class="news-aside">
+      <aside class="most-read reveal" aria-labelledby="t-lette">
+        <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
+        <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
+        <ol class="ranks">
+          <!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php).
+     Tutta la riga è un unico link: miniatura quadrata con il numero sopra, rivista e titolo -->
+<li class="rank" data-rivista="tannery">
+  <a class="rank__link" href="./acque-del-chiampo-pfas-dioxin-2026/">
+    <span class="rank__media media">
+      <img src="./assets/img/news/mini/acque-del-chiampo-pfas-dioxin-2026.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+      <span class="rank__n" aria-hidden="true">1</span>
+    </span>
+    <span class="rank__body">
+      <span class="label">Tannery</span>
+      <span class="rank__title">Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica</span>
+    </span>
+  </a>
+</li>
+
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php).
+     Tutta la riga è un unico link: miniatura quadrata con il numero sopra, rivista e titolo -->
+<li class="rank" data-rivista="shoes-and-bags">
+  <a class="rank__link" href="./shoes-leather-guangzhou-2027-fiera-calzature-pelletteria/">
+    <span class="rank__media media">
+      <img src="./assets/img/news/mini/shoes-leather-guangzhou-2027-fiera-calzature-pelletteria.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+      <span class="rank__n" aria-hidden="true">2</span>
+    </span>
+    <span class="rank__body">
+      <span class="label">Shoes &amp; Bags</span>
+      <span class="rank__title">Shoes &amp; Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera</span>
+    </span>
+  </a>
+</li>
+
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php).
+     Tutta la riga è un unico link: miniatura quadrata con il numero sopra, rivista e titolo -->
+<li class="rank" data-rivista="texstyle">
+  <a class="rank__link" href="./heimtextil-2027-si-presenta-a-milano/">
+    <span class="rank__media media">
+      <img src="./assets/img/news/mini/heimtextil-2027-si-presenta-a-milano.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+      <span class="rank__n" aria-hidden="true">3</span>
+    </span>
+    <span class="rank__body">
+      <span class="label">TexStyle</span>
+      <span class="rank__title">Heimtextil 2027 si presenta a Milano: un incontro tra tessile, design e sostenibilità</span>
+    </span>
+  </a>
+</li>
+
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php).
+     Tutta la riga è un unico link: miniatura quadrata con il numero sopra, rivista e titolo -->
+<li class="rank" data-rivista="shoes-and-bags">
+  <a class="rank__link" href="./uitic-congresso-2027-jakarta-footwear-industry/">
+    <span class="rank__media media">
+      <img src="./assets/img/news/mini/uitic-congresso-2027-jakarta-footwear-industry.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+      <span class="rank__n" aria-hidden="true">4</span>
+    </span>
+    <span class="rank__body">
+      <span class="label">Shoes &amp; Bags</span>
+      <span class="rank__title">UITIC guarda al futuro della calzatura: il XXIII Congresso Internazionale si terrà a Jakarta</span>
+    </span>
+  </a>
+</li>
+
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php).
+     Tutta la riga è un unico link: miniatura quadrata con il numero sopra, rivista e titolo -->
+<li class="rank" data-rivista="style">
+  <a class="rank__link" href="./salone-nautico-genova-2026-nautica-moda-pelle-made-in-italy/">
+    <span class="rank__media media">
+      <img src="./assets/img/news/mini/salone-nautico-genova-2026-nautica-moda-pelle-made-in-italy.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+      <span class="rank__n" aria-hidden="true">5</span>
+    </span>
+    <span class="rank__body">
+      <span class="label">Style</span>
+      <span class="rank__title">Salone Nautico di Genova 2026, taglio del nastro per la 66ª edizione: il mare incontra moda, pelle e Made in Italy</span>
+    </span>
+  </a>
+</li>
+
+        </ol>
+        <p class="ph-note">Classifica di esempio</p>
+      </aside>
+      <!-- BLOCCO ad-riquadro → spazio pubblicitario 300×250, il formato più venduto (template-parts/ad-riquadro.php) -->
+<aside class="ad-slot ad-slot--riquadro" aria-label="Pubblicità">
+  <span class="ad-slot__label">Pubblicità</span>
+  <div class="ad-slot__box"><span>Spazio pubblicitario · 300×250</span></div>
+</aside>
+
+      </div>
+      <div class="grid-news grid-news--two news-with-aside__b">
+        <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
 <article class="card reveal" data-rivista="shoes-and-bags">
   <a class="card__link" href="./shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh/">
     <div class="card__media media" style="view-transition-name: foto-shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh">
@@ -336,66 +430,6 @@
     </div>
   </a>
 </article>
-
-      </div>
-      <div class="news-aside">
-      <aside class="most-read reveal" aria-labelledby="t-lette">
-        <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
-        <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
-        <ol class="ranks">
-          <!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
-<li class="rank" data-rivista="tannery">
-  <span class="rank__n" aria-hidden="true">1</span>
-  <div>
-    <p class="label">Tannery</p>
-    <a href="./acque-del-chiampo-pfas-dioxin-2026/">Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica</a>
-  </div>
-</li>
-
-<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
-<li class="rank" data-rivista="shoes-and-bags">
-  <span class="rank__n" aria-hidden="true">2</span>
-  <div>
-    <p class="label">Shoes &amp; Bags</p>
-    <a href="./shoes-leather-guangzhou-2027-fiera-calzature-pelletteria/">Shoes &amp; Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera</a>
-  </div>
-</li>
-
-<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
-<li class="rank" data-rivista="texstyle">
-  <span class="rank__n" aria-hidden="true">3</span>
-  <div>
-    <p class="label">TexStyle</p>
-    <a href="./heimtextil-2027-si-presenta-a-milano/">Heimtextil 2027 si presenta a Milano: un incontro tra tessile, design e sostenibilità</a>
-  </div>
-</li>
-
-<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
-<li class="rank" data-rivista="shoes-and-bags">
-  <span class="rank__n" aria-hidden="true">4</span>
-  <div>
-    <p class="label">Shoes &amp; Bags</p>
-    <a href="./uitic-congresso-2027-jakarta-footwear-industry/">UITIC guarda al futuro della calzatura: il XXIII Congresso Internazionale si terrà a Jakarta</a>
-  </div>
-</li>
-
-<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
-<li class="rank" data-rivista="style">
-  <span class="rank__n" aria-hidden="true">5</span>
-  <div>
-    <p class="label">Style</p>
-    <a href="./salone-nautico-genova-2026-nautica-moda-pelle-made-in-italy/">Salone Nautico di Genova 2026, taglio del nastro per la 66ª edizione: il mare incontra moda, pelle e Made in Italy</a>
-  </div>
-</li>
-
-        </ol>
-        <p class="ph-note">Classifica di esempio</p>
-      </aside>
-      <!-- BLOCCO ad-riquadro → spazio pubblicitario 300×250, il formato più venduto (template-parts/ad-riquadro.php) -->
-<aside class="ad-slot ad-slot--riquadro" aria-label="Pubblicità">
-  <span class="ad-slot__label">Pubblicità</span>
-  <div class="ad-slot__box"><span>Spazio pubblicitario · 300×250</span></div>
-</aside>
 
       </div>
     </div>

@@ -38,9 +38,11 @@
       <a class="more" href="{{root}}news/">Tutte le news</a>
     </div>
     {{> filtri-riviste}}
+    <!-- Su telefono "Le più lette" arriva dopo le prime 2 notizie (non dopo tutte e 6);
+         su computer sta nella colonna di destra. Per questo la griglia è divisa in due pezzi. -->
     <div class="news-with-aside">
-      <div class="grid-news grid-news--two">
-        {{#news template="card-news" featured=0 offset=2 limit=6 reveal-from=0}}
+      <div class="grid-news grid-news--two news-with-aside__a">
+        {{#news template="card-news" featured=0 offset=2 limit=2 reveal-from=0}}
       </div>
       <div class="news-aside">
       <aside class="most-read reveal" aria-labelledby="t-lette">
@@ -52,6 +54,9 @@
         <p class="ph-note">Classifica di esempio</p>
       </aside>
       {{> ad-riquadro}}
+      </div>
+      <div class="grid-news grid-news--two news-with-aside__b">
+        {{#news template="card-news" featured=0 offset=4 limit=4 reveal-from=0}}
       </div>
     </div>
   </section>

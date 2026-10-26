@@ -67,6 +67,8 @@ function newsVars(item, root) {
     // Foto vera se c'è, altrimenti il segnaposto (in WP: has_post_thumbnail())
     image: item.image ? `${root}assets/img/${item.image}` : '',
     image_alt: item.imageAlt ?? '',
+    // Miniatura quadrata 200x200 (scripts/miniature.py; in WP: the_post_thumbnail('mini'))
+    image_mini: item.image ? `${root}assets/img/${item.image.replace('news/', 'news/mini/')}` : '',
   };
 }
 
