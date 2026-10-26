@@ -14,7 +14,7 @@
         <p class="label label--on-dark">{{rivista_audience}}</p>
         <h1 class="page-title">{{rivista_name}}</h1>
         <p class="page-intro">{{rivista_about}}</p>
-        <p class="magazine-hero__facts"><span>Periodicità: <em>da completare</em></span> <span>Lingua: <em>da completare</em></span></p>
+        <p class="magazine-hero__facts"><span>Periodicità: {{#if rivista_frequency}}{{rivista_frequency}}{{else}}<em>da completare</em>{{/if}}</span> <span>Lingua: {{#if rivista_language}}{{rivista_language}}{{else}}<em>da completare</em>{{/if}}</span></p>
         <div class="magazine-hero__actions">
           <a class="button button--light" href="#">Sfoglia online</a>
           <a class="button button--ghost" href="#">Abbonati</a>

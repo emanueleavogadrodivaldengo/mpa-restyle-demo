@@ -32,7 +32,10 @@ const parseAttrs = str => Object.fromEntries(
 );
 
 // Sostituisce {{nome}} con il valore (già "escapato"); {{{nome}}} lo inserisce così com'è.
+// {{#if nome}}...{{else}}...{{/if}} sceglie un ramo, come un if in PHP (non annidabile).
 const fill = (tpl, vars) => tpl
+  .replace(/\{\{#if (\w+)\}\}([\s\S]*?)(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g,
+    (_, k, yes, no = '') => (vars[k] ? yes : no))
   .replace(/\{\{\{(\w+)\}\}\}/g, (_, k) => vars[k] ?? '')
   .replace(/\{\{(\w+)\}\}/g, (_, k) => (k in vars ? escape(vars[k]) : `{{${k}}}`));
 
@@ -50,6 +53,9 @@ function newsVars(item, root) {
     magazine_name: r.name,
     magazine_short: r.short,
     magazine_url: `${root}magazines/${r.slug}/`,
+    // Foto vera se c'è, altrimenti il segnaposto (in WP: has_post_thumbnail())
+    image: item.image ? `${root}assets/img/${item.image}` : '',
+    image_alt: item.imageAlt ?? '',
   };
 }
 
@@ -62,18 +68,22 @@ function renderNews(attrs, root) {
   const revealFrom = Number(attrs['reveal-from'] ?? Infinity);
   const tpl = partial(attrs.template ?? 'card-news');
   return list.slice(offset, offset + limit)
-    .map((item, i) => fill(tpl, { ...newsVars(item, root), reveal: i >= revealFrom ? 'reveal' : '' }))
+    .map((item, i) => fill(tpl, { ...newsVars(item, root), n: i + 1, reveal: i >= revealFrom ? 'reveal' : '' }))
     .join('\n');
 }
 
 function renderRiviste(attrs, root) {
   const tpl = partial(attrs.template ?? 'cover');
-  return riviste.map(r => fill(tpl, {
+  const list = attrs.only ? riviste.filter(r => r.key === attrs.only) : riviste;
+  return list.map(r => fill(tpl, {
     root,
     key: r.key,
     name: r.name,
     audience: r.audience,
     issue: r.issue,
+    cover: r.cover ? `${root}assets/img/${r.cover}` : '',
+    frequency: r.frequency ?? '',
+    language: r.language ?? '',
     url: `${root}magazines/${r.slug}/`,
   })).join('\n');
 }
@@ -82,7 +92,7 @@ function renderRiviste(attrs, root) {
 function rivistaVars(key) {
   const r = rivistaByKey[key];
   if (!r) return {};
-  return { rivista_key: r.key, rivista_name: r.name, rivista_audience: r.audience, rivista_about: r.about, rivista_issue: r.issue };
+  return { rivista_key: r.key, rivista_name: r.name, rivista_audience: r.audience, rivista_about: r.about, rivista_issue: r.issue, rivista_frequency: r.frequency ?? '', rivista_language: r.language ?? '' };
 }
 
 function renderPage(file) {

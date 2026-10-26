@@ -25,8 +25,18 @@
       <a class="more" href="{{root}}news/">Tutte le news</a>
     </div>
     {{> filtri-riviste}}
-    <div class="grid-news">
-      {{#news template="card-news" offset=5 limit=6 reveal-from=0}}
+    <div class="news-with-aside">
+      <div class="grid-news grid-news--two">
+        {{#news template="card-news" offset=5 limit=6 reveal-from=0}}
+      </div>
+      <aside class="most-read reveal" aria-labelledby="t-lette">
+        <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
+        <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
+        <ol class="ranks">
+          {{#news template="card-news-rank" offset=11 limit=5}}
+        </ol>
+        <p class="ph-note">Classifica di esempio</p>
+      </aside>
     </div>
   </section>
 
@@ -36,7 +46,10 @@
         <h2 class="section-title" id="t-riviste">Le sei riviste</h2>
         <a class="more" href="{{root}}magazines/">Tutte le riviste</a>
       </div>
-      {{> carosello-riviste}}
+      <div class="magazines">
+        {{#riviste template="issue-feature" only="safety-first"}}
+        {{> carosello-riviste}}
+      </div>
     </div>
   </section>
 

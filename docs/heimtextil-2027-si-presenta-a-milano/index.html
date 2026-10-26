@@ -8,6 +8,8 @@
   <meta name="description" content="A Milano il press lunch di Heimtextil 2027, la fiera del tessile casa e contract in programma a Francoforte dal 12 al 15 gennaio 2027.">
   <meta name="theme-color" content="#111111">
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <script src="../assets/js/main.js" defer></script>
@@ -18,8 +20,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="logo" href="../" aria-label="MPA Style, torna alla home">
-      <!-- Segnaposto: qui va il logo STYLE in SVG -->
-      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
     </a>
 
     <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
@@ -135,10 +137,43 @@
       <div class="carousel" data-carousel>
         <div class="carousel__track carousel__track--mini" tabindex="0" aria-label="Altre news, scorri per vederle">
           <!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
+<article class="mini" data-rivista="tannery">
+  <a href="../futuro-della-conceria-digitalizzazione-sostenibilita-open-innovation/">
+    <div class="mini__media media">
+      <img src="../assets/img/news/il-futuro-della-conceria.webp" alt="Ritratto pubblicato con l'articolo" width="320" height="180" loading="lazy" decoding="async">
+    </div>
+    <p class="label">Tannery</p>
+    <h3 class="mini__title">Il futuro della conceria: digitalizzazione, sostenibilità e open innovation</h3>
+  </a>
+</article>
+
+<!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
+<article class="mini" data-rivista="shoes-and-bags">
+  <a href="../abc-fashion-event-2026-fermo-distretto-calzaturiero/">
+    <div class="mini__media media">
+      <img src="../assets/img/news/abc-fashion-event-2026-fermo.webp" alt="L'ingresso dell'ABC Fashion Event 2026, con i visitatori tra gli stand" width="320" height="180" loading="lazy" decoding="async">
+    </div>
+    <p class="label">Shoes &amp; Bags</p>
+    <h3 class="mini__title">ABC Fashion Event 2026: a Fermo il distretto calzaturiero fa il pieno di espositori</h3>
+  </a>
+</article>
+
+<!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
+<article class="mini" data-rivista="tannery">
+  <a href="../ssip-entra-in-cotance-supporting-member/">
+    <div class="mini__media media">
+      <img src="../assets/img/news/ssip-cotance-supporting-member.webp" alt="I loghi di Cotance e della Stazione Sperimentale per l'Industria delle Pelli" width="320" height="180" loading="lazy" decoding="async">
+    </div>
+    <p class="label">Tannery</p>
+    <h3 class="mini__title">SSIP entra in Cotance come supporting member: un nuovo passo verso l’Europa</h3>
+  </a>
+</article>
+
+<!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
 <article class="mini" data-rivista="shoes-and-bags">
   <a href="../futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali/">
     <div class="mini__media media">
-      <img src="../assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">
+      <img src="../assets/img/news/futurmoda-ottobre-2026.webp" alt="L'ingresso di Futurmoda 56, edizione fall/winter 27-28" width="320" height="180" loading="lazy" decoding="async">
     </div>
     <p class="label">Shoes &amp; Bags</p>
     <h3 class="mini__title">Futurmoda ottobre 2026: la filiera della calzatura tra Circolarità Avanzata, Intelligenza Artificiale e Nuovi Linguaggi Materici</h3>
@@ -149,7 +184,7 @@
 <article class="mini" data-rivista="safety-first">
   <a href="../safety-first-novembre-2026-rivista-calzature-di-sicurezza/">
     <div class="mini__media media">
-      <img src="../assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">
+      <img src="../assets/img/copertine/safety-first-14.webp" alt="La copertina di Safety First n. 14, ottobre/novembre 2026" width="320" height="180" loading="lazy" decoding="async">
     </div>
     <p class="label">Safety First</p>
     <h3 class="mini__title">Safety First Ottobre/Novembre 2026: il nuovo numero è online in versione sfogliabile</h3>
@@ -164,39 +199,6 @@
     </div>
     <p class="label">Tannery</p>
     <h3 class="mini__title">GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo</h3>
-  </a>
-</article>
-
-<!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
-<article class="mini" data-rivista="shoes-and-bags">
-  <a href="../shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh/">
-    <div class="mini__media media">
-      <img src="../assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">
-    </div>
-    <p class="label">Shoes &amp; Bags</p>
-    <h3 class="mini__title">Shoes &amp; Leather – Vietnam 2027 | La piattaforma unica dell’ASEAN per il sourcing di calzature e pelletteria</h3>
-  </a>
-</article>
-
-<!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
-<article class="mini" data-rivista="outerwear">
-  <a href="../daytona-73-mythic-legend-giubbotti-pelle/">
-    <div class="mini__media media">
-      <img src="../assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">
-    </div>
-    <p class="label">Outerwear</p>
-    <h3 class="mini__title">Mythic Legend Daytona 73</h3>
-  </a>
-</article>
-
-<!-- BLOCCO card-news-mini → card piccola per il carosello degli articoli correlati -->
-<article class="mini" data-rivista="safety-first">
-  <a href="../reas-2026-bilancio-salone-emergenza-montichiari/">
-    <div class="mini__media media">
-      <img src="../assets/img/segnaposto-16x9.svg" alt="" width="320" height="180" loading="lazy" decoding="async">
-    </div>
-    <p class="label">Safety First</p>
-    <h3 class="mini__title">REAS 2026 chiude con il segno più: crescono i professionisti, appuntamento al 2027</h3>
   </a>
 </article>
 
@@ -231,7 +233,7 @@
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
-        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
       </a>
       <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
     </div>

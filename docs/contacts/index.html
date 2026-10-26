@@ -8,6 +8,8 @@
   <meta name="description" content="Come contattare MPA: redazione e comunicati stampa, pubblicità e media kit, abbonamenti e amministrazione. Sede a Buccinasco (MI).">
   <meta name="theme-color" content="#111111">
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <script src="../assets/js/main.js" defer></script>
@@ -18,8 +20,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="logo" href="../" aria-label="MPA Style, torna alla home">
-      <!-- Segnaposto: qui va il logo STYLE in SVG -->
-      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
     </a>
 
     <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
@@ -143,7 +145,7 @@
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
-        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
       </a>
       <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
     </div>

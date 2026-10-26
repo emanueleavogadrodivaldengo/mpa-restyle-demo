@@ -8,6 +8,8 @@
   <meta name="description" content="Tannery International, la rivista MPA per concerie e industria della pelle: ultimo numero sfogliabile, news del settore e archivio.">
   <meta name="theme-color" content="#111111">
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
   <script src="../../assets/js/main.js" defer></script>
@@ -18,8 +20,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="logo" href="../../" aria-label="MPA Style, torna alla home">
-      <!-- Segnaposto: qui va il logo STYLE in SVG -->
-      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125">
     </a>
 
     <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
@@ -98,6 +100,36 @@
     <div class="grid-news">
       <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
 <article class="card " data-rivista="tannery">
+  <a class="card__link" href="../../futuro-della-conceria-digitalizzazione-sostenibilita-open-innovation/">
+    <div class="card__media media" style="view-transition-name: foto-futuro-della-conceria-digitalizzazione-sostenibilita-open-innovation">
+      <img src="../../assets/img/news/il-futuro-della-conceria.webp" alt="Ritratto pubblicato con l'articolo" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">Il futuro della conceria: digitalizzazione, sostenibilità e open innovation</h3>
+      <p class="card__excerpt">Digitalizzazione, sostenibilità e open innovation: le sfide che attendono l'industria conciaria.</p>
+      <time class="meta" datetime="2026-10-25">25 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card " data-rivista="tannery">
+  <a class="card__link" href="../../ssip-entra-in-cotance-supporting-member/">
+    <div class="card__media media" style="view-transition-name: foto-ssip-entra-in-cotance-supporting-member">
+      <img src="../../assets/img/news/ssip-cotance-supporting-member.webp" alt="I loghi di Cotance e della Stazione Sperimentale per l'Industria delle Pelli" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">SSIP entra in Cotance come supporting member: un nuovo passo verso l’Europa</h3>
+      <p class="card__excerpt">La Stazione Sperimentale per l'Industria delle Pelli diventa supporting member di Cotance, la confederazione europea dei conciatori.</p>
+      <time class="meta" datetime="2026-10-22">22 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="tannery">
   <a class="card__link" href="../../gsc-group-positivity-cabin-andrea-bianconi-zermeghedo/">
     <div class="card__media media" style="view-transition-name: foto-gsc-group-positivity-cabin-andrea-bianconi-zermeghedo">
       <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
@@ -112,7 +144,7 @@
 </article>
 
 <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
-<article class="card " data-rivista="tannery">
+<article class="card reveal" data-rivista="tannery">
   <a class="card__link" href="../../mile-museum-senato-steam-giovani-filiera-pelle/">
     <div class="card__media media" style="view-transition-name: foto-mile-museum-senato-steam-giovani-filiera-pelle">
       <img src="../../assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
@@ -179,7 +211,7 @@
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <a class="logo logo--light" href="../../" aria-label="MPA Style, torna alla home">
-        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+        <img src="../../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
       </a>
       <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
     </div>

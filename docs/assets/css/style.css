@@ -7,6 +7,17 @@
    ========================================================================= */
 
 /* 1. Variabili ----------------------------------------------------------- */
+
+/* Font dei titoli: Oswald (licenza OFL), condensato e deciso come il logo STYLE.
+   Un solo file da 28 KB, servito dal sito. font-display: swap mostra subito il testo
+   con il font di sistema e lo sostituisce appena Oswald è arrivato. */
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/oswald-latin-wght.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
 :root {
   /* Colori di marca: il nero del logo STYLE + un colore per ogni rivista */
   --ink: #111111;
@@ -26,7 +37,7 @@
 
   /* Font di sistema: zero file da scaricare, testo visibile subito */
   --font-text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-title: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-title: "Oswald", "Arial Narrow", "Roboto Condensed", sans-serif-condensed, Impact, sans-serif;
 
   --wrap: 1200px;
   --wrap-text: 42rem;   /* ~70 caratteri per riga: la misura giusta per leggere */
@@ -77,18 +88,22 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .section--dark h2 { color: #fff; }
 
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
-.section-title { font: 600 1.5rem/1.15 var(--font-title); }
+.section-title { font: 600 1.75rem/1.1 var(--font-title); text-transform: uppercase; letter-spacing: 0.01em; }
+/* Trattino colorato sotto i titoli di sezione: nero in home, colore della rivista nelle sue pagine */
+.section-title:not(.section-title--small)::after { content: ""; display: block; width: 40px; height: 4px; margin-top: 8px; background: var(--accent); }
+.section--dark .section-title::after { background: #fff; }
 .section-title--small { font: 700 0.8rem/1.2 var(--font-text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .more { font-size: 0.9375rem; font-weight: 600; white-space: nowrap; }
 .more::after { content: " →"; }
 .section-title + .grid-news, .section-title + .carousel { margin-top: 20px; }
 
 .page-head { padding-block: 28px 16px; }
-.page-title { font: 600 clamp(2rem, 7vw, 3rem)/1.05 var(--font-title); }
+.page-title { font: 600 clamp(2.4rem, 9vw, 4rem)/1 var(--font-title); text-transform: uppercase; }
 .page-intro { margin-top: 10px; color: var(--muted); max-width: 40rem; }
 
 /* Etichetta della rivista, data, note */
 .label { font: 700 0.75rem/1.2 var(--font-text); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.label::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; background: currentColor; vertical-align: 0.05em; }
 .label a { text-decoration: none; }
 .label--on-dark { color: rgba(255,255,255,.8); }
 .meta { font-size: 0.875rem; color: var(--muted); }
@@ -114,10 +129,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--ink); color: #fff; }
 .site-header__inner { max-width: var(--wrap); margin-inline: auto; padding: 0 var(--gutter); height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.logo { display: inline-flex; align-items: baseline; gap: 6px; text-decoration: none; color: #fff; }
-.logo:hover { color: #fff; }
-.logo__mpa { font: 700 0.7rem/1 var(--font-text); letter-spacing: 0.12em; }
-.logo__style { font: 900 1.6rem/1 var(--font-text); letter-spacing: 0.04em; }
+.logo { display: block; flex: none; }
+.logo img { height: 38px; width: auto; }
 .menu-toggle { background: none; border: 0; color: #fff; width: 44px; height: 44px; display: grid; place-items: center; cursor: pointer; margin-right: -10px; }
 
 /* Menu su telefono: pannello laterale aperto con l'attributo popover */
@@ -129,7 +142,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .site-nav::backdrop { background: rgba(0,0,0,.45); }
 .site-nav__close { position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; cursor: pointer; }
 .site-nav__list { list-style: none; margin: 0 0 24px; padding: 0; }
-.site-nav__list a { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); font: 600 1.25rem/1.2 var(--font-title); text-decoration: none; }
+.site-nav__list a { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); font: 500 1.5rem/1.2 var(--font-title); text-transform: uppercase; text-decoration: none; }
 .site-nav__list a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; }
 
 .search { display: flex; gap: 8px; margin-bottom: 20px; }
@@ -157,7 +170,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .card__link { display: grid; grid-template-columns: 112px 1fr; gap: 14px; text-decoration: none; }
 .card__media { aspect-ratio: 1; }
 .card__body { display: grid; gap: 4px; align-content: start; }
-.card__title { font: 600 1.0625rem/1.3 var(--font-text); }
+.card__title { font: 500 1.1875rem/1.25 var(--font-title); }
+.card .meta { color: color-mix(in srgb, var(--accent) 60%, var(--muted)); }
 .card__link:hover .card__title { text-decoration: underline; }
 .card__excerpt { display: none; color: var(--muted); font-size: 0.9375rem; }
 
@@ -165,7 +179,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .opening { display: grid; gap: 24px; padding-top: 20px; padding-bottom: 8px; }
 .lead__link { display: grid; gap: 8px; text-decoration: none; }
 .lead__media { margin-bottom: 4px; }
-.lead__title { font: 600 clamp(1.6rem, 5.5vw, 2.6rem)/1.1 var(--font-title); }
+.lead__title { font: 600 clamp(1.9rem, 7vw, 3.1rem)/1.05 var(--font-title); }
 .lead__link:hover .lead__title { text-decoration: underline; text-decoration-thickness: 2px; }
 .lead__excerpt { color: var(--muted); }
 .headlines { list-style: none; margin: 8px 0 0; padding: 0; }
@@ -182,7 +196,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   box-shadow: 0 10px 24px -14px rgba(0,0,0,.6);
 }
 .cover__kicker { font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: .85; }
-.cover__name { font: 700 1.5rem/1 var(--font-title); }
+.cover__name { font: 600 1.6rem/1 var(--font-title); text-transform: uppercase; }
+.cover__img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 2px; box-shadow: 0 10px 24px -14px rgba(0,0,0,.6); transition: transform .2s ease; }
+.cover:hover .cover__img { transform: translateY(-3px); }
 .cover__ph { font-size: 0.6875rem; opacity: .7; }
 .cover__caption { font-size: 0.875rem; color: var(--muted); }
 .cover__caption strong { color: var(--ink); display: block; }
@@ -202,12 +218,35 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .carousel__nav button:disabled { opacity: .35; cursor: default; }
 
 .mini a { display: grid; gap: 6px; text-decoration: none; }
-.mini__title { font: 600 1rem/1.3 var(--font-text); }
+.mini__title { font: 500 1.0625rem/1.25 var(--font-title); }
+
+/* Ultime news + "Le più lette" */
+.news-with-aside { display: grid; gap: 40px; }
+.most-read { padding: 20px; background: var(--tint); border-radius: var(--radius); align-self: start; }
+.ranks { list-style: none; margin: 12px 0 8px; padding: 0; }
+.rank { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding-block: 12px; border-top: 1px solid var(--line); }
+.rank:first-child { border-top: 0; }
+.rank__n { font: 600 2rem/1 var(--font-title); color: var(--accent); }
+.rank a { font-weight: 600; line-height: 1.3; text-decoration: none; color: var(--ink); }
+.rank a:hover { text-decoration: underline; }
+
+/* Riviste: ultimo numero in evidenza + carosello */
+.magazines { display: grid; gap: 32px; }
+.magazines > *, .news-with-aside > * { min-width: 0; }
+.issue { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; }
+.issue__cover img { width: 100%; border-radius: 2px; box-shadow: 0 18px 32px -16px rgba(0,0,0,.55); }
+.issue__body { display: grid; gap: 6px; }
+.issue__title { font: 600 2rem/1 var(--font-title); text-transform: uppercase; }
+.issue__meta { font-weight: 600; color: var(--ink); }
+.issue__facts { font-size: 0.9375rem; color: var(--muted); }
+.issue__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.button--outline { background: transparent; color: var(--ink); }
+.button--outline:hover { background: var(--ink); color: #fff; }
 
 /* Fiere */
 .fairs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .fair { display: grid; grid-template-columns: 84px 1fr; gap: 14px; align-items: center; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); }
-.fair__date { font: 700 1rem/1.2 var(--font-title); color: var(--ink); }
+.fair__date { font: 600 1.125rem/1.2 var(--font-title); color: var(--ink); text-transform: uppercase; }
 .fair strong { display: block; color: var(--ink); }
 .fair span { font-size: 0.9rem; color: var(--muted); }
 
@@ -216,7 +255,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .advertisers p { margin-top: 8px; }
 .stats { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 20px; margin: 0; }
 .stats div { display: flex; flex-direction: column-reverse; gap: 2px; }
-.stats dd { margin: 0; font: 700 2rem/1 var(--font-title); color: #fff; }
+.stats dd { margin: 0; font: 600 2.4rem/1 var(--font-title); color: #fff; }
 .stats dt { font-size: 0.875rem; }
 .stats__note { font-size: 0.8125rem; font-style: italic; opacity: .7; margin: -12px 0 0 !important; }
 .advertisers .button { justify-self: start; }
@@ -246,14 +285,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* Articolo: testo a 18px, righe da ~70 caratteri */
 .article__head { padding-top: 28px; display: grid; gap: 12px; }
-.article__title { font: 600 clamp(1.75rem, 6vw, 2.75rem)/1.1 var(--font-title); }
+.article__title { font: 600 clamp(2rem, 7vw, 3.25rem)/1.05 var(--font-title); }
 .article__standfirst { font-size: 1.1875rem; line-height: 1.5; color: var(--muted); }
 .article__hero { margin: 20px auto 0; }
 .article__hero figcaption { margin-top: 8px; font-size: 0.875rem; color: var(--muted); }
 .article__layout { display: grid; gap: 32px; margin-top: 28px; }
 .prose { max-width: var(--wrap-text); font-size: 1.125rem; line-height: 1.7; }
 .prose > * + * { margin-top: 1.1em; }
-.prose h2 { font: 600 1.5rem/1.2 var(--font-title); margin-top: 1.8em; }
+.prose h2 { font: 600 1.625rem/1.2 var(--font-title); margin-top: 1.8em; }
 .prose a { color: var(--accent); font-weight: 600; }
 .article__aside { display: none; }
 .aside-box { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); }
@@ -277,7 +316,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Contatti */
 .contact-cards { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 12px; }
 .contact-card { display: grid; gap: 4px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); }
-.contact-card h2 { font: 600 1.125rem/1.25 var(--font-title); margin-bottom: 4px; }
+.contact-card h2 { font: 500 1.25rem/1.2 var(--font-title); margin-bottom: 4px; }
 .contact-card a { font-weight: 600; }
 .contact-card--wa .button { justify-self: start; margin-top: 4px; background: #1f7a4c; border-color: #1f7a4c; }
 .contact-layout { display: grid; gap: 40px; }
@@ -310,7 +349,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .section { padding-block: 56px; }
   .section-title:not(.section-title--small) { font-size: 1.875rem; }
   .grid-news { grid-template-columns: repeat(3, 1fr); }
-  .grid-news--list .card:first-child { grid-column: span 2; }
+  /* Pagina News: la prima notizia occupa tutta la riga, foto a sinistra e testo a destra */
+  .grid-news--list .card:first-child { grid-column: 1 / -1; }
+  .grid-news--list .card:first-child .card__link { grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: center; }
+  .grid-news--list .card:first-child .card__title { font-size: 2.25rem; line-height: 1.08; }
+  .grid-news--list .card:first-child .card__excerpt { -webkit-line-clamp: 4; font-size: 1.0625rem; }
+  .grid-news--two { grid-template-columns: repeat(2, 1fr); }
+  .news-with-aside { grid-template-columns: 1fr 320px; gap: 48px; }
+  .magazines { grid-template-columns: 380px 1fr; align-items: center; gap: 48px; }
+  .issue { grid-template-columns: 170px 1fr; }
   .opening { grid-template-columns: 2fr 1fr; gap: 40px; padding-top: 32px; }
   .opening__side { border-left: 1px solid var(--line); padding-left: 32px; }
   .headlines { margin-top: 12px; }
@@ -326,6 +373,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .contact-cards { grid-template-columns: repeat(4, 1fr); }
   .contact-layout { grid-template-columns: 1.4fr 1fr; gap: 64px; }
 
+  .site-header__inner { height: 72px; }
+  .logo img { height: 50px; }
+  html { scroll-padding-top: 88px; }
+
   /* Menu su desktop: lo stesso <nav> diventa una barra orizzontale, il popover non serve più */
   .menu-toggle, .site-nav__close { display: none; }
   .site-nav {
@@ -334,7 +385,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
     margin: 0; padding: 0; background: none; color: #fff;
   }
   .site-nav__list { display: flex; gap: 20px; margin: 0; }
-  .site-nav__list a { padding: 0; border: 0; font: 600 0.9375rem/1 var(--font-text); }
+  .site-nav__list a { padding: 0; border: 0; font: 500 1rem/1 var(--font-title); letter-spacing: 0.03em; }
   .site-nav__list a:hover { color: #fff; text-decoration: underline; }
   .search { margin: 0; }
   .search input { width: 150px; padding: 6px 10px; background: #222; border-color: #333; color: #fff; }

@@ -8,6 +8,8 @@
   <meta name="description" content="Le news quotidiane della filiera moda, pelle, tessile e DPI, le sei riviste di MPA e il calendario delle fiere internazionali.">
   <meta name="theme-color" content="#111111">
   <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="./assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
   <script src="./assets/js/main.js" defer></script>
@@ -18,8 +20,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="logo" href="./" aria-label="MPA Style, torna alla home">
-      <!-- Segnaposto: qui va il logo STYLE in SVG -->
-      <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="./assets/img/logo-style.webp" alt="" width="400" height="125">
     </a>
 
     <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
@@ -60,16 +62,16 @@
   <!-- Primo schermo: niente animazioni, così l'apertura compare subito -->
   <section class="opening wrap" aria-label="In apertura">
     <!-- BLOCCO card-news-lead → la notizia di apertura della home (template-parts/card-news-lead.php) -->
-<article class="lead" data-rivista="shoes-and-bags">
-  <a class="lead__link" href="./futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali/">
-    <div class="lead__media media" style="view-transition-name: foto-futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali">
+<article class="lead" data-rivista="tannery">
+  <a class="lead__link" href="./futuro-della-conceria-digitalizzazione-sostenibilita-open-innovation/">
+    <div class="lead__media media" style="view-transition-name: foto-futuro-della-conceria-digitalizzazione-sostenibilita-open-innovation">
       <!-- Immagine dell'apertura: niente lazy loading e fetchpriority alta, perché è l'elemento principale (LCP) -->
-      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="1200" height="675" fetchpriority="high" decoding="async">
+      <img src="./assets/img/news/il-futuro-della-conceria.webp" alt="Ritratto pubblicato con l'articolo" width="1200" height="675" fetchpriority="high" decoding="async">
     </div>
-    <p class="label">Shoes &amp; Bags</p>
-    <h2 class="lead__title">Futurmoda ottobre 2026: la filiera della calzatura tra Circolarità Avanzata, Intelligenza Artificiale e Nuovi Linguaggi Materici</h2>
-    <p class="lead__excerpt">Ad Elche la fiera dei componenti per calzatura e pelletteria mette al centro circolarità, intelligenza artificiale e nuovi materiali.</p>
-    <time class="meta" datetime="2026-10-19">19 ottobre 2026</time>
+    <p class="label">Tannery</p>
+    <h2 class="lead__title">Il futuro della conceria: digitalizzazione, sostenibilità e open innovation</h2>
+    <p class="lead__excerpt">Digitalizzazione, sostenibilità e open innovation: le sfide che attendono l'industria conciaria.</p>
+    <time class="meta" datetime="2026-10-25">25 ottobre 2026</time>
   </a>
 </article>
 
@@ -77,31 +79,31 @@
       <h2 class="section-title section-title--small">Le ultime</h2>
       <ol class="headlines">
         <!-- BLOCCO card-news-title → solo titolo, per la colonna accanto all'apertura (template-parts/card-news-title.php) -->
-<li class="headline" data-rivista="safety-first">
-  <p class="label">Safety First</p>
-  <a href="./safety-first-novembre-2026-rivista-calzature-di-sicurezza/">Safety First Ottobre/Novembre 2026: il nuovo numero è online in versione sfogliabile</a>
-  <time class="meta" datetime="2026-10-18">18 ottobre 2026</time>
+<li class="headline" data-rivista="shoes-and-bags">
+  <p class="label">Shoes &amp; Bags</p>
+  <a href="./abc-fashion-event-2026-fermo-distretto-calzaturiero/">ABC Fashion Event 2026: a Fermo il distretto calzaturiero fa il pieno di espositori</a>
+  <time class="meta" datetime="2026-10-23">23 ottobre 2026</time>
 </li>
 
 <!-- BLOCCO card-news-title → solo titolo, per la colonna accanto all'apertura (template-parts/card-news-title.php) -->
 <li class="headline" data-rivista="tannery">
   <p class="label">Tannery</p>
-  <a href="./gsc-group-positivity-cabin-andrea-bianconi-zermeghedo/">GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo</a>
-  <time class="meta" datetime="2026-10-16">16 ottobre 2026</time>
+  <a href="./ssip-entra-in-cotance-supporting-member/">SSIP entra in Cotance come supporting member: un nuovo passo verso l’Europa</a>
+  <time class="meta" datetime="2026-10-22">22 ottobre 2026</time>
 </li>
 
 <!-- BLOCCO card-news-title → solo titolo, per la colonna accanto all'apertura (template-parts/card-news-title.php) -->
 <li class="headline" data-rivista="shoes-and-bags">
   <p class="label">Shoes &amp; Bags</p>
-  <a href="./shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh/">Shoes &amp; Leather – Vietnam 2027 | La piattaforma unica dell’ASEAN per il sourcing di calzature e pelletteria</a>
-  <time class="meta" datetime="2026-10-14">14 ottobre 2026</time>
+  <a href="./futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali/">Futurmoda ottobre 2026: la filiera della calzatura tra Circolarità Avanzata, Intelligenza Artificiale e Nuovi Linguaggi Materici</a>
+  <time class="meta" datetime="2026-10-19">19 ottobre 2026</time>
 </li>
 
 <!-- BLOCCO card-news-title → solo titolo, per la colonna accanto all'apertura (template-parts/card-news-title.php) -->
-<li class="headline" data-rivista="outerwear">
-  <p class="label">Outerwear</p>
-  <a href="./daytona-73-mythic-legend-giubbotti-pelle/">Mythic Legend Daytona 73</a>
-  <time class="meta" datetime="2026-10-13">13 ottobre 2026</time>
+<li class="headline" data-rivista="safety-first">
+  <p class="label">Safety First</p>
+  <a href="./safety-first-novembre-2026-rivista-calzature-di-sicurezza/">Safety First Ottobre/Novembre 2026: il nuovo numero è online in versione sfogliabile</a>
+  <time class="meta" datetime="2026-10-18">18 ottobre 2026</time>
 </li>
 
       </ol>
@@ -124,8 +126,54 @@
   <a href="./magazines/outerwear/" data-section="outerwear">Outerwear</a>
 </nav>
 
-    <div class="grid-news">
-      <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+    <div class="news-with-aside">
+      <div class="grid-news grid-news--two">
+        <!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="tannery">
+  <a class="card__link" href="./gsc-group-positivity-cabin-andrea-bianconi-zermeghedo/">
+    <div class="card__media media" style="view-transition-name: foto-gsc-group-positivity-cabin-andrea-bianconi-zermeghedo">
+      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Tannery</p>
+      <h3 class="card__title">GSC Group apre le porte all’arte: la “Positivity Cabin” di Andrea Bianconi torna a casa a Zermeghedo</h3>
+      <p class="card__excerpt">L'opera di Andrea Bianconi torna a Zermeghedo, nella sede di GSC Group.</p>
+      <time class="meta" datetime="2026-10-16">16 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="shoes-and-bags">
+  <a class="card__link" href="./shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh/">
+    <div class="card__media media" style="view-transition-name: foto-shoes-and-leather-vietnam-2027-exhibition-ho-chi-minh">
+      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Shoes &amp; Bags</p>
+      <h3 class="card__title">Shoes &amp; Leather – Vietnam 2027 | La piattaforma unica dell’ASEAN per il sourcing di calzature e pelletteria</h3>
+      <p class="card__excerpt">La fiera vietnamita si presenta come piattaforma dell'area ASEAN per il sourcing di calzature e pelletteria.</p>
+      <time class="meta" datetime="2026-10-14">14 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
+<article class="card reveal" data-rivista="outerwear">
+  <a class="card__link" href="./daytona-73-mythic-legend-giubbotti-pelle/">
+    <div class="card__media media" style="view-transition-name: foto-daytona-73-mythic-legend-giubbotti-pelle">
+      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+    </div>
+    <div class="card__body">
+      <p class="label">Outerwear</p>
+      <h3 class="card__title">Mythic Legend Daytona 73</h3>
+      <p class="card__excerpt">I giubbotti in pelle Daytona 73.</p>
+      <time class="meta" datetime="2026-10-13">13 ottobre 2026</time>
+    </div>
+  </a>
+</article>
+
+<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
 <article class="card reveal" data-rivista="safety-first">
   <a class="card__link" href="./reas-2026-bilancio-salone-emergenza-montichiari/">
     <div class="card__media media" style="view-transition-name: foto-reas-2026-bilancio-salone-emergenza-montichiari">
@@ -170,51 +218,50 @@
   </a>
 </article>
 
-<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
-<article class="card reveal" data-rivista="tannery">
-  <a class="card__link" href="./acque-del-chiampo-pfas-dioxin-2026/">
-    <div class="card__media media" style="view-transition-name: foto-acque-del-chiampo-pfas-dioxin-2026">
-      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
-    </div>
-    <div class="card__body">
-      <p class="label">Tannery</p>
-      <h3 class="card__title">Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica</h3>
-      <p class="card__excerpt">Acque del Chiampo presenta a Dioxin 2026 il suo lavoro contro i PFAS.</p>
-      <time class="meta" datetime="2026-10-06">6 ottobre 2026</time>
-    </div>
-  </a>
-</article>
+      </div>
+      <aside class="most-read reveal" aria-labelledby="t-lette">
+        <h2 class="section-title section-title--small" id="t-lette">Le più lette</h2>
+        <!-- Classifica di esempio: sul sito vero arriva dalle statistiche (in WP un plugin di "post più visti") -->
+        <ol class="ranks">
+          <!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
+<li class="rank" data-rivista="tannery">
+  <span class="rank__n" aria-hidden="true">1</span>
+  <div>
+    <p class="label">Tannery</p>
+    <a href="./acque-del-chiampo-pfas-dioxin-2026/">Acque del Chiampo porta la lotta ai PFAS al Dioxin 2026: 13 anni di innovazione e tutela idrica</a>
+  </div>
+</li>
 
-<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
-<article class="card reveal" data-rivista="texstyle">
-  <a class="card__link" href="./heimtextil-2027-si-presenta-a-milano/">
-    <div class="card__media media" style="view-transition-name: foto-heimtextil-2027-si-presenta-a-milano">
-      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
-    </div>
-    <div class="card__body">
-      <p class="label">TexStyle</p>
-      <h3 class="card__title">Heimtextil 2027 si presenta a Milano: un incontro tra tessile, design e sostenibilità</h3>
-      <p class="card__excerpt">Al Palazzo Touring Club il press lunch della fiera del tessile casa e contract, a Francoforte dal 12 al 15 gennaio 2027.</p>
-      <time class="meta" datetime="2026-10-05">5 ottobre 2026</time>
-    </div>
-  </a>
-</article>
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
+<li class="rank" data-rivista="texstyle">
+  <span class="rank__n" aria-hidden="true">2</span>
+  <div>
+    <p class="label">TexStyle</p>
+    <a href="./heimtextil-2027-si-presenta-a-milano/">Heimtextil 2027 si presenta a Milano: un incontro tra tessile, design e sostenibilità</a>
+  </div>
+</li>
 
-<!-- BLOCCO card-news → in WordPress: template-parts/card-news.php, dentro il loop -->
-<article class="card reveal" data-rivista="shoes-and-bags">
-  <a class="card__link" href="./shoes-leather-guangzhou-2027-fiera-calzature-pelletteria/">
-    <div class="card__media media" style="view-transition-name: foto-shoes-leather-guangzhou-2027-fiera-calzature-pelletteria">
-      <img src="./assets/img/segnaposto-16x9.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
-    </div>
-    <div class="card__body">
-      <p class="label">Shoes &amp; Bags</p>
-      <h3 class="card__title">Shoes &amp; Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera</h3>
-      <p class="card__excerpt">La fiera di Guangzhou torna nel 2027 per calzatura e pelletteria.</p>
-      <time class="meta" datetime="2026-10-05">5 ottobre 2026</time>
-    </div>
-  </a>
-</article>
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
+<li class="rank" data-rivista="shoes-and-bags">
+  <span class="rank__n" aria-hidden="true">3</span>
+  <div>
+    <p class="label">Shoes &amp; Bags</p>
+    <a href="./shoes-leather-guangzhou-2027-fiera-calzature-pelletteria/">Shoes &amp; Leather Guangzhou 2027: L’Asia riaccende i motori della filiera calzaturiera e pelletteriera</a>
+  </div>
+</li>
 
+<!-- BLOCCO card-news-rank → riga numerata per "Le più lette" (template-parts/card-news-rank.php) -->
+<li class="rank" data-rivista="shoes-and-bags">
+  <span class="rank__n" aria-hidden="true">4</span>
+  <div>
+    <p class="label">Shoes &amp; Bags</p>
+    <a href="./uitic-congresso-2027-jakarta-footwear-industry/">UITIC guarda al futuro della calzatura: il XXIII Congresso Internazionale si terrà a Jakarta</a>
+  </div>
+</li>
+
+        </ol>
+        <p class="ph-note">Classifica di esempio</p>
+      </aside>
     </div>
   </section>
 
@@ -224,10 +271,28 @@
         <h2 class="section-title" id="t-riviste">Le sei riviste</h2>
         <a class="more" href="./magazines/">Tutte le riviste</a>
       </div>
-      <!-- BLOCCO carosello-riviste → scroll-snap del browser; il JS serve solo alle frecce -->
+      <div class="magazines">
+        <!-- BLOCCO issue-feature → l'ultimo numero uscito, in evidenza (in WP: l'ultimo contenuto di tipo "Numero") -->
+<article class="issue" data-rivista="safety-first">
+  <a class="issue__cover" href="./magazines/safety-first/">
+    <img src="./assets/img/copertine/safety-first-14.webp" alt="Copertina di Safety First, N. 14 · Ottobre/Novembre 2026" width="600" height="848" loading="lazy" decoding="async">
+  </a>
+  <div class="issue__body">
+    <p class="label">Appena uscito</p>
+    <h3 class="issue__title">Safety First</h3>
+    <p class="issue__meta">N. 14 · Ottobre/Novembre 2026</p>
+    <p class="issue__facts">Trimestrale · testi in Italiano e inglese</p>
+    <div class="issue__actions">
+      <a class="button" href="./magazines/safety-first/">Sfoglia online</a>
+      <a class="button button--outline" href="./magazines/safety-first/">Tutti i numeri</a>
+    </div>
+  </div>
+</article>
+
+        <!-- BLOCCO carosello-riviste → scroll-snap del browser; il JS serve solo alle frecce -->
 <div class="carousel" data-carousel>
   <div class="carousel__track" tabindex="0" aria-label="Le riviste MPA, scorri per vederle tutte">
-    <!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+    <!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="./magazines/style/" data-rivista="style">
   <span class="cover__art" role="img" aria-label="Copertina segnaposto di Style">
     <span class="cover__kicker">Moda e accessori</span>
@@ -237,7 +302,7 @@
   <span class="cover__caption"><strong>Style</strong> Ultimo numero</span>
 </a>
 
-<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="./magazines/shoes-and-bags/" data-rivista="shoes-and-bags">
   <span class="cover__art" role="img" aria-label="Copertina segnaposto di Shoes &amp; Bags">
     <span class="cover__kicker">Calzatura e pelletteria moda</span>
@@ -247,7 +312,7 @@
   <span class="cover__caption"><strong>Shoes &amp; Bags</strong> Ultimo numero</span>
 </a>
 
-<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="./magazines/tannery/" data-rivista="tannery">
   <span class="cover__art" role="img" aria-label="Copertina segnaposto di Tannery International">
     <span class="cover__kicker">Concerie e industria della pelle</span>
@@ -257,7 +322,7 @@
   <span class="cover__caption"><strong>Tannery International</strong> Ultimo numero</span>
 </a>
 
-<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="./magazines/texstyle/" data-rivista="texstyle">
   <span class="cover__art" role="img" aria-label="Copertina segnaposto di TexStyle">
     <span class="cover__kicker">Tessile</span>
@@ -267,17 +332,13 @@
   <span class="cover__caption"><strong>TexStyle</strong> Ultimo numero</span>
 </a>
 
-<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="./magazines/safety-first/" data-rivista="safety-first">
-  <span class="cover__art" role="img" aria-label="Copertina segnaposto di Safety First">
-    <span class="cover__kicker">Calzature e DPI da lavoro</span>
-    <span class="cover__name">Safety First</span>
-    <span class="cover__ph">Copertina segnaposto</span>
-  </span>
-  <span class="cover__caption"><strong>Safety First</strong> Ottobre/Novembre 2026</span>
+  <img class="cover__img" src="./assets/img/copertine/safety-first-14.webp" alt="Copertina di Safety First, N. 14 · Ottobre/Novembre 2026" width="600" height="848" loading="lazy" decoding="async">
+  <span class="cover__caption"><strong>Safety First</strong> N. 14 · Ottobre/Novembre 2026</span>
 </a>
 
-<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Segnaposto: sul sito vero c'è la foto della copertina -->
+<!-- BLOCCO cover → copertina di una rivista (template-parts/cover.php). Se manca la foto, segnaposto disegnato in CSS -->
 <a class="cover" href="./magazines/outerwear/" data-rivista="outerwear">
   <span class="cover__art" role="img" aria-label="Copertina segnaposto di Outerwear">
     <span class="cover__kicker">Capispalla e pellicceria</span>
@@ -294,6 +355,7 @@
   </div>
 </div>
 
+      </div>
     </div>
   </section>
 
@@ -373,7 +435,7 @@
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <a class="logo logo--light" href="./" aria-label="MPA Style, torna alla home">
-        <span class="logo__mpa">MPA</span><span class="logo__style">STYLE</span>
+        <img src="./assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
       </a>
       <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
     </div>

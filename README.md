@@ -62,8 +62,8 @@ file PHP andrà.
 aggiungono il desktop. Su telefono le card della lista hanno la foto piccola a sinistra, così in
 una schermata si leggono 3-4 notizie invece di una.
 
-**Velocità.** Niente font da scaricare (si usano quelli del sistema), niente librerie, un solo
-CSS (~20 KB) e un solo JS piccolo caricato con `defer`. L'immagine dell'apertura ha
+**Velocità.** Niente librerie, un solo CSS (~24 KB) e un solo JS piccolo caricato con `defer`.
+Un solo font da scaricare, per i titoli (vedi sotto); il testo usa i font del sistema. L'immagine dell'apertura ha
 `fetchpriority="high"` e niente lazy loading; tutte le altre hanno `loading="lazy"`. Ogni
 immagine ha `width` e `height`, così la pagina non "salta" mentre carica. Nel primo schermo non ci
 sono animazioni: il contenuto principale compare subito (oggi ci mette ~5,9 s).
@@ -71,6 +71,11 @@ sono animazioni: il contenuto principale compare subito (oggi ci mette ~5,9 s).
 **Leggibilità delle news.** Articolo a 18 px con righe da ~70 caratteri, titolo sopra la foto,
 sottotitolo e riga "di Redazione · data · tempo di lettura" in italiano, titoli in minuscolo
 normale, date scritte per intero.
+
+**Un font tutto nostro per i titoli.** Oswald (licenza libera OFL, `assets/fonts/`), condensato e
+deciso come il logo STYLE. È un file da 28 KB servito dal sito stesso, non da Google Fonts: niente
+richieste a server esterni e niente problemi di privacy. `font-display: swap` mostra subito il
+testo e cambia font appena è arrivato; il `preload` nell'header lo fa partire per primo.
 
 **Le riviste hanno un volto.** Ogni testata ha un colore (`--c-tannery` ecc.). Basta mettere
 `data-rivista="tannery"` su un elemento e etichetta, foto segnaposto e copertina prendono quel
@@ -102,8 +107,12 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 
 ## Cosa è segnaposto
 
-- **Foto e copertine**: segnaposto dichiarati ("Foto segnaposto", "Copertina segnaposto").
-- **Logo**: per ora è testo; va sostituito con l'SVG del logo STYLE.
+- **Foto e copertine**: vere per le ultime news (conceria, ABC Fashion Event, SSIP/Cotance,
+  Futurmoda) e per Safety First n. 14; le altre sono segnaposto dichiarati ("Foto segnaposto",
+  "Copertina segnaposto"). Il componente usa la foto se c'è, altrimenti il segnaposto.
+- **Logo**: quello vero, in WebP. Meglio averlo in SVG (più nitido e più leggero).
+- **Le più lette**: classifica di esempio, dichiarata. Sul sito vero arriva dalle statistiche.
+- **Indirizzi delle 3 news più recenti** (`"slugApprox": true`): ricostruiti dal titolo.
 - **Numeri per gli inserzionisti** (copie, iscritti, fiere, paesi): `00.000`, dichiarati.
 - **Estratti delle news**: il sito di oggi non ne ha. Li ho scritti riassumendo solo quello che
   dice il titolo; vanno sostituiti con quelli della redazione.
@@ -118,6 +127,6 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 - **Menu**: Riviste, Fiere, Academy, Chi siamo e Pubblicità non sono ancora nella demo
   (portano alla pagina 404, che lo spiega).
 
-Contenuti reali usati: le 12 news più recenti con titoli e date (salvate il 20/10/2026), il
+Contenuti reali usati: le 15 news più recenti con titoli e date (salvate il 20/10/2026), il
 testo completo dell'articolo Heimtextil 2027, le sei testate, il calendario fiere, i partner,
 indirizzi, telefoni, P.IVA e link social (aggiornati a https e x.com).

@@ -3,7 +3,7 @@
   <a class="lead__link" href="{{url}}">
     <div class="lead__media media" style="view-transition-name: foto-{{slug}}">
       <!-- Immagine dell'apertura: niente lazy loading e fetchpriority alta, perché è l'elemento principale (LCP) -->
-      <img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="1200" height="675" fetchpriority="high" decoding="async">
+      {{#if image}}<img src="{{image}}" alt="{{image_alt}}" width="1200" height="675" fetchpriority="high" decoding="async">{{else}}<img src="{{root}}assets/img/segnaposto-16x9.svg" alt="" width="1200" height="675" fetchpriority="high" decoding="async">{{/if}}
     </div>
     <p class="label">{{magazine_short}}</p>
     <h2 class="lead__title">{{title}}</h2>

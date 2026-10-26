@@ -1,17 +1,51 @@
 [
   {
+    "slug": "futuro-della-conceria-digitalizzazione-sostenibilita-open-innovation",
+    "slugApprox": true,
+    "title": "Il futuro della conceria: digitalizzazione, sostenibilità e open innovation",
+    "date": "2026-10-25",
+    "magazine": "tannery",
+    "excerpt": "Digitalizzazione, sostenibilità e open innovation: le sfide che attendono l'industria conciaria.",
+    "image": "news/il-futuro-della-conceria.webp",
+    "imageAlt": "Ritratto pubblicato con l'articolo"
+  },
+  {
+    "slug": "abc-fashion-event-2026-fermo-distretto-calzaturiero",
+    "slugApprox": true,
+    "title": "ABC Fashion Event 2026: a Fermo il distretto calzaturiero fa il pieno di espositori",
+    "date": "2026-10-23",
+    "magazine": "shoes-and-bags",
+    "excerpt": "A Fermo l'ABC Fashion Event 2026 registra il tutto esaurito tra gli espositori del distretto calzaturiero.",
+    "image": "news/abc-fashion-event-2026-fermo.webp",
+    "imageAlt": "L'ingresso dell'ABC Fashion Event 2026, con i visitatori tra gli stand"
+  },
+  {
+    "slug": "ssip-entra-in-cotance-supporting-member",
+    "slugApprox": true,
+    "title": "SSIP entra in Cotance come supporting member: un nuovo passo verso l’Europa",
+    "date": "2026-10-22",
+    "magazine": "tannery",
+    "excerpt": "La Stazione Sperimentale per l'Industria delle Pelli diventa supporting member di Cotance, la confederazione europea dei conciatori.",
+    "image": "news/ssip-cotance-supporting-member.webp",
+    "imageAlt": "I loghi di Cotance e della Stazione Sperimentale per l'Industria delle Pelli"
+  },
+  {
     "slug": "futurmoda-ottobre-2026-circolarita-intelligenza-artificiale-materiali",
     "title": "Futurmoda ottobre 2026: la filiera della calzatura tra Circolarità Avanzata, Intelligenza Artificiale e Nuovi Linguaggi Materici",
     "date": "2026-10-19",
     "magazine": "shoes-and-bags",
-    "excerpt": "Ad Elche la fiera dei componenti per calzatura e pelletteria mette al centro circolarità, intelligenza artificiale e nuovi materiali."
+    "excerpt": "Ad Elche la fiera dei componenti per calzatura e pelletteria mette al centro circolarità, intelligenza artificiale e nuovi materiali.",
+    "image": "news/futurmoda-ottobre-2026.webp",
+    "imageAlt": "L'ingresso di Futurmoda 56, edizione fall/winter 27-28"
   },
   {
     "slug": "safety-first-novembre-2026-rivista-calzature-di-sicurezza",
     "title": "Safety First Ottobre/Novembre 2026: il nuovo numero è online in versione sfogliabile",
     "date": "2026-10-18",
     "magazine": "safety-first",
-    "excerpt": "Il nuovo numero della rivista delle calzature di sicurezza e dei DPI si può sfogliare online."
+    "excerpt": "Il nuovo numero della rivista delle calzature di sicurezza e dei DPI si può sfogliare online.",
+    "image": "copertine/safety-first-14.webp",
+    "imageAlt": "La copertina di Safety First n. 14, ottobre/novembre 2026"
   },
   {
     "slug": "gsc-group-positivity-cabin-andrea-bianconi-zermeghedo",
