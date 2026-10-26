@@ -32,6 +32,15 @@ La cartella `docs/` è già generata e inclusa nel repo, così si può pubblicar
 (Settings → Pages → branch `main`, cartella `/docs`). Non va modificata a mano: si cambia
 `src/` e si rilancia la build.
 
+## Prendere news e foto dal sito attuale
+
+```bash
+node scripts/scarica-news.mjs 20   # le ultime 20 news, con foto, titoli, date, estratti e categorie
+```
+
+Usa l'API che ogni WordPress ha all'indirizzo `/wp-json/`. Le foto finiscono in
+`src/assets/img/news/`, i dati in `scripts/news-dal-sito.json`.
+
 ## Com'è organizzato
 
 ```
