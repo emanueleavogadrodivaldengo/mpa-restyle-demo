@@ -58,7 +58,8 @@
         <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
         <li><a href="../contacts/" data-section="contatti" aria-current="page">Contatti</a></li>
       </ul>
-      <form class="search" role="search" action="../" method="get">
+      <!-- In WordPress action è home_url('/') e i risultati li mostra search.php -->
+      <form class="search" role="search" action="../search/" method="get">
         <label class="visually-hidden" for="s">Cerca nel sito</label>
         <input id="s" name="s" type="search" placeholder="Cerca una notizia">
         <button type="submit">Cerca</button>

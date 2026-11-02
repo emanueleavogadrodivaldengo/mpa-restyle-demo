@@ -1,0 +1,66 @@
+<!--page {
+  "title": "Cerca nel sito · MPA Style",
+  "description": "Cerca tra le notizie di MPA Style su calzatura, pelletteria, concia, tessile, capispalla e sicurezza sul lavoro.",
+  "section": ""
+} -->
+{{> header}}
+
+<!-- PAGINA risultati di ricerca → in WordPress diventa search.php.
+     Sul sito vero l'indirizzo resta quello di oggi (/?s=parola) e la ricerca la fa WordPress
+     (in PHP: get_search_query(), il loop con have_posts(), il ramo "else" per "nessun risultato").
+     Nella demo, che non ha un server, le notizie sono già tutte nella pagina e un piccolo
+     JavaScript (main.js) mostra solo quelle che contengono le parole cercate. -->
+<main id="contenuto" class="wrap search-page" data-search-page>
+  <header class="page-head">
+    <h1 class="page-title" data-search-title>Cerca</h1>
+    <p class="page-intro" data-search-status role="status">Scrivi una o più parole: cerchiamo nei titoli e nei testi delle notizie.</p>
+  </header>
+
+  <form class="search-big" role="search" action="./" method="get">
+    <label class="search-big__label" for="cerca">Cosa cerchi?</label>
+    <div class="search-big__row">
+      <input id="cerca" name="s" type="search" placeholder="Per esempio: pelle, fiere, sicurezza" autocomplete="off" enterkeyhint="search">
+      <button class="button" type="submit">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        Cerca
+      </button>
+    </div>
+  </form>
+
+  <!-- Ricerche suggerite: in WordPress possono essere i tag più usati (wp_tag_cloud) o una lista scelta dalla redazione -->
+  <nav class="search-tips" aria-label="Ricerche frequenti" data-search-tips>
+    <p class="search-tips__title">Ricerche frequenti</p>
+    <ul>
+      <li><a href="./?s=pelle">Pelle</a></li>
+      <li><a href="./?s=calzature">Calzature</a></li>
+      <li><a href="./?s=fiera">Fiere</a></li>
+      <li><a href="./?s=sostenibilità">Sostenibilità</a></li>
+      <li><a href="./?s=sicurezza">Sicurezza</a></li>
+      <li><a href="./?s=tessile">Tessile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Risultati: una notizia sotto l'altra, foto a sinistra, così si leggono bene anche su schermo grande -->
+  <div class="grid-news grid-news--results" data-search-results hidden>
+    {{#news template="card-news"}}
+  </div>
+
+  <!-- Nessun risultato (in WP: il ramo else di have_posts()) -->
+  <section class="search-empty" data-search-empty hidden aria-labelledby="nessun-risultato">
+    <h2 id="nessun-risultato" class="section-title">Nessuna notizia trovata</h2>
+    <ul class="search-empty__tips">
+      <li>Controlla di aver scritto bene la parola.</li>
+      <li>Prova con una parola sola o più generale: per esempio <strong>pelle</strong> invece di <strong>pelle conciata al vegetale</strong>.</li>
+      <li>Oppure sfoglia le notizie per rivista:</li>
+    </ul>
+    {{> filtri-riviste}}
+  </section>
+
+  <noscript>
+    <p class="empty">In questa demo la ricerca ha bisogno di JavaScript. Sul sito vero la fa WordPress e funziona sempre.</p>
+  </noscript>
+
+  <p class="ph-note">Demo: si cerca tra le 20 notizie scaricate dal sito. Sul sito vero WordPress cerca in tutti gli articoli.</p>
+</main>
+
+{{> footer}}
