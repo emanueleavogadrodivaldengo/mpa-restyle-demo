@@ -74,3 +74,102 @@ document.querySelectorAll('[data-hero]').forEach(hero => {
   update();
   if (!stopped && slides.length > 1) { pauseBtn.hidden = false; play(); }
 });
+
+// Pagina "Cerca" (solo nella demo: sul sito vero la ricerca la fa WordPress, in search.php).
+// Le notizie sono già tutte nella pagina; qui mostriamo quelle che contengono TUTTE le parole
+// cercate, ignorando maiuscole e accenti ("citta" trova "città"), e evidenziamo le parole trovate.
+document.querySelectorAll('[data-search-page]').forEach(page => {
+  const q = (new URLSearchParams(location.search).get('s') ?? '').trim();
+  const title = page.querySelector('[data-search-title]');
+  const status = page.querySelector('[data-search-status]');
+  const results = page.querySelector('[data-search-results]');
+  const empty = page.querySelector('[data-search-empty]');
+  const tips = page.querySelector('[data-search-tips]');
+  const cards = [...results.children];
+
+  // Anche la casella nell'header mostra la parola cercata
+  document.querySelectorAll('input[name="s"]').forEach(i => { i.value = q; });
+  if (!q) return; // nessuna parola: resta la pagina con la casella e le ricerche frequenti
+
+  // Toglie accenti e maiuscole, una lettera alla volta, ricordando dove sta ogni lettera
+  // nel testo originale (serve per evidenziare il punto giusto)
+  const plain = c => c.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+  const fold = text => {
+    let out = '';
+    const pos = [];
+    [...text].forEach((c, i) => { const p = plain(c); out += p; for (let k = 0; k < p.length; k++) pos.push(i); });
+    return { out, pos };
+  };
+  // Le parole lunghe perdono l'ultima vocale: "calzature" trova anche "calzaturiero",
+  // "pelli" trova "pelle". Le parole di una o due lettere ("di", "e") non contano.
+  // Le parole valgono solo a inizio parola: "arte" non trova "partecipare"
+  const isLetter = c => /[\p{L}\p{N}]/u.test(c ?? '');
+  const findAll = (text, w) => {
+    const found = [];
+    for (let i = text.indexOf(w); i !== -1; i = text.indexOf(w, i + 1)) {
+      if (!isLetter(text[i - 1])) found.push(i);
+    }
+    return found;
+  };
+  const words = [...new Set(plain(q).split(/[^\p{L}\p{N}]+/u)
+    .filter(w => w.length > 2)
+    .map(w => (w.length > 4 ? w.replace(/[aeiou]$/, '') : w)))];
+
+  const show = (heading, message) => {
+    title.textContent = heading;
+    status.textContent = message;
+    document.title = `${q} · Cerca nel sito · MPA Style`;
+  };
+
+  if (!words.length) {
+    show('Cerca', 'Scrivi una parola di almeno tre lettere.');
+    return;
+  }
+
+  const scored = cards.map(card => {
+    const titleText = fold(card.querySelector('.card__title').textContent).out;
+    const rest = fold(card.textContent).out;
+    const ok = words.every(w => findAll(rest, w).length);
+    // Prima le notizie che hanno le parole nel titolo, poi le altre (a parità, la più recente)
+    return { card, ok, score: words.filter(w => findAll(titleText, w).length).length };
+  }).filter(r => r.ok).sort((a, b) => b.score - a.score);
+
+  cards.forEach(c => { c.hidden = true; });
+  scored.forEach(({ card }) => { card.hidden = false; results.append(card); });
+  results.querySelectorAll('.card__title, .card__excerpt').forEach(el => highlight(el, words));
+
+  const n = scored.length;
+  show('Risultati della ricerca',
+    n ? `${n === 1 ? 'Una notizia trovata' : `${n} notizie trovate`} per «${q}».`
+      : `Per «${q}» non abbiamo trovato notizie.`);
+  results.hidden = !n;
+  empty.hidden = !!n;
+  tips.hidden = !!n;
+
+  // Avvolge in <mark> le parole trovate, senza toccare l'HTML della card
+  function highlight(el, list) {
+    const text = el.textContent;
+    const { out, pos } = fold(text);
+    const ranges = [];
+    for (const w of list) {
+      for (const i of findAll(out, w)) ranges.push([pos[i], pos[i + w.length - 1] + 1]);
+    }
+    if (!ranges.length) return;
+    ranges.sort((a, b) => a[0] - b[0]);
+    const chars = [...text];
+    el.textContent = '';
+    let at = 0;
+    for (const [from, to] of ranges) {
+      if (from < at) continue; // si sovrappone a una parola già evidenziata
+      // Evidenzia la parola intera: "calzatur" → "calzaturiero"
+      let end = to;
+      while (end < chars.length && isLetter(chars[end])) end++;
+      el.append(chars.slice(at, from).join(''));
+      const mark = document.createElement('mark');
+      mark.textContent = chars.slice(from, end).join('');
+      el.append(mark);
+      at = end;
+    }
+    el.append(chars.slice(at).join(''));
+  }
+});

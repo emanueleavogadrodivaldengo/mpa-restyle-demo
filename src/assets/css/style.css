@@ -459,6 +459,30 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .big-link { font: 600 1.75rem/1.1 var(--font-title); text-decoration: none; }
 .contact-wa { justify-self: start; margin-top: 0.5rem; background: #1f7a4c; border-color: #1f7a4c; }
 
+/* Pagina Cerca: casella grande, ricerche frequenti, risultati uno sotto l'altro */
+.search-page [hidden] { display: none !important; }
+.search-big { margin-bottom: 1.5rem; }
+.search-big__label { display: block; margin-bottom: 0.5rem; font-weight: 700; font-size: 1.125rem; color: var(--ink); }
+.search-big__row { display: flex; gap: 0.5rem; }
+.search-big input {
+  flex: 1; min-width: 0; min-height: 3.5rem; padding: 0.75rem 1rem;
+  border: 2px solid var(--ink); border-radius: var(--radius); background: #fff; font-size: 1.1875rem;
+}
+.search-big input::placeholder { color: #8a8a8f; }
+.search-big .button { min-height: 3.5rem; padding-inline: 1.25rem; font-size: 1.125rem; }
+.search-tips { margin-bottom: 2rem; }
+.search-tips__title { margin-bottom: 0.625rem; font-weight: 700; color: var(--ink); }
+.search-tips ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.625rem; }
+.search-tips a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.375rem 1.125rem; border: 1px solid var(--line); border-radius: 999px; background: var(--tint); font-weight: 600; text-decoration: none; }
+.search-tips a:hover { border-color: var(--ink); color: var(--ink); }
+.search-page mark { background: #ffe58a; color: inherit; padding-inline: 0.08em; border-radius: 2px; }
+.grid-news--results { margin-bottom: 1.5rem; }
+.grid-news--results .card { padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); }
+/* Su telefono si vede anche l'inizio del testo: lì spesso c'è la parola cercata */
+.grid-news--results .card__excerpt { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9375rem; }
+.search-empty { margin-bottom: 1.5rem; }
+.search-empty__tips { margin: 1rem 0 1.25rem; padding-left: 1.25rem; display: grid; gap: 0.5rem; font-size: 1.125rem; }
+
 /* Desktop ---------------------------------------------------------------- */
 @media (min-width: 640px) {
   :root { --gutter: 1.5rem; }
@@ -479,6 +503,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .ticks--two { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
   .fairs--list .fair { grid-template-columns: 4.5rem 1fr auto; }
   .fair__cal { grid-column: auto; align-self: center; }
+  /* Risultati della ricerca: una colonna sola, foto a sinistra e testo a destra */
+  .grid-news.grid-news--results { grid-template-columns: 1fr; gap: 1.5rem; }
+  .grid-news--results .card__link { grid-template-columns: 15rem 1fr; gap: 1.5rem; align-items: start; }
+  .grid-news--results .card__title { font-size: 1.625rem; }
+  .grid-news--results .card__excerpt { -webkit-line-clamp: 3; font-size: 1.0625rem; }
 }
 
 @media (min-width: 960px) {

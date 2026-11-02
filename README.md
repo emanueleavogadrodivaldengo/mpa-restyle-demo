@@ -14,13 +14,15 @@ Pagine di questa prima versione (italiano; l'inglese è previsto ma non ancora f
 | Riviste (le sei testate) | `docs/magazines/index.html` | `page-magazines.php` |
 | Pagina di ogni testata (sei, da un solo modello) | `docs/magazines/<testata>/index.html` | `category.php` |
 | Calendario fiere | `docs/fairs/index.html` | `archive-fiera.php` |
-| Academy | `docs/academy/index.html` | `page-academy.php` |
 | Chi siamo | `docs/company/index.html` | `page-company.php` |
 | Pubblicità e media kit (pagina nuova) | `docs/pubblicita/index.html` | `page-pubblicita.php` |
 | Contatti | `docs/contacts/index.html` | `page-contacts.php` |
+| Risultati di ricerca | `docs/search/index.html` | `search.php` (indirizzo `/?s=parola`) |
 
 Gli indirizzi sono quelli di oggi (`/news/`, `/magazines/tannery/`, `/fairs/`, `/company/`,
-`/academy/`, `/contacts/`, articoli alla radice; `/pubblicita/` è nuova): così, quando il tema andrà online, Google non perde nessuna pagina.
+`/contacts/`, articoli alla radice; `/pubblicita/` è nuova): così, quando il tema andrà online, Google non perde nessuna pagina.
+L'Academy chiude e non c'è più: quando il tema va online, `/academy/` e `/academy/courses/` vanno
+reindirizzate (301) a `/company/`, così chi ha il vecchio link non trova un errore.
 
 ## Come si usa
 
@@ -138,11 +140,13 @@ Tutti e tre si spengono se nel sistema è attivo "riduci movimento". GSAP per or
 - **Descrizioni delle riviste**, periodicità, link "Sfoglia" e "Abbonati": da completare.
 - **Contatti**: numeri ed email sono quelli del sito di oggi; quale numero e quale email per
   la pubblicità va confermato. Nel footer resta un solo numero (redazione).
-- **Moduli** (newsletter, contatti) e **ricerca**: grafica pronta, non inviano nulla.
+- **Moduli** (newsletter, contatti): grafica pronta, non inviano nulla.
+- **Ricerca**: funziona, ma solo fra le 20 news della demo e con un piccolo JavaScript in
+  `main.js` (ignora maiuscole e accenti, trova anche "calzaturiero" cercando "calzature").
+  Sul sito vero la fa WordPress su tutti gli articoli, all'indirizzo di oggi `/?s=parola`.
 - **Fiere**: le 27 del sito di oggi (`data/fiere.json`); quelle già finite spariscono da sole a
   ogni build.
 - **Chi siamo**: testo e partner dal sito di oggi; storia, persone e loghi dei partner da completare.
-- **Academy**: testo dal sito di oggi; date, sedi e costi dei corsi da completare.
 - **Pubblicità**: pagina nuova. Formati ricavati dagli spazi della demo e dalla distribuzione delle
   riviste; formati esatti, prezzi e numeri da confermare.
 - **Pagine delle testate**: Outerwear oggi non ha notizie fra le 20 scaricate, quindi mostra un
