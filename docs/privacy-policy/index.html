@@ -1,0 +1,217 @@
+<!doctype html>
+<!-- BLOCCO header → in WordPress diventa header.php (get_header()) -->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy · MPA Style</title>
+  <meta name="description" content="Come MPA srl tratta i dati personali di chi visita mpastyle.it, ci scrive, si iscrive alla newsletter o si abbona alle riviste, e come esercitare i propri diritti.">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://www.mpastyle.it/privacy-policy/">
+  <!-- Solo per la demo online: dice a Google di non mettere queste pagine nei risultati,
+       così non fanno concorrenza agli articoli veri di mpastyle.it. Nel tema WordPress va tolta. -->
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Anteprima quando il link si condivide su WhatsApp, LinkedIn, Facebook, X (Open Graph).
+       In WordPress queste righe le scrive Yoast, con la foto in evidenza dell'articolo. -->
+  <meta property="og:site_name" content="MPA Style">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy policy · MPA Style">
+  <meta property="og:description" content="Come MPA srl tratta i dati personali di chi visita mpastyle.it, ci scrive, si iscrive alla newsletter o si abbona alle riviste, e come esercitare i propri diritti.">
+  <meta property="og:url" content="https://www.mpastyle.it/privacy-policy/">
+  <meta property="og:image" content="https://www.mpastyle.it/assets/img/condivisione.jpg">
+  <meta property="og:image:alt" content="MPA Style · media, publishing &amp; advertising">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Versione inglese prevista: quando esiste, qui va <link rel="alternate" hreflang="en" href="..."> (in WP lo genera WPML) -->
+  <!-- Il font dei titoli è nel sito (niente Google Fonts): lo precarichiamo perché serve subito -->
+  <link rel="preload" href="../assets/fonts/oswald-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="../" aria-label="MPA Style, torna alla home">
+      <!-- Logo vero in WebP; quando ci sarà la versione SVG, basta cambiare il file -->
+      <img src="../assets/img/logo-style.webp" alt="" width="400" height="125">
+    </a>
+
+    <button class="menu-toggle" type="button" popovertarget="menu" aria-label="Apri il menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- Su telefono è un pannello "popover" (si apre senza JavaScript); su desktop è una barra normale -->
+    <nav id="menu" class="site-nav" popover aria-label="Menu principale">
+      <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Chiudi il menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-nav__list">
+        <li><a href="../news/" data-section="news">News</a></li>
+        <li><a href="../magazines/" data-section="riviste">Riviste</a></li>
+        <li><a href="../fairs/" data-section="fiere">Fiere</a></li>
+        <li><a href="../academy/" data-section="academy">Academy</a></li>
+        <li><a href="../company/" data-section="chi-siamo">Chi siamo</a></li>
+        <li><a href="../pubblicita/" data-section="pubblicita">Pubblicità</a></li>
+        <li><a href="../contacts/" data-section="contatti">Contatti</a></li>
+      </ul>
+      <form class="search" role="search" action="../" method="get">
+        <label class="visually-hidden" for="s">Cerca nel sito</label>
+        <input id="s" name="s" type="search" placeholder="Cerca una notizia">
+        <button type="submit">Cerca</button>
+      </form>
+      <p class="lang">
+        <a aria-current="true" lang="it">IT</a>
+        <span class="lang__soon" lang="en" title="Versione inglese in arrivo">EN</span>
+      </p>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Pagina Privacy policy → in WordPress: una Pagina normale con indirizzo /privacy-policy/ (lo stesso di oggi),
+     impostata in Impostazioni → Privacy. Il testo lo scrive e lo aggiorna la redazione dal pannello, non il tema. -->
+<main id="contenuto">
+  <header class="wrap page-head">
+    <h1 class="page-title">Privacy policy</h1>
+    <p class="page-intro">Come trattiamo i tuoi dati quando visiti il sito, ci scrivi, ricevi la newsletter o ti abboni a una rivista.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="prose legal">
+      <p class="legal__draft"><strong>Bozza.</strong> Questo testo è un punto di partenza scritto per la demo: va controllato e completato da chi segue la privacy di MPA prima di andare online. Le parti <span class="da-definire">evidenziate</span> sono da definire.</p>
+
+      <p class="meta">Ultimo aggiornamento: <span class="da-definire">da definire</span></p>
+
+      <nav class="legal__toc" aria-labelledby="t-indice">
+        <h2 id="t-indice">In questa pagina</h2>
+        <ol>
+          <li><a href="#titolare">Chi tratta i tuoi dati</a></li>
+          <li><a href="#quali-dati">Quali dati, perché e per quanto tempo</a></li>
+          <li><a href="#chi-li-riceve">Chi riceve i dati</a></li>
+          <li><a href="#fuori-ue">Dati fuori dall'Unione Europea</a></li>
+          <li><a href="#diritti">I tuoi diritti</a></li>
+          <li><a href="#modifiche">Modifiche a questa pagina</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="titolare">1. Chi tratta i tuoi dati</h2>
+      <p>Il titolare del trattamento è <strong>MPA srl</strong>, Via del Commercio 46, 20090 Buccinasco (MI), P.IVA 09515700962.</p>
+      <p>Per qualsiasi domanda sui tuoi dati scrivi a <a href="mailto:info@mpastyle.it">info@mpastyle.it</a> <span class="da-definire">(oppure a un indirizzo dedicato, es. privacy@mpastyle.it)</span>. MPA <span class="da-definire">non ha nominato un responsabile della protezione dei dati (DPO): da confermare</span>.</p>
+
+      <h2 id="quali-dati">2. Quali dati, perché e per quanto tempo</h2>
+      <p>Raccogliamo solo i dati che servono per ciascuna attività. Per ognuna trovi lo scopo, la base giuridica (cioè la ragione per cui la legge ci permette di trattarli, art. 6 del Regolamento UE 2016/679, il "GDPR") e per quanto tempo li teniamo.</p>
+
+      <h3>Navigazione sul sito</h3>
+      <p>Il server che ospita il sito registra in automatico alcuni dati tecnici: indirizzo IP, browser, pagina richiesta, data e ora. Servono a far funzionare il sito e a proteggerlo da abusi.</p>
+      <ul>
+        <li><strong>Base giuridica:</strong> legittimo interesse di MPA alla sicurezza del sito.</li>
+        <li><strong>Conservazione:</strong> <span class="da-definire">da verificare con l'hosting (di solito pochi giorni o settimane)</span>.</li>
+      </ul>
+
+      <h3>Statistiche delle visite</h3>
+      <p>Con il tuo consenso usiamo Google Analytics per sapere quante persone leggono il sito e quali articoli interessano di più. I dettagli sono nella <a href="../cookie-policy/">cookie policy</a>.</p>
+      <ul>
+        <li><strong>Base giuridica:</strong> il tuo consenso, che puoi ritirare quando vuoi.</li>
+        <li><strong>Conservazione:</strong> <span class="da-definire">14 mesi (impostazione di Google Analytics da confermare)</span>.</li>
+      </ul>
+
+      <h3>Modulo contatti, email e WhatsApp</h3>
+      <p>Se ci scrivi usiamo nome, email e quello che ci racconti per risponderti: richieste alla redazione, comunicati stampa, media kit, corsi.</p>
+      <ul>
+        <li><strong>Base giuridica:</strong> rispondere a una tua richiesta (misure precontrattuali o legittimo interesse).</li>
+        <li><strong>Conservazione:</strong> il tempo necessario a gestire la richiesta, poi <span class="da-definire">24 mesi</span>.</li>
+      </ul>
+
+      <h3>Newsletter</h3>
+      <p>Se ti iscrivi usiamo la tua email per mandarti le news della settimana e le fiere in arrivo. In fondo a ogni email c'è il link per cancellarti.</p>
+      <ul>
+        <li><strong>Base giuridica:</strong> il tuo consenso.</li>
+        <li><strong>Conservazione:</strong> finché resti iscritto.</li>
+      </ul>
+
+      <h3>Abbonamenti alle riviste</h3>
+      <p>Per spedirti le riviste e fatturare usiamo nome, azienda, indirizzo, dati fiscali e di contatto.</p>
+      <ul>
+        <li><strong>Base giuridica:</strong> il contratto di abbonamento e gli obblighi fiscali.</li>
+        <li><strong>Conservazione:</strong> per la durata dell'abbonamento; i documenti contabili 10 anni, come chiede la legge.</li>
+      </ul>
+
+      <h3>Clienti pubblicitari e partner</h3>
+      <p>Trattiamo i dati di contatto delle persone delle aziende con cui lavoriamo per preventivi, contratti e fatture.</p>
+      <ul>
+        <li><strong>Base giuridica:</strong> il contratto e gli obblighi fiscali.</li>
+        <li><strong>Conservazione:</strong> per la durata del rapporto; i documenti contabili 10 anni.</li>
+      </ul>
+
+      <p>Non usiamo i tuoi dati per decisioni automatiche o profilazione, e non li vendiamo a nessuno.</p>
+
+      <h2 id="chi-li-riceve">3. Chi riceve i dati</h2>
+      <p>I dati li vedono solo le persone di MPA che se ne occupano e i fornitori che ci aiutano a gestire il sito e i servizi, nominati responsabili del trattamento:</p>
+      <ul>
+        <li>la società che ospita il sito: <span class="da-definire">nome dell'hosting</span>;</li>
+        <li>Google Ireland Ltd, per le statistiche (solo con il tuo consenso);</li>
+        <li>il servizio di invio della newsletter: <span class="da-definire">da definire</span>;</li>
+        <li>il commercialista e la banca, per abbonamenti e fatture;</li>
+        <li>il servizio di spedizione delle riviste: <span class="da-definire">da definire</span>.</li>
+      </ul>
+      <p>L'elenco aggiornato dei responsabili si può chiedere scrivendo all'indirizzo del punto 1.</p>
+
+      <h2 id="fuori-ue">4. Dati fuori dall'Unione Europea</h2>
+      <p>Alcuni fornitori, come Google, possono trattare dati negli Stati Uniti. In quel caso il trasferimento avviene con le garanzie previste dal GDPR: il Data Privacy Framework UE-USA o le clausole contrattuali standard approvate dalla Commissione Europea.</p>
+
+      <h2 id="diritti">5. I tuoi diritti</h2>
+      <p>In qualsiasi momento puoi chiederci di:</p>
+      <ul>
+        <li>sapere quali dati abbiamo su di te e averne una copia;</li>
+        <li>correggerli o aggiornarli;</li>
+        <li>cancellarli, quando non serve più conservarli;</li>
+        <li>limitarne l'uso o opporti al trattamento;</li>
+        <li>riceverli in un formato leggibile da un computer, per portarli altrove;</li>
+        <li>ritirare un consenso che ci hai dato, senza che questo tocchi quello che è stato fatto prima.</li>
+      </ul>
+      <p>Basta una email a <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>: rispondiamo entro un mese. Se pensi che abbiamo trattato male i tuoi dati puoi fare reclamo al <a href="https://www.garanteprivacy.it/" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+
+      <h2 id="modifiche">6. Modifiche a questa pagina</h2>
+      <p>Se cambiamo il modo in cui trattiamo i dati aggiorniamo questa pagina e la data in alto. Per i cambiamenti importanti avvisiamo anche gli iscritti alla newsletter.</p>
+    </div>
+  </div>
+</main>
+
+<!-- BLOCCO footer → in WordPress diventa footer.php (get_footer()) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="logo logo--light" href="../" aria-label="MPA Style, torna alla home">
+        <img src="../assets/img/logo-style.webp" alt="" width="400" height="125" loading="lazy">
+      </a>
+      <p>Casa editrice B2B della filiera moda, pelle, tessile e DPI. Sei riviste, news ogni giorno, le fiere di tutto il mondo.</p>
+    </div>
+
+    <address class="site-footer__contacts">
+      <strong>MPA srl</strong><br>
+      Via del Commercio 46, 20090 Buccinasco (MI)<br>
+      <a href="tel:+390240741222">+39 02 4074 1222</a><br>
+      <a href="mailto:info@mpastyle.it">info@mpastyle.it</a>
+    </address>
+
+    <ul class="site-footer__social" aria-label="MPA Style sui social">
+      <li><a href="https://www.instagram.com/MPA_STYLE/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/mpa-style" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/mpastyle" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.youtube.com/channel/UC5ABR-irn3IS_hnYTifS04A" rel="noopener">YouTube</a></li>
+      <li><a href="https://x.com/MpaStyle" rel="noopener">X</a></li>
+    </ul>
+  </div>
+  <div class="site-footer__legal">
+    <p>© 2026 MPA srl · P.IVA 09515700962</p>
+    <!-- In WordPress "Preferenze cookie" riapre il riquadro di Complianz (classe cmplz-show-banner) -->
+    <p><a href="../privacy-policy/">Privacy policy</a> · <a href="../cookie-policy/">Cookie policy</a> · <a href="../cookie-policy/#come-scegli">Preferenze cookie</a></p>
+  </div>
+</footer>
+</body>
+</html>
+
